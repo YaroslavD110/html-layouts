@@ -1,0 +1,14 @@
+{
+  "name": "parallax-js",
+  "homepage": "https://github.com/razorfish/Parallax-JS",
+  "_release": "a1c32a607a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a1c32a607a8a7ab34f719d890019e6456b2cb3ca"
+  },
+  "_source": "https://github.com/razorfish/Parallax-JS.git",
+  "_target": "*",
+  "_originalSource": "parallax-js",
+  "_direct": true
+}

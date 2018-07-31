@@ -1,0 +1,664 @@
+@import "vars"
+@import "libs"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	margin: 0
+	padding: 0
+
+body 
+	overflow-x: hidden
+
+h1, h2, h3, h4, h5, h6 
+	font-weight: 400
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: 'Ubuntu', sans-serif
+
+.button 	
+	width: 100%
+	border: none
+	color: $white
+	padding: 19px 0
+	cursor: pointer
+	background-color: $red
+	border-bottom: $black_red 4px solid
+	transition: all .3s linear
+	outline: none
+	position: relative
+	font-weight: 500
+	font-size: 15px
+	bottom: 0
+	border-radius: 0!important
+
+	&:hover 	
+		border-bottom-width: 0px
+		bottom: -4px
+
+.form_box
+	box-shadow: -10px 10px 20px 5px rgba(0,0,0,0.2);
+	padding: 31px 38px
+	margin: 50px -50px 50px 0
+	background-color: $white
+
+	h3
+		font-weight: 400 
+		margin: 0
+		line-height: 20px
+
+	form 
+		margin-top: 15px
+
+		input
+			text-align: center
+			border: $gray 2px solid
+			color: $black
+			width: 100%
+			padding: 20px 0
+			outline: none
+
+		#phone-error,
+		#email-error
+			position: absolute
+			z-index: 10
+			top: -60px
+			background-color: $red
+			color: $white
+			line-height: 18px
+			left: 15px
+			width: 95%
+			padding: 8px
+			border-radius: 5px
+
+		.col-lg-3,
+		.col-md-3,
+		.col-md-4
+			position: relative
+			padding-right: 0
+
+#popup
+	background-color: $white
+	padding: 25px 0
+
+	.close-reveal-modal
+		font-size: 40px
+		transition: all .3s linear
+
+		&:hover 
+			color: $accent
+			transform: rotate(180deg)
+			margin-top: 5px
+
+	.form_box 
+		box-shadow: none
+		margin: 0
+
+		h3 
+			text-align: center
+			border-bottom: $accent 1px solid
+			padding-bottom: 15px
+
+		input 
+			margin-bottom: 15px
+
+header
+	.fixed_menu 
+		color: $white 
+		background-color: $accent
+		position: fixed
+		top: 0
+		z-index: 99
+		width: 100%
+
+		.toggle-btn
+			display: none
+			position: relative
+			margin-top: 10px
+
+			.menu-btn
+				border: none
+				width: 50px
+				height: 1px
+				background-color: $white
+				cursor: pointer
+				transition: width .5s linear
+				outline: none
+				position: relative
+
+				&::after,
+				&::before
+					position: absolute
+					width: 50px
+					height: 2px
+					background-color: $white
+					content: ''
+					left: 0
+					transition: all .3s linear
+
+				&::after
+					bottom: -15px
+
+				&::before
+					top: -15px
+
+
+			.rotate-btn
+				width: 0
+				background-color: $accent
+
+				&::after
+					bottom: 0
+					left: -15px
+					transform: rotate(45deg)
+
+				&::before
+					top: 0
+					left: -15px
+					transform: rotate(-45deg)
+
+		h4 
+			margin: 0
+			padding: 15px 0
+
+		.logo 
+			img 	
+				float: left
+
+		.phone 
+			br 
+				display: none
+
+		menu 
+			padding: 0
+
+			ul 
+				padding: 0
+				display: flex
+				justify-content: space-around
+
+				li 
+					//display: inline-block
+					font-weight: 700
+					list-style: none
+
+					a 
+						color: $white
+						text-decoration: none
+
+	.header_body 	
+		margin-top: 60px
+
+		.header 
+			position: relative
+			z-index: 2
+
+			h1 
+				font-size: 65px
+				line-height: 70px
+				font-weight: 400
+
+		.features 
+			margin: 70px 0
+			position: relative
+			z-index: 2
+
+			.feature-box
+				img 
+					float: left
+					margin: 5px 15px 0 0
+
+				h4 	
+					margin: 0 0 0 60px
+					font-weight: 400
+					line-height: 20px
+
+		.form_box
+			margin-bottom: 100px
+			position: relative
+			z-index: 2
+
+		.paralax_dog
+			position: relative
+			bottom: -130px
+
+			.fix_cover 	
+				position: absolute
+				background-color: $white
+				height: 100px
+				width: 200%
+				bottom: 100px
+				left: -80%
+
+			img 
+				width: 120%
+
+			.girl 
+				position: relative
+				right: 280px
+				top: -160px
+				z-index: -1
+
+			.dog 
+				position: relative
+				top: 52px
+
+.dog_health
+	margin-top: -60px
+
+	.left_bg
+		background: $accent url('../img/bg_paw.png')
+		height: 100%
+		margin-left: -100vw
+
+		.health_book
+			float: right
+
+			img 
+				position: absolute
+				right: -100%
+				width: 1080px
+
+	.text_box
+		background-color: rgba(255, 255, 255, 0.8)
+		padding: 25px 50px
+		margin-left: -30px
+
+		.text
+			h1 
+				font-size: 38px
+				line-height: 45px
+				margin: 80px 0 50px 0
+
+			p 
+				font-size: 18px
+
+		.form_box
+			margin: 50px 0 50px -150px
+			width: 650px
+
+			form 	
+				margin: 0
+
+				button 
+					padding: 10px 0
+
+					.text_align
+						position: relative
+						bottom: 10px
+
+					img 	
+						margin-left: 5px
+
+.what_case	
+	padding-bottom: 100px
+	width: 100vw
+	overflow: hidden
+
+	.text_box
+		position: relative
+
+		.text 
+			h1 
+				font-size: 38px
+				line-height: 45px
+				margin: 50px 0
+
+			p 
+				font-size: 18px
+
+		.boxes 
+			margin-top: 80px
+
+			.box 
+				text-align: center
+
+				img
+					width: 50px
+
+		.float_text 	
+			position: absolute
+			background-color: $white
+			z-index: 80
+			right: -150px
+			bottom: -70px
+			line-height: 22px
+			padding: 0 35px
+			border: $accent 5px solid
+
+	.sad_dog
+		height: 115%
+		width: 220%
+		margin-right: -120%
+		background: url("../img/sad_dog.jpg") no-repeat center center
+		background-size: cover
+
+.why_happend
+	margin-bottom: 50px
+
+	.cat_img 
+		height: 105%
+		width: 220%
+		margin-left: -120%
+		background: url("../img/cat_img.jpg") no-repeat center center
+		background-size: cover
+
+	.text_box 	
+		background-color: $white
+		padding: 15px 50px
+		margin-top: 40px
+		margin-left: -100px
+
+		h2 	
+			font-size: 30px
+
+		img 
+			float: left
+
+		h4 	
+			padding-left: 70px
+			margin: 40px 0
+
+		ul 
+			padding: 0
+
+			li 
+				list-style: none
+				margin: 10px
+
+				img 	
+					width: 30px
+					margin: 0 15px -8px -5px
+
+.about_us
+	overflow-x: hidden
+	position: relative
+	z-index: 2
+	background-color: $white
+
+	.text_box 
+		position: relative
+
+		h1 
+			font-size: 35px
+			line-height: 40px
+
+		h4 
+			font-weight: 400
+
+		.our_team
+			img 	
+				float: left
+				margin-right: 15px
+
+			h1 	
+				font-size: 20px
+				margin: 0
+				line-height: 25px
+
+			h4 
+				margin: 0
+
+		.our_achievements
+			h1 
+				float: left
+				color: $accent
+				font-size: 35px
+
+				span 
+					margin-left: 25px
+
+			h4 
+				line-height: 20px
+				padding-top: 15px
+				margin-left: 80px
+
+		.medic_card	
+			position: absolute
+			z-index: 80
+			top: 100px
+			right: -170px
+			padding: 0 25px
+			width: 280px
+			background-image: url("../img/gray_bg.jpg")
+
+
+	.right_bg 	
+		background: $accent url('../img/bg_paw.png')
+		height: 100%
+		margin-right: -100vw
+		position: relative
+
+.do_you_know
+	padding: 40px 0
+
+	.container
+		position: relative
+
+		.form_box
+			position: relative
+			z-index: 2
+			width: 100%
+
+		.paralax_dog
+			img 
+				width: 100%
+
+			.girl 
+				position: relative
+				right: 280px
+				bottom: 70px
+				z-index: -1
+
+			.dog 
+				position: relative
+				right: 50px
+				bottom: -100px
+				z-index: 1
+
+		h1 	
+			font-size: 38px
+			line-height: 45px
+			margin-bottom: 80px
+			position: relative
+			z-index: 2
+
+.our_services
+	background: $black url("../img/children_bg.jpg") no-repeat center top
+	background-size: cover
+	color: $white
+	padding-bottom: 50px
+	position: relative
+	z-index: 2
+	margin-top: -150px
+
+	h1 
+		font-size: 45px
+		margin-left: 50px
+
+	.services
+		.service_box
+			padding: 15px
+			margin: 0 -15px
+			text-align: right
+			transition: all .3s linear
+
+			h1 
+				font-size: 30px
+				line-height: 35px
+				text-align: left
+				margin: 0
+				padding-bottom: 25px
+				font-weight: 500
+				border-bottom: $white 2px solid
+
+			.button 
+				width: 40%
+				padding: 14px 0
+
+		.active_service_box
+			background-color: rgba(87,173,105, 0.8)
+
+			.button 	
+				background-color: transparent
+				border: $white 1px solid
+				padding: 15px 0
+
+				&:hover 
+					padding: 15px 0
+					border-bottom-width: 1px
+					background-color: $white
+					color: $accent
+					bottom: 0
+
+.separate
+	padding: 50px 0
+
+	h1 
+		margin: 0
+		font-size: 30px
+
+	.button 
+		text-decoration: none
+		padding: 25px 45px
+
+		&:hover 
+			padding-bottom: 26px
+				
+.we_have
+	background: $accent url('../img/bg_paw.png')
+	color: $white
+	padding-bottom: 50px
+	position: relative
+	z-index: 2
+
+	h1 
+		font-size: 38px
+
+	.we_have_box 	
+		background-color: $black_accent
+		height: 100%
+		position: relative
+		padding-bottom: 25px
+
+		h3
+			padding: 15px 25px
+			margin: 0
+			font-size: 30px
+			box-shadow: -5px 10px 45px 5px rgba(0,0,0,0.2);
+
+		ul 
+			li 
+				list-style: none
+				position: relative
+
+				&::before
+					position: absolute
+					content: ''
+					height: 2px
+					width: 10px
+					background-color: $red
+					top: 13px
+					left: -20px
+
+		.button 	
+			position: absolute
+			bottom: -15px
+			right: 30px
+			width: 40%
+			padding: 15px 0
+
+	.accent_we_have_box
+		box-shadow: -10px 10px 20px 5px rgba(0,0,0,0.2);
+		background-color: $accent
+
+.where_we
+	background-color: $white
+	position: relative
+	z-index: 2
+	margin-top: -140px
+
+	.text_box
+		h1
+			font-size: 38px
+			color: $accent
+			margin-top: 150px
+
+	.form_box 
+		margin: 50px 150px 50px -100px
+		position: relative
+		z-index: 2
+
+	#map
+		width: 36%
+		height: 700px
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 0
+
+footer 
+	h4 
+		color: $gray
+		text-align: right
+		font-weight: 400
+		font-size: 17px
+
+// thn page
+.thn_header
+	overflow: hidden
+
+	.header_body 	
+		.header 
+			margin-top: 100px
+
+			h4 	
+				font-size: 28px
+				text-align: center
+
+		.paralax_dog
+			position: relative
+			bottom: -180px
+
+			.fix_cover 
+				display: none	
+
+.accent_text 
+	color: $accent
+
+@import "media" // Завжди в кінці

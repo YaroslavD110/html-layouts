@@ -1,0 +1,356 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	header 
+		.header_body 
+			.paralax_dog
+				.girl 
+					right: 230px
+
+	.do_you_know
+		.container
+			.paralax_dog 	
+				.girl 
+					right: 230px
+
+	.our_services
+		margin-top: 50px
+
+	.where_we
+		margin-top: 50px
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 998px)
+	header 
+		.fixed_menu 
+			.toggle-btn
+				display: block
+
+				.menu-btn
+					width: 40px
+
+					&::after,
+					&::before
+						width: 40px
+
+				.rotate-btn
+					&::after
+						left: -10px
+
+					&::before
+						left: -10px
+
+			menu
+				margin: 0
+
+				ul
+					display: none
+					min-width: 250px
+					background-color: $accent
+
+					li 
+						display: block
+						text-align: left
+						padding: 15px 35px
+
+		.paralax_dog
+			#scene
+				img 	
+					width: 100%
+
+			.girl 
+				display: none
+
+			.fix_cover
+				display: none
+
+			div 
+				position: static!important
+
+			.dog 
+				top: 0px!important
+
+		.header_body 	
+			.header 
+				h1
+					font-size: 32px
+					line-height: 40px
+					text-align: center
+
+	.form_box
+		margin: 0
+
+		form 
+			input
+				margin-bottom: 15px 
+
+	.dog_health
+		.left_bg
+			.health_book
+				img 
+					width: 100%
+					right: 0
+
+		.text_box
+			margin: 0 -15px
+			padding: 15px
+
+			.form_box
+				margin: 0
+				width: 100%
+
+			.text 
+				h1 
+					font-size: 32px
+					line-height: 40px
+
+	.what_case	
+		.sad_dog 
+			width: 100%
+
+		.text_box
+			.text 
+				h1 
+					font-size: 30px
+					line-height: 40px
+
+				p 
+					font-size: 16px
+
+			.boxes 
+				margin-top: 40px
+
+				.box 
+					margin-bottom: 30px
+
+			.float_text  
+					bottom: 200px
+					right: -300px
+
+	.why_happend
+		.cat_img
+			margin: 0
+			width: 100%
+
+	.do_you_know 
+		.paralax_dog
+			img 	
+				width: 100%
+
+			.girl 	
+				display: none
+
+			.dog
+				left: 0
+
+			div 
+				position: static!important
+
+		h1 
+			font-size: 28px!important
+			line-height: 40px!important
+			margin-bottom: 30px!important
+			
+	.about_us
+		overflow-x: auto
+
+		.text_box 
+			h1 	
+				font-size: 30px
+				line-height: 40px
+
+			.medic_card	 
+				position: static
+				width: 100%
+				padding: 15px
+
+				h1 
+					margin: 0
+
+	.separate
+		text-align: center
+
+		h1 
+			font-size: 28px
+			line-height: 36px
+
+		.align-self-center
+			margin-top: 35px
+
+	.we_have
+		h1 
+			font-size: 35px
+			line-height: 41px
+			text-align: center
+
+		.col-lg-4
+			margin-bottom: 50px
+
+	.where_we
+		.form_box 
+			margin-right: 0
+
+	.form_box 
+		form 
+			.col-lg-3,
+			.col-md-3,
+			.col-md-4
+				padding-right: 15px
+
+	.thn_header
+		.header_body 	
+			.header 
+				h4 	
+					font-size: 20px
+
+			.paralax_dog
+				bottom: -100px
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	header 
+		.header_body 
+			margin-top: 120px
+
+			.features 
+				margin: 40px 0
+
+				.feature-box
+					margin: 10px 0	
+
+			.paralax_dog
+				bottom: -10px
+
+				#scene
+					img 
+					
+		.fixed_menu 
+			.phone 	
+				text-align: right
+				line-height: 22px
+
+				br 
+					display: block
+
+				span 
+					display: none
+
+			.logo 
+				margin-left: 22px
+				line-height: 21px
+
+				img 
+					margin: 7px 4px 0 -38px
+
+			.toggle-btn
+				.menu-btn
+					margin-top: 25px
+
+	.what_case	
+		padding-bottom: 0
+
+		.text_box
+			.float_text  
+				position: static
+
+		.sad_dog 
+			width: 100%
+			height: 600px
+
+	.why_happend
+		.cat_img 
+			width: 100%
+			height: 600px
+
+		.text_box 	
+			margin: 0
+			padding: 15px
+
+			ul 
+				li 
+					line-height: 17px
+					margin: 20px 0
+
+					img 
+						margin-top: 5px
+
+	.about_us 
+		.text_box 
+			.our_team
+				h4 
+					font-size: 16px
+					margin-bottom: 20px
+
+	.do_you_know 
+		.paralax_dog
+			margin-top: 100px
+
+			img 
+				position: relative
+				bottom: -9px
+
+	.our_services
+		background-position: right top
+
+		h1 
+			text-align: center
+			font-size: 35px
+			line-height: 42px
+
+	.where_we
+		.form_box 
+			margin: 0 0 50px 0
+
+		.text_box
+			h1
+				font-size: 30px
+				margin-top: 0
+
+		#map 
+			position: static
+			width: 100%
+			height: 500px
+
+	#popup
+		width: 100%
+		margin: 0
+		left: 0
+
+	.thn_header
+		.header_body 	
+			margin-top: 0
+
+			.header 
+				margin-top: 0
+
+				h4 	
+					font-size: 20px
+
+			.paralax_dog
+				bottom: -10px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	#popup
+		margin-top: -120px
+
+	.dog_health 
+		.text_box
+			.form_box 
+				form 
+					.button 	
+						padding: 15px 0 10px 0
+
+						.text_align
+							bottom: 10px
+
+						img 
+							width: 30px
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/

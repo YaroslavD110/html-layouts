@@ -1,3 +1,3 @@
-# B&W html-layout
+# MobileApp html-layout
 
 ![preview](mobileapp.jpg)

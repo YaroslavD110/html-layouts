@@ -1,0 +1,415 @@
+@import "fonts"
+@import "vars"
+@import "libs"
+@import "animations"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	margin: 0
+	padding: 0
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+
+.headers-box
+	text-align: center
+
+	h1
+		font-family: $headers-font
+		margin: 0
+		font-weight: 300
+
+	h5
+		font-family: $headers-font
+		font-style: italic
+		margin: 0
+		margin-top: -10px
+		color: $gray
+
+	
+#main
+	// Header styles
+	header
+		width: 100%
+
+		menu
+			font-family: $menu-font
+			margin: 0
+			padding: 0
+			text-align: center
+
+			ul 
+				margin: 0
+				padding: 0
+
+				li
+					display: inline-block
+					padding: 0 25px
+
+					a
+						text-decoration: none
+						color: $gray
+
+						&:hover
+							color: $black
+
+			.hidden-menu
+				display: none
+
+				.menu-btn
+					float: left
+					margin: 15px 0 0 15px
+					font-size: 20px
+
+				.logo
+					margin-left: -95px
+
+		.welcome	
+			text-align: center
+			margin-top: 200px
+
+			.welcome-btn
+				margin-top: 50px
+
+				a 
+					text-transform: uppercase
+					color: $black
+					padding: 15px 35px
+					border: $black 1px solid
+					font-size: 13px
+					font-weight: 400
+					text-decoration: none
+					transition: all .3s linear 
+
+					&:hover
+						color: $white
+						background-color: $black
+
+		.header-btn
+			text-align: center
+			margin-top: 200px
+			margin-bottom: 50px
+
+			.slide-down-btn
+				cursor: pointer
+				display: inline-block
+
+				.btn-item 
+					width: 10px
+					height: 10px
+					border-radius: 50%
+					background-color: $gray
+					margin-top: 15px
+
+				.first-item
+					animation: opacity 1s linear 2.5s infinite alternate
+
+				.second-item
+					animation: opacity 1s linear 1.5s infinite alternate
+
+				.third-item
+					animation: opacity 1s linear 0s infinite alternate
+
+	// About Us section styles
+	.about-us
+		width: 100%
+		background-color: $black-bg
+		text-align: center
+		height: 1010px
+
+		.info-card
+			opacity: 0
+
+	.animation-active
+		.cards-box
+			position: relative
+
+			.info-card
+				position: absolute
+				color: $white
+				text-align: left
+				opacity: 0
+				animation: cardOpacity 5s linear 0s 1
+
+				h1 
+					font-family: $headers-font
+					margin: 0
+
+				p
+					margin: 0
+					font-size: 13px
+
+			.card
+				&-2011
+					top: 130px
+					animation-delay: 1.5s
+
+				&-2012
+					top: 255px
+					animation-delay: 2.6s
+
+				&-2013
+					top: 465px
+					animation-delay: 5s
+
+				&-2014
+					top: 680px
+					animation-delay: 7s
+
+		.left-card-box
+			.info-card
+				text-align: right
+
+
+		.line
+			display: inline-block
+			position: relative
+			height: 1000px
+			width: 4px
+			background-color: $white
+			animation: heightOfLine 10s linear 0s 1
+
+			.circle	
+				transform: scale(0)
+				position: absolute
+				border-radius: 50%
+				border: $white 5px solid
+				background-color: $black-bg
+				animation: circleScale 2s linear 0s 1
+
+			.circle
+				&-small
+					height: 20px
+					width: 20px
+					left: -200%
+
+				&-large
+					height: 40px
+					width: 40px
+					left: -450%
+
+				&-2011
+					top: 150px
+					animation-delay: 1.5s
+
+				&-2012
+					top: 275px
+					animation-delay: 2.6s
+
+				&-2013
+					top: 475px
+					animation-delay: 5s
+
+				&-2014
+					top: 700px
+					animation-delay: 7s
+
+	.buildings-box
+		position: relative
+		background-color: $black-bg
+
+		.line
+			position: absolute
+			top: -10px
+			left: 50%
+			transform: translate(-50%)
+			width: 4px
+			background-color: $white
+			animation: heightSecondOfLine 1s linear 10s 1
+
+		img
+			width: 100%
+			margin-bottom: -5px
+			
+	// "Team" section styles
+	#team
+		.headers-box
+			margin-top: 50px
+
+		.cards-box
+			margin-top: 150px
+
+			.col-md-4
+				.card
+					text-align: center
+
+					h3
+						margin: 0
+						margin-top: 15px
+
+					h6 	
+						margin: 0
+						color: $gray
+
+					.social-box
+						margin-top: 15px
+
+						a 
+							color: $gray
+							padding: 5px
+
+							&:hover
+								color: $black
+
+				&:nth-child(odd)
+					padding-top: 150px
+
+	.transition-box
+		img
+			width: 100%
+
+
+	// "Services" section styles
+	#services
+		background-color: $darken-bg
+		margin-top: -1px
+
+		.headers-box
+			color: $white
+			margin-top: 50px
+
+		.cards-box
+			margin-top: 100px
+
+			.card 
+				text-align: center
+
+				.icon-box
+					color: $white
+					border: $white 3px solid
+					width: 100px
+					height: 100px
+					display: inline-block
+					border-radius: 50%
+					font-size: 40px
+
+					i 
+						margin-top: 25px
+
+				h4
+					color: $white
+
+
+	// "Blog" section styles
+	#blog
+		position: relative
+
+		.blog-btn
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+			a 
+				color: $darken-bg
+				padding: 15px 35px
+				background-color: $white
+				text-decoration: none
+				transition: all .3s linear
+				text-transform: uppercase
+
+				&:hover
+					background-color: transparent
+					border: $white 1px solid
+					color: $white
+
+		.blog-bg
+			background-color: $darken-bg
+
+			img 	
+				width: 100%
+				margin-bottom: -1px
+
+
+	// "Contact us" section styles
+	#contact-us
+		text-align: center
+
+		.contact-width-box
+			width: 60%
+			margin: 50px 0 100px 0
+			display: inline-block
+
+			.item
+				text-align: center
+
+				h6 	
+					margin: 0
+					color: $gray
+
+			form
+				margin-top: 100px
+
+				input
+					width: 100%
+					margin: 10px 0
+					height: 40px
+					text-align: center
+
+				textarea 	
+					margin: 10px 0
+					width: 100%
+					height: 200px
+
+				button
+					background-color: $black-bg
+					width: 100%
+					height: 40px
+					border: none
+					text-align: center
+					color: $white
+					transition: all .3s linear
+
+					&:hover
+						background-color: transparent
+						border: $black-bg 1px solid
+						color: $black-bg
+
+
+	// "Footer" section styles
+	footer
+		width: 100%
+		text-align: center
+		padding: 25px 0
+
+		p 
+			font-size: 13px
+		
+
+@import "media" // Завжди в кінціs

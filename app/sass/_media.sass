@@ -1,0 +1,120 @@
+@import "vars"
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.features 	
+		.features_header
+			.features_line
+				width: 65%
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.features 	
+		.features_header
+			.features_line
+				width: 53%
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	header 
+		.fixed_header
+			.toggle-btn
+				display: block
+
+			.logo
+				width: 100%
+
+				img
+					width: 50%
+
+		menu 
+			display: none
+			padding: 0
+			margin: 0
+
+			ul 
+				display: block!important
+				padding: 0
+
+				li 
+					display: block!important
+
+		.header_carousel
+			.owl-carousel
+				.item
+					.item_header
+						h1 
+							font-size: 70px
+
+						h5 
+							font-size: 20px
+							margin-top: -10px
+							line-height: 23px
+
+	.info_section
+		.info_box
+			h3
+				padding: 25px 
+
+	.content 
+		.content_img
+			img 
+				width: 60%
+
+	.features 	
+		.features_header
+			.features_line
+				width: 100%
+				top: 80%
+
+			h2 
+				padding-left: 15px
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	header 
+		.fixed_header
+			.logo
+				img
+					width: 70%
+
+			.toggle-btn
+				.menu-btn
+					margin-top: 15px
+
+		.header_carousel
+			.owl-carousel
+				.item
+					.item_header
+						width: 80%
+
+						h1 
+							margin-top: -30px
+
+	.info_section
+		.info_box
+			h3
+				padding: 15px 
+				font-size: 17px
+
+	.content 
+		.content_img
+			img 
+				width: 80%
+
+		.content_text
+			h2
+				font-size: 25px
+				line-height: 29px 
+
+	footer 
+		.copyright
+			h5 
+				font-size: 12px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/

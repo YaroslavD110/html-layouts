@@ -1,0 +1,22 @@
+{
+  "name": "Boostrap Grid",
+  "version": "0.0.1",
+  "authors": [
+    "brad candullo"
+  ],
+  "description": "The grid system for Bootstrap 3, nothing else.",
+  "main": "grid.css",
+  "keywords": [
+    "Bootstrap",
+    "CSS"
+  ],
+  "license": "MIT",
+  "homepage": "www.bcandullo.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

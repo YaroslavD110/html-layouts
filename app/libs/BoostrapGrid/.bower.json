@@ -1,0 +1,31 @@
+{
+  "name": "Boostrap Grid",
+  "authors": [
+    "brad candullo"
+  ],
+  "description": "The grid system for Bootstrap 3, nothing else.",
+  "main": "grid.css",
+  "keywords": [
+    "Bootstrap",
+    "CSS"
+  ],
+  "license": "MIT",
+  "homepage": "www.bcandullo.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "e721111dd5",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e721111dd556b61a222f02c3ce82954392ad774f"
+  },
+  "_source": "https://github.com/bcandullo/bootstrap-grid.git",
+  "_target": "*",
+  "_originalSource": "bootstrap-grid-css",
+  "_direct": true
+}

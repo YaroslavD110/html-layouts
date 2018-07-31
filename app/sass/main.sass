@@ -1,0 +1,423 @@
+body
+	font-family: 'Open Sans', sans-serif
+	padding: 0
+	margin: 0
+
+.tiny-font
+	font-weight: 300
+
+.under-head
+	text-align: center
+	margin-bottom: 25px
+
+.header
+	background-color: #111111
+	margin: 0
+
+	.top-panel
+		max-width: 1200px
+		font-family: 'Lato', sans-serif
+		margin: 0 auto
+
+		.logo
+			float: left
+			margin-left: 15px
+
+			h2 
+				color: #fcac45
+
+		#menu
+			text-align: right
+
+			ul
+				padding: 0
+				margin: 0
+
+				li 
+					display: inline-block
+					padding: 15px
+					position: relative
+
+					&::before
+						content: ''
+						height: 2px
+						width: 0%
+						background-color: #fcac45
+						position: absolute
+						bottom: 0
+						right: 50%
+
+						transition: width .2s linear
+
+					&::after
+						content: ''
+						height: 2px
+						width: 0%
+						background-color: #fcac45
+						position: absolute
+						bottom: 0
+						left: 50%
+
+						transition: width .2s linear
+
+					&:hover
+						cursor: pointer
+
+						&::before,
+						&::after
+							width: 50%
+
+					a 
+						color: #ffffff
+						text-decoration: none
+						font-size: 0.9em
+
+		.open-menu-btn
+			color: #ffffff
+			float: right
+			font-size: 1.5em
+			margin: 20px 15px 0 0
+			display: none
+
+	.introduction 
+		margin-top: 200px
+		text-align: center
+		width: 100%
+
+		h1
+			color: #ffffff
+			font-weight: 300
+			opacity: 0.75
+			font-size: 3em
+
+		p 
+			color: #ffffff
+			margin: 0 10px
+			font-size: 2em
+
+		.accent-color
+			color: #fcac45
+			font-weight: 900
+			opacity: 1
+	
+	.scroll-down-btn
+		margin: 250px 0 100px 0
+		text-align: center
+		width: 100%
+
+		i 
+			color: #ffffff
+			font-size: 3em
+			padding: 8px 16px
+
+			border: #ffffff 1px solid
+			border-radius: 50%
+
+			transition: all .3s linear
+
+			&:hover
+				cursor: pointer
+				color: #fcac45
+				border-color: #fcac45
+
+.about-us
+	max-width: 1200px
+	margin: 100px auto 50px auto
+
+	img 
+		width: 600px
+
+	.aboutUs-text-box 
+		h3
+			font-weight: 300
+
+		h1 
+			text-transform: uppercase
+
+		p 
+			font-size: 1.1em
+
+		ul 
+			padding: 0
+			margin: 0
+			margin-top: 50px
+
+			li 
+				list-style: none
+				font-size: 1.2em
+
+		button 
+			background-color: transparent
+			border: #7f7f7f 1px solid
+			color: #7f7f7f
+			padding: 15px 30px
+			margin-top: 50px
+
+			transition: all .2s linear
+
+			&:hover 
+				border-color: #fcac45
+				color: #fcac45
+				cursor: pointer
+
+.our-team 
+	background-color: #111111
+	width: 100%
+
+	h1 
+		color: #ffffff
+		font-size: 2.2em
+		position: relative
+		padding: 5px
+		margin: 0
+		margin-top: 25px
+		text-align: center
+
+	.our-team-carousel-body
+		margin: 50px
+
+		.carousel-item 
+			text-align: center
+			color: #ffffff
+
+			.portrait
+				display: inline-block
+				overflow: hidden
+				width: 150px
+				height: 150px
+				border-radius: 50%
+
+				img
+					width: 150px
+
+			h2 
+				font-size: 1.5em
+				margin-bottom: 0
+
+			h3 
+				font-size: 1.1em
+				margin-top: 0
+
+
+
+.our-services 
+	text-align: center
+	margin: 25px 0 50px 0
+
+	h1
+		text-transform: uppercase
+		font-size: 3em
+		margin: 0
+
+	>p 
+		margin: 25px 0 100px 0
+
+	.circle
+		display: inline-block
+		padding: 15px
+		width: 100px
+		border: #fcac45 3px solid
+		border-radius: 50%
+		font-size: 3em
+		text-align: center
+
+.our-clients
+	background-color: #111111
+	width: 100%
+
+	h1 
+		color: #ffffff
+		font-size: 2.2em
+		position: relative
+		padding: 5px
+		margin: 0
+		margin-top: 25px
+		text-align: center
+
+	.our-clients-carousel-body
+		margin: 50px
+
+		.carousel-item 
+
+.our-work
+	width: 100%
+	text-align: center
+	margin: 50px 0
+
+	.our-work-top
+		margin: 25px 0
+
+		h1
+			font-size: 3em
+			text-transform: uppercase
+			margin: 0
+
+	.galery-filter
+		h3
+			margin: 15px 0
+
+		a 
+			font-weight: 300
+			color: #000000
+
+			&:hover 
+				text-decoration: none
+				color: #fcac45
+
+		.active
+			font-weight: 600
+
+	.our-work-galery
+		.galery-item
+			position: relative
+			margin-bottom: 30px
+
+			.item-cover
+				position: absolute
+				top: 0
+				left: 0
+				background-color: #111111
+				width: 103%
+				height: 100%
+				color: #ffffff
+				opacity: 0
+				transition: opacity .25s linear
+
+				h2 
+					text-transform: uppercase
+					margin-top: 55px
+					margin-bottom: 0
+
+				h3 
+					margin-top: 0
+					font-weight: 300
+
+				img
+					margin-top: 15px
+					cursor: pointer
+
+				&:hover
+					opacity: 1
+
+.clients-test
+	background-color: #111111
+	width: 100%
+	color: #ffffff
+	text-align: center
+
+	h1 
+		text-transform: uppercase
+		font-size: 3em
+		margin-top: 50px
+		margin-bottom: 0
+
+	.clients-test-carousel
+		.carousel-item
+			p 
+				font-size: 1.5em
+
+			h3 
+				opacity: 0.8
+
+.contacts
+	width: 100%
+	text-align: center
+
+	h1 
+		text-transform: uppercase
+		font-size: 3em
+		margin-top: 50px
+		margin-bottom: 0
+
+	p 
+		margin: 50px auto
+		max-width: 800px
+
+	form
+		margin: 50px auto
+		max-width: 800px
+
+		label
+			text-align: left
+
+		input 
+			width: 100%
+			height: 40px
+			font-size: 1.3em
+			text-align: center
+			margin-bottom: 25px
+
+		textarea
+			width: 100%
+			height: 200px
+
+		button
+			float: right
+			padding: 10px 60px
+			background-color: #fcac45
+			border: none
+			transition: all .2s linear
+
+			&:hover
+				background-color: transparent
+				border: #fcac45 1px solid
+				color: #fcac45
+
+footer 
+	width: 100%
+	background-color: #111111
+	color: #ffffff
+
+	h3
+		opacity: 0.8
+
+	.social-box
+		i 
+			width: 40px
+			height: 40px
+			text-align: center
+			padding: 10px
+			font-size: 1.2em
+			opacity: 0.8
+			border: #ffffff 2px solid
+			border-radius: 50%
+			margin: 10px
+			cursor: pointer
+			transition: all 0.2s linear
+
+			&:hover
+				color: #fcac45
+				border-color: #fcac45
+				opacity: 1
+
+/* Owl Carousel */
+.owl-controls
+	>.owl-pagination
+		margin-top: 50px
+
+		>.owl-page 
+			background-image: url(../img/nav-dot.png)
+			background-repeat: no-repeat
+			background-position: center
+
+			>span 
+				background-color: transparent
+
+			&:hover
+				background-image: url(../img/active-nav-dot.png)
+				background-repeat: no-repeat
+				background-position: center
+
+		>.active
+			background-image: url(../img/active-nav-dot.png)
+			background-repeat: no-repeat
+			background-position: center
+
+.owl-item
+	text-align: center
+
+	.carousel-item
+		display: inline-block
+
+.owl-carousel
+	margin: 50px 0!important

@@ -1,0 +1,37 @@
+@media only screen and (max-width : 1400px) {
+	footer {
+		margin-top: -60px;
+	}
+}
+
+@media only screen and (max-width : 1200px) {
+	#my-button {
+		display: block;
+	}
+
+	menu {
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width : 990px) {
+	.introduction {
+		margin-top: 50px!important;
+	}
+
+	.features .info-box {
+		margin-top: 25px!important;
+	}
+}
+
+@media only screen and (max-width : 600px) {
+	.introduction .phone-img-box img {
+		margin-top: 20px!important;
+	}
+
+	.text-header .box h1::after,
+	.text-header .box h1::before {
+		display: none;
+	}
+
+}

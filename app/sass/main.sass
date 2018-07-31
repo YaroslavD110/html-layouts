@@ -1,0 +1,422 @@
+body 
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400
+	margin: 0
+	background-color: #f3f3f3
+
+h1, h2, h3, h4, h5
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400
+
+#my-button
+	display: none
+	float: right
+	border: none
+	background-color: transparent
+	margin: 25px
+	font-size: 1.3em
+
+header
+	background-image: url(../img/bg-img.png)
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+	width: 100%
+	min-height: 100vh
+
+	.top-panel
+		background-color: #fff
+		margin-top: 30px
+
+		.logo
+			height: 100%
+			margin-left: 25px
+			position: relative
+			overflow: hidden
+
+			h2 
+				font-weight: 500
+				color: #1AB798
+				font-size: 2em
+				margin: 20px 0
+
+			img
+				position: absolute
+				top: 30px
+
+		menu 
+			padding: 0
+			margin: 0
+
+			ul 
+				padding: 0
+				margin-right: 20px
+				float: right
+
+				li 
+					display: inline-block
+					padding: 15px
+					position: relative
+
+					&::before
+						content: ''
+						height: 2px
+						width: 0%
+						background-color: #1AB798
+						position: absolute
+						bottom: 0
+						right: 50%
+
+						transition: width .2s linear
+
+					&::after
+						content: ''
+						height: 2px
+						width: 0%
+						background-color: #1AB798
+						position: absolute
+						bottom: 0
+						left: 50%
+
+						transition: width .2s linear
+
+					&:hover
+						cursor: pointer
+
+						&::before,
+						&::after
+							width: 50%
+
+					a 	
+						color: #000
+						opacity: 0.5
+						font-weight: 600
+						font-size: 0.9em
+
+						&:hover 
+							opacity: 1
+							text-decoration: none
+							cursor: pointer
+
+	.introduction 
+		color: #fff
+		margin-top: 150px
+
+		h1 	
+			font-size: 3em
+			margin: 0
+
+		h2 
+			margin: 0
+
+		ul 
+			padding: 0
+			margin-top: 50px
+
+			li 
+				list-style: none
+				font-weight: 300 
+
+				i 
+					margin-right: 10px
+					font-size: 1.6em
+
+		button 
+			margin-top: 50px
+			border: none
+			background-color: #1AB798
+			padding: 10px 30px
+			font-size: 1.5em
+			font-weight: 600
+			border-radius: 5px
+			transition: 0.2s all linear
+
+			i 
+				margin-right: 5px
+
+			&:hover 
+				border: #1AB798 1px solid
+				background-color: transparent
+				padding: 9px 29px
+				color: #1AB798
+
+		.phone-img-box
+			text-align: center
+
+			img 
+				width: 300px
+
+.text-header
+	text-align: center
+
+	.box
+		width: auto
+		position: relative
+		display: inline-block
+
+		h1
+			color: #1AB798
+			font-weight: 500
+			margin: 0
+			text-transform: uppercase
+
+			&::after,
+			&::before
+				content: ''
+				position: absolute
+				top: 20px
+				width: 60px
+				height: 1px
+				background-color: #000
+				opacity: 0.5
+			
+			&::before
+				left: -70px
+
+			&::after
+				right: -70px
+
+
+
+
+.features
+	margin-top: 50px
+
+	h2 	
+		text-align: center
+		font-size: 1.2em
+		margin-top: 50px
+
+	.info-box 
+		margin-top: 100px
+
+		.img-box
+			text-align: center
+
+		.item
+			margin: 50px 0
+
+			.row
+				.col-xs-3
+			 		.icon
+						color: #1AB798
+						font-size: 4em
+						text-align: center
+
+				.col-xs-9
+		 			h3 
+		 				font-weight: 500
+
+.video 
+	background-color: #31D4E7
+	padding: 50px 0
+
+	h2 
+		text-transform: uppercase
+		font-weight: 500
+		font-size: 2em
+
+	p 
+		color: #fff
+
+	.social-box
+		margin-bottom: 50px
+
+		i 	
+			background-color: #0098CD
+			color: #fff
+			font-size: 2em
+			padding: 20px
+			border-radius: 60%
+			margin: 10px
+			transition: 0.5s all linear
+
+			&:hover
+				background-color: #000
+				cursor: pointer
+
+.team 
+	text-align: center
+	margin-top: 50px
+
+	.team-box
+		margin-top: 100px
+
+		.worker-box 
+			position: relative
+
+			img
+				width: 100%
+
+			.worker-cover
+				position: absolute
+				bottom: 0
+				left: 0
+				overflow: hidden
+				height: 0
+				width: 100%
+				background-color: rgba(26,183,152,0.8)
+				color: #fff
+				padding: 0 15px
+				transition: 0.5s all linear
+
+				h3
+					font-weight: 500
+					margin-top: 50px
+
+				i 
+					background-color: rgba(0,0,0,0.3)
+					padding: 12px
+					transition: 0.3s all linear
+
+					&:hover
+						background-color: rgba(0,0,0,1)
+						cursor: pointer
+
+			&:hover .worker-cover
+					height: 100%
+
+			h2 	
+				margin: 0
+
+
+.comments
+	margin: 100px 0
+
+	.comments-carousel
+		text-align: center
+		margin-top: 15px
+		overflow: hidden!important
+
+		.owl-wrapper-outer
+			overflow: hidden!important
+
+		.carousel-item
+			.text
+				position: relative
+
+				h3 
+					position: absolute
+					top: -50px
+					right: 0
+					font-size: 10em
+					margin: 0
+					padding: 0
+					font-family: 'Georgia', sans-serif;
+					text-align: center
+					opacity: 0.3
+
+		.owl-controls
+			.owl-pagination
+				.active
+					span
+						background-color: #1AB798
+
+				.owl-page
+					&:hover
+						span
+							background-color: #1AB798
+
+.contacts
+	background-image: url(../img/footer-bg.jpg)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	min-height: 100vh
+	width: 100%
+	width: 100%
+	color: #fff
+	padding-bottom: 60px
+
+	.text-header
+		margin-top: 50px
+
+		.box
+			h1
+				color: #fff
+
+				&::after,
+				&::before
+					background-color: #fff
+
+	.contacts-box
+		margin-top: 100px
+
+		h2 
+			font-size: 3em
+			font-weight: 400
+			margin: 0
+
+		p 
+			opacity: 0.5
+			margin: 0
+
+		.social-box
+			margin-top: 50px
+
+			i 	
+				color: #fff
+				padding-top: 10px
+				font-size: 1.5em
+				height: 40px
+				width: 40px
+				border-radius: 50%
+				margin: 5px
+				text-align: center
+				transition: 0.5s all linear
+
+				&:hover
+					cursor: pointer
+					transform: rotate(360deg)
+
+			.fa-twitter
+				background-color: #3EC2F3
+
+			.fa-google-plus
+				background-color: #E44C41
+
+			.fa-facebook
+				background-color: #3B5997
+
+		h3 	
+			color: #BFACE2
+			margin: 5px 0
+			font-size: 1em
+
+		form
+			margin-bottom: 150px
+
+			input
+				width: 100%
+				margin-bottom: 30px
+				font-family: 'Open Sans', sans-serif;
+				color: #000
+				border: none
+				border-radius: 5px
+				height: 50px
+				padding: 0 15px
+
+			textarea
+				width: 100%
+				height: 200px
+				padding: 15px
+				border: none
+				border-radius: 5px
+				margin-bottom: 30px
+				color: #000
+				font-family: 'Open Sans', sans-serif;
+
+
+			button
+				border: none
+				background-color: #31D4E7
+				padding: 15px 50px
+				border-radius: 5px
+				float: right
+
+footer
+	margin-top: -57px 
+	border-top: rgba(255,255,255,0.5) 1px solid
+
+	h3 
+		color: #fff

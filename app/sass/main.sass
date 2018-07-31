@@ -1,0 +1,607 @@
+@import "vars"
+@import "libs"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	margin: 0
+	padding: 0
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: 'Open Sans', sans-serif
+
+section
+	padding: 50px 0
+
+.accent-header
+	color: $accent
+	font-size: 21px
+
+b 
+	font-weight: 600
+
+#email-error
+	position: absolute
+	top: -28px
+	color: #ff0000
+	left: 50%
+	transform: translateX(-50%)
+	min-width: 300px
+
+// Styles for popup window
+#popup-polit,
+#popup 
+	background-color: $white
+	width: 400px
+	margin-left: -200px
+	padding: 25px 0
+	border-radius: 0
+
+	.close-reveal-modal
+		font-size: 40px
+		transition: all .3s linear
+		margin-top: 10px
+
+		&:hover 
+			color: $accent
+			transform: rotate(180deg)
+			margin-top: 10px
+
+	.popup-form-box
+		width: 80%
+
+		h4 
+			color: $black
+			border-bottom: $black 1px solid
+			padding-bottom: 15px
+			margin-bottom: 25px
+			text-align: center
+
+		form
+			text-align: center
+
+			._field-wrapper
+				position: relative
+
+				input
+					text-align: center
+					background-color: transparent
+					border: $black 1px solid
+					padding: 20px 30px
+					//border-radius: 50px
+					margin-bottom: 20px
+					outline: none
+					font-size: 13px
+					transition: all .3s linear
+					width: 100%
+
+					&::placeholder
+						color: $black
+
+			.polit-btn
+				margin-top: 0!important
+
+			.button
+				background-color: $accent
+				color: $white
+				transition: all .5s linear
+				position: relative
+				top: 0px
+				box-shadow: 0px 10px 10px 0px rgba(237,17,74,0.6);
+				width: 100%
+				margin-bottom: 25px
+				
+				&:hover
+					position: relative
+					box-shadow: 0px 0px 0px 0px rgba(237,17,74,0.6);
+					top: 5px
+
+		.text
+			width: 100%
+			overflow: auto
+			height: 300px
+			text-align: left
+
+
+// Style for buttons
+.button
+	background-color: $white
+	padding: 20px 15px
+	border: none
+	font-weight: 600
+	cursor: pointer
+	transition: background-color .5s linear
+	outline: none
+	font-size: 17px
+
+// Styles for header
+header
+	padding: 70px 0 50px 0
+	position: relative
+
+	.fixed-menu
+		position: fixed
+		top: 0
+		width: 100%
+		background-color: $white
+		z-index: 99
+		padding: 10px 0
+
+		.logo
+			width: 230px
+
+		.toggle-btn
+			display: none
+			position: relative
+			margin-top: -20px
+
+			.menu-btn
+				border: none
+				width: 50px
+				height: 100%
+				cursor: pointer
+				outline: none
+				position: relative
+				background-color: transparent
+
+				span 	
+					width: 50px
+					height: 2px
+					background-color: $black
+					position: absolute
+					left: 0
+					transition: all .5s linear
+
+					&:nth-child(1)
+						top: -10px
+
+					&:nth-child(2) 
+						top: 0px
+						transition: width .5s linear
+
+					&:nth-child(3)
+						top: 10px
+
+			.rotate-btn
+				span 
+					&:nth-child(1)
+						top: 0
+						transform: rotate(45deg)
+
+					&:nth-child(2)
+						width: 0
+
+					&:nth-child(3)
+						top: 0
+						transform: rotate(-45deg)
+
+		menu 
+			margin: 0
+			padding: 0
+
+			ul 	
+				text-align: right
+				margin: 0
+				padding: 0
+
+				li 
+					display: inline-block
+					margin-left: 25px
+
+					a 
+						color: $black
+						text-decoration: none
+						transition: color .2s linear
+
+						&:hover
+							color: $accent
+
+					button
+						background-color: transparent
+						padding: 10px 35px
+						border-radius: 50px
+						border: $accent 2px solid
+						transition: all .3s linear
+						cursor: pointer
+						font-size: 15px
+						outline: none
+		
+						&:hover
+							background-color: $accent
+							color: $white
+
+	.text
+		h1 
+			margin: 0
+			font-size: 50px
+			font-weight: 400
+			line-height: 55px
+
+		p 	
+			margin-top: 25px
+
+	.header-form
+		position: relative
+		text-align: center
+		margin-top: 20px
+
+		.bg-computer
+			width: 100%
+			margin-top: 50px
+
+		form 
+			margin-top: 50px
+			background-size: cover
+			padding: 40px 30px
+			min-width: 300px
+			position: absolute
+			top: 0
+			left: 50%
+			transform: translateX(-50%)
+
+			._field-wrapper
+				position: relative
+
+				input
+					text-align: center
+					border: #a2a2a2 1px solid
+					padding: 18px 28px
+					//border-radius: 50px
+					margin-bottom: 20px
+					background-color: $white
+					font-size: 15px
+					width: 100%
+					outline: none
+					transition: all .3s linear
+
+					&::placeholder
+						color: $black
+
+					// &:focus
+					// 	background-color: $white
+
+
+			.button
+				background-color: $accent
+				color: $white
+				transition: all .5s linear
+				position: relative
+				padding: 20px 10px
+				width: 100%
+				top: 0px
+				box-shadow: 0px 10px 10px 0px rgba(237,17,74,0.6);
+				
+				&:hover
+					position: relative
+					box-shadow: 0px 0px 0px 0px rgba(237,17,74,0.6);
+					top: 5px
+
+	.time
+		img
+			float: left
+			margin-right: 20px
+
+		h3 
+			margin: 0
+			font-size: 24px
+			color: $accent
+
+		h4 
+			margin: 0
+			margin-top: -10px
+			font-weight: 400
+
+	.animation-box
+		position: absolute
+		top: 150px
+		height: 220px
+		overflow: hidden!important
+
+		svg
+			height: 100%
+			margin-left: -90px
+
+			path 
+				stroke-dasharray: 1000
+				stroke-dashoffset: 0
+				animation: dash 20s linear alternate 1
+
+	.left
+		left: 0
+
+	.right
+		right: 0
+
+// Intro section
+.intro-section
+	background: $black url('../img/intro-bg.png') right center no-repeat
+
+	.text
+		color: $white
+
+		h1 
+			font-size: 48px
+			line-height: 50px
+			font-weight: 400
+			margin: 0
+
+		.accent-text
+			text-align: right
+			line-height: 25px
+
+// Separation section
+.separation-section
+	background-color: $accent
+
+	.text
+		p 
+			margin: 0
+			color: $white
+			line-height: 20px
+
+// About me section
+.about_me-section
+	padding-bottom: 0
+
+	.about_me-img
+		img 
+			width: 160%
+			margin-left: -60%
+			margin-bottom: -9px
+
+	.text
+		h1
+			font-size: 40px
+			margin: 0
+			margin-left: -80px
+			font-weight: 400
+			line-height: 50px
+
+		h2
+			color: $accent
+			margin-bottom: 0
+
+		h4 
+			margin: 0
+			margin-top: -10px
+			font-weight: 400
+
+		ul 
+			li 
+				list-style: none
+				position: relative
+				margin-bottom: 15px
+				line-height: 20px
+
+				&::before
+					content: ''
+					background-color: $accent
+					width: 30px
+					height: 2px
+					position: absolute
+					top: 5px
+					left: -40px
+
+
+
+// Section about my free program
+.program-section
+	background: $black url('../img/bg.jpg') center center no-repeat
+	color: $white
+
+	.program_section-header
+		text-align: center
+
+		h1 
+			font-size: 40px
+			display: inline-block
+			font-weight: 400
+			margin-top: 0
+
+	ul 
+		padding: 0 25px
+
+		li 
+			list-style: none
+			position: relative
+			margin-bottom: 15px
+			line-height: 20px
+
+			&::before
+				content: ''
+				background: transparent url('../img/list-icon.jpg') no-repeat
+				width: 30px
+				height: 3px
+				position: absolute
+				top: 5px
+				left: -40px
+
+// For who section 
+.for_who-section
+	.for_who-header
+		text-align: center
+
+		h1 
+			font-weight: 300
+			font-size: 40px
+			margin-top: 0
+
+	.for_who-box
+		text-align: center
+		padding: 25px
+
+		.for_who-img
+			min-height: 130px
+
+		p 
+			text-align: left
+
+	.button
+		background-color: $accent
+		color: $white
+		transition: all .5s linear
+		position: relative
+		top: 0px
+		box-shadow: 0px 10px 10px 0px rgba(237,17,74,0.6);
+		
+		&:hover
+			position: relative
+			box-shadow: 0px 0px 0px 0px rgba(237,17,74,0.6);
+			top: 5px
+
+// Footer
+footer
+	background: $black url('../img/bg.jpg') center center no-repeat
+	color: $white
+	padding: 50px 0
+
+	.text
+		h1
+			font-weight: 400
+			line-height: 40px
+			font-weight: 40px
+			margin: 0
+
+		ul 
+			padding: 0 70px 0 43px
+			margin-top: 40px
+
+			li 
+				list-style: none
+				position: relative
+				margin-bottom: 15px
+				line-height: 20px
+
+				&::before
+					content: ''
+					background: transparent url('../img/list-icon.jpg') no-repeat
+					width: 30px
+					height: 3px
+					position: absolute
+					top: 5px
+					left: -40px
+
+	.form-header
+		padding: 0 110px
+
+		img
+			float: left
+			margin-right: 20px
+
+		h3 
+			margin: 0
+			font-size: 24px
+			color: $accent
+
+		h4 
+			margin: 0
+			margin-top: -10px
+			font-weight: 400
+
+	.footer-form
+		position: relative
+		text-align: center
+
+		.bg-computer
+			width: 70%
+			margin-top: 50px
+
+		form 
+			margin-top: 50px
+			background-size: cover
+			padding: 55px 30px
+			min-width: 300px
+			position: absolute
+			top: 0
+			left: 50%
+			transform: translateX(-50%)
+
+			._field-wrapper
+				position: relative
+
+				input
+					text-align: center
+					border: #a2a2a2 1px solid
+					padding: 18px 28px
+					background-color: $white
+					//border-radius: 50px
+					margin-bottom: 20px
+					font-size: 15px
+					width: 100%
+					outline: none
+					transition: all .3s linear
+
+					&::placeholder
+						color: $black
+
+					&:focus
+						background-color: $white
+
+
+			.button
+				background-color: $accent
+				color: $white
+				transition: all .5s linear
+				position: relative
+				padding: 20px 10px
+				width: 100%
+				top: 0px
+				box-shadow: 0px 10px 10px 0px rgba(237,17,74,0.6);
+				
+				&:hover
+					position: relative
+					box-shadow: 0px 0px 0px 0px rgba(237,17,74,0.6);
+					top: 5px
+
+	.footer-logo
+		margin-top: 50px
+	
+
+.polit-btn
+	background-color: transparent
+	color: $gray
+	border: none
+	padding: 0
+	font-size: 11px
+	height: 0
+	margin-top: 15px
+	cursor: pointer
+
+
+@import "animations"
+@import "media" // Завжди в кінці

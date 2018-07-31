@@ -1,0 +1,210 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	form 
+		padding-left: 30px!important
+		padding-right: 30px!important
+
+	footer
+		.footer-form
+			form
+				padding-top: 30px
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.intro-section
+		//background-image: url("../img/intro-bg-2.jpg")
+		background-position: top center
+
+		.text
+			background-color: #000
+			padding: 10px
+			border-radius: 5px
+			margin: 430px -15px 0 -15px
+
+	.about_me-section
+		padding-bottom: 50px
+
+		.about_me-img
+			img 
+				width: 100%
+				margin-left: 0
+
+		.text
+			text-align: center
+
+			h1
+				margin: 0!important
+				font-size: 32px
+				line-height: 35px
+
+			ul 
+				text-align: left
+
+	footer
+		background-size: cover
+
+		.form-header
+			margin-top: 50px
+
+		.footer-form
+			.bg-computer
+				width: 50%
+				margin-left: -30%
+
+	header
+		.fixed-menu
+			menu
+				ul
+					display: none
+					text-align: left
+					padding-bottom: 25px
+
+					li 
+						display: block
+						margin: 15px 0 0 0
+
+			
+			.toggle-btn
+				display: block
+
+		.text
+			h1 
+				margin: 0
+				font-size: 40px
+				font-weight: 400
+				line-height: 55px
+
+			p 	
+				margin: 25px 0 50px 0
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.separation-section
+		text-align: center
+
+		.button
+			margin-top: 50px 
+
+	.program-section
+		background-size: cover
+
+		.program_section-header
+			h1 
+				font-size: 35px
+				line-height: 38px
+
+		ul 
+			padding: 0 0 0 45px
+			margin: 0
+
+			li 
+				list-style: none
+				position: relative
+				margin-bottom: 15px
+				line-height: 20px
+
+	.for_who-section
+		.for_who-header
+			text-align: center
+
+			h1 
+				font-size: 35px
+				line-height: 38px
+
+		.for_who-box
+			.for_who-img
+				min-height: 0
+
+			p 
+				text-align: center
+
+		.button
+			width: 90%
+
+	footer
+		.form-header
+			padding: 0 50px
+
+		.footer-form
+			.bg-computer
+				width: 70%
+				margin-left: -30%
+
+			form 
+				padding-top: 50px
+
+	header
+		.header-form
+			.bg-computer
+				width: 70%
+
+	#popup,
+	#popup-polit
+		width: 100%
+		margin: 0
+		left: 0
+		right: 0
+
+	header
+		form 
+			margin: 0 0 50px 0
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	#popup-polit
+		.popup-form-box
+			top: 50%
+
+		.close-btn
+			top: 20px
+			right: 20px
+			width: 30px
+
+	.intro-section
+		.text
+			h1 
+				font-size: 35px
+
+	footer
+		.form-header
+			padding: 0
+
+		.text
+			ul 
+				padding: 0 0 0 45px
+
+		.footer-form
+			.bg-computer
+				width: 100%
+				margin-left: 0
+
+	header
+		.fixed-menu
+			.logo
+				width: 180px
+
+			.toggle-btn
+				.menu-btn
+					width: 40px
+
+					span 
+						width: 40px
+
+		.header-form
+			.bg-computer
+				width: 100%
+				margin: 0
+
+			form  
+				margin-top: 0
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/

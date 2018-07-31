@@ -1,0 +1,471 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	header 
+		.fixed_menu
+			.logo
+				.logo_box
+					width: 118%
+
+		.fixed_anim
+			.logo
+				.logo_box
+					img
+						&:nth-child(1)
+							width: 40px
+
+						&:nth-child(2)
+							width: 90px
+
+	.fear
+		padding-top: 0
+
+	.about_me
+		.man_img
+			width: 130%
+			bottom: -10px
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.animation_cover
+		margin-left: -15px
+		margin-right: -15px
+		padding: 0 15px
+
+		.row 
+			margin: 0 -15px
+
+			.animation_box
+				&:nth-child(12),
+				&:nth-child(11),
+				&:nth-child(10),
+				&:nth-child(9)
+					display: none
+
+			.text_box
+				text-align: center
+
+				h3
+					padding-right: 0
+
+				img
+					top: 110px
+					left: 50%
+					transform: rotate(90deg)
+
+			.anim_button
+				button
+					padding: 25px 0
+					text-align: center
+
+	header
+		.fixed_menu
+			.logo 	
+				.logo_box
+					img
+						&:nth-child(1)
+							width: 50px
+
+						&:nth-child(2)
+							width: 75px
+
+
+			.phone_number	
+				h4
+					margin: -8px 0 
+					line-height: 20px
+
+					.sep_line
+						display: none
+
+					br 
+						display: block!important 	
+
+		.fixed_anim
+			.logo
+				.logo_box
+					padding: 35px 0
+
+					img
+						&:nth-child(1)
+							width: 20px
+
+						&:nth-child(2)
+							width: 60px
+
+	.reasons
+		.right
+			img
+				margin: 0
+
+		.reason_img
+			position: relative
+
+			img 
+				position: absolute
+				right: 0
+				top: -100px
+				width: 50%
+
+		.row:nth-child(1)
+			margin-bottom: 200px
+
+	.fear
+		padding-top: 200px
+
+	.facts
+		.col-lg-5
+			left: 0!important
+			top: 0!important
+			margin-bottom: 25px
+
+	.about_me
+		.man_img
+			width: 50%
+			bottom: -20px
+
+		.blue_bg
+			.about_me_bg
+				text-align: center
+
+				h3
+					padding-right: 0
+
+				img
+					top: 110px
+					left: 50%
+					transform: rotate(90deg)
+
+		.about_me_btn
+			button
+				padding: 25px 0
+				text-align: center
+
+	.instaling
+		h1 
+			text-align: center
+			margin-left: 0
+			margin-bottom: 25px
+
+		.step
+			.step_body
+				width: 100%
+
+		.btn_box 
+			width: 100%
+
+			.blue_bg
+				h4
+					margin: 15px 0
+
+				button 
+					padding: 25px
+
+	.cost 
+		.header_p 
+			font-size: 18px
+
+		h1 
+			text-align: center
+
+		.cost_box
+			margin-bottom: 25px
+
+		.blue_bg
+			.cost_bg
+				text-align: center
+
+				h3 
+					padding-right: 0
+
+				h1 
+					padding-right: 0
+
+		.cost_btn
+			button 
+				text-align: center
+
+	.our_services
+		h1
+			font-size: 35px
+			line-height: 40px
+			margin-left: 15px
+			text-align: center 
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	header 
+		.fixed_menu
+			.logo 	
+				.logo_box
+					height: 69px
+					width: 100%
+					padding: 15px 0px
+
+					img 
+						&:nth-child(1)
+							width: 30px
+
+			.toggle-btn
+				display: block
+
+		menu 
+			display: none
+
+			ul 
+				padding-top: 40px!important
+				display: block!important
+
+	.animation_cover
+		.animation_box
+			height: 100px!important
+
+			&:nth-child(8),
+			&:nth-child(7),
+			&:nth-child(6)
+				display: none
+
+		.float_text
+			top: 30px!important
+			padding-left: 15px!important
+
+			h1 
+				font-size: 30px!important
+				line-height: 35px!important
+
+				br 
+					display: none
+
+			h3 
+				font-size: 20px!important
+				line-height: 25px!important
+
+				br 
+					display: none
+
+	.reasons
+		.reason_img
+			img 
+				top: -50px
+				width: 50%
+
+	.fear
+		.fear_body
+			.animation_box
+				height: 100px!important
+
+				&:nth-child(8),
+				&:nth-child(7),
+				&:nth-child(6)
+					display: block
+
+			.float_text
+				h1 
+					margin: 0
+
+				ul 
+					padding-left: 30px 
+
+					li 
+						&:before
+							top: 20px
+
+	.facts
+		h1 
+			font-size: 35px
+			line-height: 40px
+			text-align: center
+			margin-left: 15px
+
+			img 
+				width: 120px
+				bottom: -5px
+
+	.about_me
+		.man_img
+			width: 80%
+			bottom: -20px
+
+		.blue_bg
+			.about_me_bg
+				img
+					top: auto
+					bottom: 0
+					left: 46%
+					transform: rotate(90deg)
+
+	.cost 
+		.header_p 
+			margin-left: 15px
+
+		h1 
+			margin-left: 15px
+
+	.comments
+		h1
+			font-size: 35px
+			line-height: 40px
+			margin-left: 15px
+			text-align: center
+
+	.our_team
+		h1 
+			font-size: 35px
+			line-height: 40px
+			margin-left: 15px
+
+			text-align: center
+
+		.team_box
+			margin-bottom: 50px
+
+	.where_we
+		padding-top: 0
+
+		.where_we_body
+			.void_box
+				display: none
+
+			.row
+				.animation_box
+					height: 100px
+
+	footer 
+		padding: 15px 0
+		padding-bottom: 0
+
+		.foote_logo
+			img 
+				margin-left: 0
+				top: -5px
+
+		.phone_number 
+			h4 
+				position: relative
+				top: -10px
+
+				br 
+					display: block
+
+				.sep_line
+					display: none
+
+	#popup
+		width: 100%
+		margin: 0
+		left: 0
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	#popup
+		margin-top: -120px
+
+	header 
+		.fixed_menu 
+			.toggle-btn
+				margin-left: -5px
+
+	.animation_cover	
+		.animation_box
+			&:nth-child(8),
+			&:nth-child(7)
+				display: none
+
+		.text_box 
+			h3 
+				br 
+					display: none
+
+			img 
+				top: auto!important
+				bottom: 0
+				left: 46%!important
+
+	.reasons
+		h1 
+			font-size: 35px
+			line-height: 40px
+
+		.reason_img
+			img 
+				top: -80px
+				width: 60%
+
+		.row:nth-child(1)
+			margin-bottom: 100px
+
+	.fear
+		padding-top: 100px
+
+		.fear_body
+			.animation_box
+				&:nth-child(8),
+				&:nth-child(7)
+					display: block
+
+			.float_text
+				ul 
+					padding-left: 30px 
+
+					li 
+						font-size: 18px
+
+						&:before
+							top: 20px
+
+	.facts
+		padding-top: 0
+
+		h1 
+			font-size: 32px
+
+		.fact_box
+			.text_box 
+				padding-top: 15px
+
+				p
+					br 
+						display: none
+
+	.about_me
+		.man_img
+			width: 100%
+
+	.instaling
+		h1 
+			font-size: 30px
+			line-height: 35px
+
+		.btn_box 
+			width: 100% 
+
+			.blue_bg
+				padding: 0
+				padding-top: 35px
+
+				h4
+					margin-bottom: 45px
+
+				button 
+					padding: 25px
+	
+	.cost 
+		.header_p 
+			br 
+				display: none
+
+		h1 
+			font-size: 35px
+			line-height: 40px
+
+		.blue_bg
+			.cost_bg
+				padding: 0 15px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/

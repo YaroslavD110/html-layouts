@@ -1,0 +1,890 @@
+@import "_vars"
+@import "_libs"
+@import "_animations"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	margin: 0
+	padding: 0
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: 'ProximaNovaRegular', sans-serif
+
+button 
+	outline: none
+
+h1, h2, h3, h4, h5, h6
+	font-family: 'ProximaNovaBold', sans-serif
+
+section 
+	padding: 25px 0
+
+#popup
+	background-color: $white
+	padding: 25px 0
+	border-radius: 0
+
+	.close-reveal-modal
+		font-size: 40px
+		transition: all .3s linear
+
+		&:hover 
+			color: $accent
+			transform: rotate(180deg)
+			margin-top: 5px
+
+	.form_box 
+		box-shadow: none
+		margin: 0
+
+		h3 
+			text-align: center
+			border-bottom: $accent 1px solid
+			padding-bottom: 15px
+
+		input 
+			margin-bottom: 15px
+			width: 100%
+			text-align: center
+			padding: 15px 0
+			font-size: 18px
+			transition: border-color .3s linear
+			outline: none
+
+		.error 
+			border: $red 1px solid
+
+		label
+			display: none!important
+
+		button 
+			background-color: $red
+			font-family: 'ProximaNovaBold', sans-serif
+			font-weight: 600
+			width: 100%
+			padding: 25px 0
+			border: none
+			font-size: 18px
+			text-align: center
+			color: $white
+			cursor: pointer
+			transition: background-color .3s linear
+
+			&:hover 
+				background-color: #e1113a
+
+.animation_cover
+	position: relative
+	margin-top: 68px
+
+	.row 
+		margin: 0
+
+		.animation_box
+			width: 100%
+			background-color: $dark_blue
+			height: 180px
+			opacity: 0.8
+			border: $light_blue 1px solid
+
+		.animation_style-1
+			animation: changeOpacity_1 3s linear 1s alternate infinite
+
+		.animation_style-2
+			animation: changeOpacity_2 3s linear 2s alternate infinite
+
+		.animation_style-3
+			animation: changeOpacity_3 3s linear 3s alternate infinite
+
+		.text_box 
+			background-color: rgba(38,72,98, 0.7)
+			padding: 35px 0
+			color: $white
+			text-align: right
+			position: relative
+
+			h3
+				font-family: 'ProximaNovaRegular', sans-serif
+				font-weight: 400
+				font-size: 24px
+				line-height: 30px
+				padding-right: 85px
+
+				.bold_text
+					text-decoration: underline
+
+			img 
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 25px
+
+		.float_text
+			overflow: hidden
+			position: absolute
+			top: 50px
+			padding-left: 200px
+			color: $white
+
+			h1 
+				font-size: 40px
+				line-height: 45px
+
+			h3 
+				font-family: 'ProximaNovaRegular', sans-serif
+				font-weight: 400
+				font-size: 25px
+				line-height: 30px
+
+		.anim_button
+			padding: 55px 10px
+			background-color: rgba(38,72,98, 0.7)
+
+			button 
+				background-color: $red
+				font-family: 'ProximaNovaBold', sans-serif
+				font-weight: 600
+				width: 100%
+				padding: 25px 15px
+				border: none
+				font-size: 18px
+				text-align: left
+				color: $white
+				cursor: pointer
+				transition: background-color .3s linear
+
+				&:hover 
+					background-color: #e1113a
+
+header 
+	.fixed_menu
+		background-color: $white
+		position: fixed
+		top: 0
+		width: 100%
+		z-index: 99
+		padding: 20px 0
+		transition: all .2s linear
+
+		.toggle-btn
+			display: none
+			position: relative
+
+			.menu-btn
+				border: none
+				width: 50px
+				height: 100%
+				cursor: pointer
+				outline: none
+				position: relative
+				background-color: transparent
+				margin-left: 10px
+
+				span 	
+					width: 30px
+					height: 4px
+					background-color: $black
+					position: absolute
+					left: 0
+					transition: all .5s linear
+
+					&:nth-child(1)
+						top: 0px
+
+					&:nth-child(2) 
+						top: 10px
+						transition: width .5s linear
+
+					&:nth-child(3)
+						top: 20px
+
+			.rotate-btn
+				span 
+					&:nth-child(1)
+						top: 10px
+						transform: rotate(45deg)
+
+					&:nth-child(2)
+						width: 0
+
+					&:nth-child(3)
+						top: 10px
+						transform: rotate(-45deg)
+
+		.logo
+			width: 100%
+			margin-top: -20px
+			position: relative
+			text-align: center
+
+			.logo_box
+				width: 115%
+				height: 247px
+				padding: 55px 15px
+				position: absolute
+				top: 0
+				left: 0
+				background-color: $accent
+				transition: all .3s linear
+
+				img 
+					transition: all .9s linear
+
+					&:nth-child(1)
+						width: 50px
+
+					&:nth-child(2)
+						width: 110px
+
+		menu 
+			padding: 0
+			margin: 0
+
+			ul 
+				display: flex
+				justify-content: space-around
+				padding: 0
+				margin: 0
+
+				li 
+					list-style: none
+
+					a
+						text-decoration: none
+						font-family: 'ProximaNovaBold', sans-serif
+						font-weight: 600
+						color: $gray
+						border-left: $gray 3px solid
+						padding-left: 10px
+						transition: all .2s linear
+
+						&:hover 	
+							color: $accent
+							border-color: $accent
+
+		.phone_number 
+			h4 
+				color: $gray
+				margin: 0
+
+				br 	
+					display: none
+
+	.fixed_anim
+		padding: 31px 0
+		box-shadow: 0px 5px 22px 0px rgba(0,0,0,0.2);
+
+		.logo
+			margin-top: -31px
+
+			.logo_box
+				height: 90px
+				padding: 20px 0
+
+				img
+					&:nth-child(1)
+						width: 40px
+
+
+	.header_body 	
+		background: transparent url('../img/header_bg.jpg') no-repeat center center
+		background-size: cover
+
+.reasons
+	h1 
+		font-size: 40px
+		line-height: 45px
+
+		.anim_smile
+			position: relative
+			display: inline-block
+
+			.anim_tear
+				position: absolute
+				left: 3px
+				bottom: 10px
+
+	p 
+		font-size: 16px
+
+		.accent_text
+			font-family: 'ProximaNovaBold', sans-serif
+			font-weight: 600
+
+	.reason_img
+		img
+			width: 100% 
+			margin-top: 50px
+
+	.right
+		img
+			margin-left: -100px
+
+	.row:nth-child(1)
+		margin-bottom: 50px
+
+.fear 
+	.fear_body
+		background: transparent url('../img/fear_bg.jpg') no-repeat center center
+		background-size: cover
+
+		.float_text 
+			padding-left: 0
+			top: 0
+
+			h1 
+				margin-left: 25px
+
+			ul 
+				padding-left: 60px
+
+				li 
+					list-style: none
+					position: relative
+					font-size: 22px
+
+					&:before
+						content: ''
+						position: absolute
+						left: -30px
+						top: 50%
+						background-color: $red
+						width: 20px
+						height: 3px
+
+.facts 
+	h1 
+		font-size: 40px
+		line-height: 45px
+		margin-left: 50px
+
+		img 
+			width: 150px
+			position: relative
+			bottom: -10px
+
+	.fact_box
+		.img_box
+			float: left
+			box-shadow: -15px 15px 45px 0px rgba(0,0,0,0.2);
+			height: 150px
+			width: 150px
+			position: relative
+			position: relative
+			z-index: 2
+			background-color: $white
+
+			img 
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+
+		.text_box
+			padding-top: 30px
+			margin-left: 170px
+
+			h4 
+				color: $accent
+				font-size: 22px
+				margin: 0
+
+			p 
+				margin: 0
+				line-height: 19px
+
+	.col-lg-5:nth-child(3)
+		position: relative
+		left: 60px
+		top: -25px
+
+		.fact_box
+			.img_box
+				z-index: -1
+
+	.col-lg-5:nth-child(4)
+		position: relative
+		left: 60px
+		top: -25px
+
+		.fact_box
+			.img_box
+				z-index: -1
+
+.about_me
+	.man_img
+		position: relative
+		bottom: -15px
+		left: -45px
+
+	.text_box
+		padding-left: 25px
+
+		h1 
+			font-size: 40px
+			line-height: 45px
+			position: relative
+
+			img 
+				position: absolute
+				left: -25px
+				bottom: -25px
+				width: 320px
+
+		p 
+			font-size: 17px
+
+			.accent_text
+				font-family: 'ProximaNovaBold', sans-serif
+				font-weight: 600
+	
+	.blue_bg
+		padding: 0
+		background: transparent url('../img/about_me_bg.jpg') no-repeat center center
+		background-size: cover
+		width: 100%
+		height: 100%
+
+		.col-lg-9
+			padding: 0
+			background-color: rgba(38,72,98, 0.7)
+
+		.about_me_bg
+			padding: 35px 0
+			color: $white
+			text-align: right
+			position: relative
+ 
+			h3
+				font-family: 'ProximaNovaRegular', sans-serif
+				font-weight: 400
+				font-size: 24px
+				line-height: 30px
+				padding-right: 85px
+
+				.bold_text
+					text-decoration: underline
+
+			img 
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 25px
+
+	.about_me_btn
+		padding: 55px 10px
+		background-color: rgba(38,72,98, 0.7)
+
+		button 
+			background-color: $red
+			font-family: 'ProximaNovaBold', sans-serif
+			font-weight: 600
+			width: 100%
+			padding: 25px 15px
+			border: none
+			font-size: 18px
+			text-align: left
+			color: $white
+			cursor: pointer
+			transition: background-color .3s linear
+
+			&:hover 
+				background-color: #e1113a
+
+.instaling
+	h1 
+		font-size: 40px
+		line-height: 45px
+		margin-left: 100px
+		margin-bottom: 80px
+
+	.step
+		margin-bottom: 50px
+
+		.step_header
+			.img_box
+				float: left
+
+				img
+					width: 90px
+
+			.text_box
+				margin-left: 110px
+				margin-bottom: 55px
+
+				h2 
+					font-family: 'ProximaNovaRegular', sans-serif
+					font-weight: 400
+					font-size: 20px
+					margin-bottom: 5px
+
+				h3
+					font-size: 20px
+					line-height: 25px
+					margin: 0
+					float: left
+
+		.step_body
+			padding: 15px
+			box-shadow: -15px 15px 45px 0px rgba(0,0,0,0.2);
+			height: 70%
+			width: 108%
+
+	.btn_box 
+		background: transparent url('../img/about_me_bg.jpg') no-repeat center right
+		background-size: cover
+		width: 108%
+		height: 81%
+		color: $white
+		margin-top: 20px
+
+		.blue_bg
+			background-color: rgba(38,72,98, 0.7)
+			width: 100%
+			height: 100%
+			padding: 25px 100px
+
+			h4 	
+				font-size: 24px
+				text-align: center
+				font-family: 'ProximaNovaRegular', sans-serif
+				font-weight: 400
+				line-height: 28px
+				margin: 25px -30px 
+
+			button 
+				background-color: $red
+				position: relative
+				bottom: 0
+				cursor: pointer
+				border: none
+				width: 100%
+				font-size: 25px
+				color: $white
+				padding: 50px 0
+				transition: background-color .3s linear
+
+				&:hover 
+					background-color: #e1113a
+
+.cost
+	.header_p 
+		font-size: 25px
+		font-family: 'ProximaNovaBold', sans-serif
+		font-weight: 600
+		line-height: 30px
+		margin-left: 100px
+
+	h1 
+		font-size: 40px
+		line-height: 45px
+		margin-left: 100px
+
+	.cost_box
+		margin-bottom: 100px
+
+		.cost_header
+			h2 
+				border-bottom: $gray 4px solid
+				padding-bottom: 15px
+
+				sup 
+					font-size: 13px
+
+		.cost_body
+			.before,
+			.after
+				h4
+					display: inline-block 
+					font-family: 'ProximaNovaRegular', sans-serif
+					font-weight: 400
+					margin-right: 50px
+					line-height: 20px
+
+				h3
+					display: inline-block
+
+					sup 
+						font-size: 13px
+
+			.before
+				h3 
+					color: #acacac
+					position: relative
+
+					&::before
+						content: ''
+						width: 100%
+						background-color: $red
+						height: 2px
+						position: absolute
+						top: 13px
+						left: 0
+						transform: rotate(10deg)
+
+			.after
+				h3 
+					color: $red
+					position: relative
+					top: -10px
+
+	.blue_bg
+		padding: 0
+		background: transparent url('../img/about_me_bg.jpg') no-repeat center center
+		background-size: cover
+		width: 100%
+		height: 100%
+
+		.col-lg-9 
+			padding: 0
+			background-color: rgba(38,72,98, 0.7)
+
+		.cost_bg
+			padding: 50px 0
+			color: $white
+			text-align: right
+			position: relative
+ 
+			h3
+				font-family: 'ProximaNovaRegular', sans-serif
+				font-weight: 400
+				font-size: 24px
+				line-height: 30px
+				padding-right: 50px
+				display: inline-block
+
+			h1 
+				display: inline-block
+				font-size: 60px
+				padding-right: 50px
+				margin: 0
+
+	.cost_btn
+		padding: 55px 10px
+		background-color: rgba(38,72,98, 0.7)
+
+		button 
+			background-color: $red
+			width: 100%
+			padding: 5px 15px
+			border: none
+			text-align: center
+			color: $white
+			cursor: pointer
+			transition: background-color .3s linear
+
+			&:hover 
+				background-color: #e1113a
+
+			p 
+				margin: 15px 0
+				font-family: 'ProximaNovaRegular', sans-serif
+				font-weight: 400
+				font-size: 16px
+				line-height: 20px
+
+.comments
+	h1 
+		font-size: 40px
+		line-height: 45px
+		margin-left: 100px
+
+	.comment_box
+		.comment_header
+			.img_box
+				float: left
+				width: 70px
+				height: 70px
+				box-shadow: -15px 15px 45px 0px rgba(0,0,0,0.2);
+
+				img 
+					width: 100%
+
+			.text_box
+				margin-left: 90px
+
+				h2 
+					margin-bottom: 0
+
+				h4
+					margin-top: 0
+					font-family: 'ProximaNovaRegular', sans-serif
+					font-weight: 400
+
+		.comment_body
+			margin-top: 50px
+
+.our_services
+	h1 
+		font-size: 40px
+		line-height: 45px
+		margin-left: 100px
+
+	.service_bg
+		background: transparent url('../img/services_bg.jpg') no-repeat center center
+		background-size: cover
+		width: 100%
+		height: 100%
+
+		.blue_bg
+			background-color: rgba(38,72,98, 0.7)
+			padding: 15px
+			color: $white
+			text-align: center
+			position: relative
+ 
+			h4
+				font-family: 'ProximaNovaRegular', sans-serif
+				font-weight: 400
+				font-size: 16px
+				line-height: 20px
+
+			h2
+				font-size: 22px
+				line-height: 30px
+
+			button 
+				position: relative
+				bottom: 0
+				background-color: $red
+				font-family: 'ProximaNovaBold', sans-serif
+				font-size: 16px
+				font-weight: 600
+				width: 100%
+				padding: 25px 15px
+				border: none
+				text-align: center
+				color: $white
+				cursor: pointer
+				transition: background-color .3s linear
+
+				&:hover 
+					background-color: #e1113a
+
+.our_team
+	h1 
+		font-size: 40px
+		margin-left: 100px
+
+	.team_box
+		text-align: center
+		padding: 0 40px
+
+		img
+			box-shadow: -15px 15px 45px 0px rgba(0,0,0,0.2);
+			width: 100%
+
+		h3 
+			font-size: 16px
+			line-height: 20px
+			text-align: left
+
+		h4 
+			font-family: 'ProximaNovaRegular', sans-serif
+			font-size: 16px
+			line-height: 20px
+			text-align: left
+			font-weight: 400
+
+.where_we
+	padding-bottom: 0
+
+	#map
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+
+	.where_we_body
+		position: relative
+
+		.animation_box,
+		.text_box,
+		.anim_button
+			z-index: 2
+
+		.float_text
+			padding-left: 50px
+			top: 20px
+			z-index: 3
+
+			p 
+				font-size: 20px
+
+footer 
+	padding: 25px 0
+
+	.foote_logo
+		position: relative
+
+		img 
+			margin-left: 100px
+			position: absolute
+			top: -10px
+
+	h5 
+		color: $gray
+		border-left: $gray 3px solid
+		padding-left: 10px
+		margin: 0
+		font-size: 16px
+
+	.phone_number 
+		h4 
+			color: $gray
+			margin: 0
+			font-size: 16px
+
+			br 	
+				display: none
+
+.accent_text 	
+	color: $accent
+
+.bold_text
+	font-family: 'ProximaNovaBold', sans-serif
+	font-weight: 600
+
+.thn_page
+	.animation_cover
+		margin-top: 0
+
+@import "_media" // Завжди в кінці

@@ -1,3 +1,3 @@
-# B&W html-layout
+# SmartHouse html-layout
 
 ![preview](template.jpg)

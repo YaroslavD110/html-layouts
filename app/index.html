@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Система "Умный дом"</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+<body>
+
+	<div id="popup">
+		<div class="container">
+			<div class="row justify-content-end">
+				<img class="close-btn" src="img/close-icon.png" alt="close-icon" />
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="popup-header"><h2></h2></div>
+			</div>
+
+			<div class="row justify-content-center">
+				<form action="php/mail.php" method="POST" id="popup-form">
+					<input class="name-input" type="text" name="name" placeholder="Ваше имя" />
+					<input class="phonenumber-input" type="text" name="phonenumber" placeholder="Ваш телефон" />
+					<button type="submit" class="button">Получить бесплатную консультацию</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<header id="header">
+		<div class="header-line">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-3 col-2 toggle-btn">
+						<button class="menu-btn"></button>
+					</div>
+
+					<div class="col-lg-2 col-md-2 col-2">
+						<div class="logo">
+							<a href="#header"><img src="img/logo.png" alt="logo-img" /></a>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-12 order-10">
+						<menu>
+							<ul>
+								<li><a href="#functions">Функции Умного дома</a></li>
+								<li><a href="#who_do">Кто делает</a></li>
+								<li><a href="#our_works">Наши работы</a></li>
+							</ul>
+						</menu>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-8 order-md-12">
+						<div class="lost-app-btn">
+							<button class="popup-btn">Оставить заявку <img src="img/arrow_r-icon.png" alt="arrow_r-icon" /></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="intro">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="intro-text">
+						<h1>Система «Умный дом»</h1>
+						<h3>Установим в Ваш частный дом, квартиру или офис<br> систему автоматизации, известную как «Умный дом»</h3>
+					</div>
+				</div>
+ 
+				<div class="row justify-content-center">
+					<div class="col-md-3">
+						<div class="intro-box">
+							<img src="img/phone-icon.png" alt="phone-icon" />
+							<h4>Управляете домом<br> со смартфона</h4>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="intro-box">
+							<img src="img/calendar-icon.png" alt="calendar-icon" />
+							<h4>Срок установки<br> – от 3 месяцев</h4>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="intro-box">
+							<img src="img/ukr-icon.png" alt="ukr-icon" />
+							<h4>Революционная для<br> Украины технология</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="contact-form">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-xl-4 col-lg-6">
+						<p>Оставьте свой телефон и мы <b>подберем оптимальный набор умных функций</b> для Вашего дома, квартиры или офиса</p>
+					</div>
+
+					<div class="col-xl-8 col-lg-6">
+						<form action="php/mail.php" method="POST" id="main-form">
+							<input class="name-input" type="text" name="name" placeholder="Ваше имя" />
+							<input class="phonenumber-input" type="text" name="phonenumber" placeholder="Ваш телефон" />
+							<button type="submit" class="button">Получить бесплатную консультацию</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="new_era-section">
+		<div class="container">
+			<div class="row">
+				<div class="float-box">
+					<img src="img/new_era-img.jpg" alt="new_era-img" />
+
+					<div class="float-text">
+						<p>Прошли времена, когда можно было кого-то удивить плиткой из итальянского мрамора или японской вазой XVII века.</p>
+						<p class="accent-paragraph">Сегодня на Вас будут «косо» смотреть, если в доме нет климат-контроля, а гостиную нельзя превратить в домашний кинотеатр нажатием 1 кнопки на смартфоне</p>
+						<h4>Добро пожаловать в Эру Технологий!</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="imagine_house-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="imagine_house-header">
+					<h2>Представьте, что Ваш дом или квартира...</h2>
+					<h4>Это больше не коробка с 4-мя стенами, а огромный технологичный организм</h4>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-md-6 dignity-box weekend-dignity-box">
+					<h3>Уехали в отпуск?</h3>
+					<p>3 клика - и вот Вы уже следите чем занимаются дети или домашние животные с экрана своего смартфона</p>
+				</div>
+
+				<div class="col-md-6 dignity-box tired-dignity-box">
+					<h3>Едете уставший после работы домой?</h3>
+					<p>Нажали пару клавиш - и по приезду умная система прогрела дом до нужной температуры и набрала Вам горячую ароматную ванну</p>
+				</div>
+
+				<div class="col-md-6 dignity-box order-12">
+					<h3>Подберем набор функций<br> Умного дома конкретно<br> под Ваши задачи</h3>
+					<button class="button popup-btn">Оставить заявку</button>
+				</div>
+
+				<div class="col-md-6 dignity-box fire_security-dignity-box">
+					<h3>К Вам забрались воры, случился пожар или затопило?</h3>
+					<p>Умный дом сам перекроет все двери (при взломе), трубы (при затоплении), вызовет охрану или пожарных</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="house_skills-section">
+		<div class="container">
+			<div class="row house_skills-header justify-content-center">
+				<h1>Что еще умеет Умный дом</h1>
+			</div>
+
+			<div class="skills-wrap">
+				<div class="row justify-content-center">
+					<div class="col-lg-2 col-md-6 col-12">
+						<div class="skill-box">
+							<div class="arrow-right">
+								<div class="skill-stroke">
+									<div class="skill-button">
+										<img src="img/light-icon.png" alt="light-icon" />
+									</div>
+								</div>
+
+								<div class="skill-arrow"></div>	
+								<div class="skill-text">
+									<h5>Система управления освещением</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-2 col-md-6 col-12">
+						<div class="skill-box">
+							<div class="arrow-bottom">
+								<div class="skill-stroke">
+									<div class="skill-button">
+										<img src="img/house-icon.png" alt="house-icon" />
+									</div>
+								</div>
+
+								<div class="skill-arrow"></div>	
+								<div class="skill-text">
+									<h5>Климат-контроль</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-md-6 col-12">
+						<div class="skill-box">
+							<div class="arrow-left">
+								<div class="skill-stroke">
+									<div class="skill-button">
+										<img src="img/controller-icon.png" alt="controller-icon" />
+									</div>
+								</div>
+
+								<div class="skill-arrow"></div>	
+								<div class="skill-text">
+									<h5>Удаленное управление каминами, фонтанами, бассейном</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row justify-content-center">
+					<div class="col-lg-2 col-md-6 col-12">
+						<div class="skill-box">
+							<div class="arrow-right">
+								<div class="skill-stroke">
+									<div class="skill-button">
+										<img src="img/music-icon.png" alt="music-icon" />
+									</div>
+								</div>
+
+								<div class="skill-arrow"></div>	
+								<div class="skill-text">
+									<h5>Мультирум (сопровождение звуком и видео)</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-2 col-md-6 col-12">
+						<div class="skill-box">
+							<div class="arrow-center">
+								<div class="skill-stroke">
+									<div class="skill-button">
+										<img src="img/faucet-icon.png" alt="faucet-icon" />
+									</div>
+								</div>
+
+								<div class="skill-arrow"></div>	
+								<div class="skill-text">
+									<h5>Система антизатопления</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-md-6 col-12">
+						<div class="skill-box">
+							<div class="arrow-left">
+								<div class="skill-stroke">
+									<div class="skill-button">
+										<img src="img/window-icon.png" alt="window-icon" />
+									</div>
+								</div>
+
+								<div class="skill-arrow"></div>	
+								<div class="skill-text">
+									<h5>Реагирует на погоду. Закроет окна в сильный ветер, уберет обледенение с крыши</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row justify-content-center">
+					<div class="col-lg-2 col-md-6 col-12">
+						<div class="skill-box">
+							<div class="arrow-right">
+								<div class="skill-stroke">
+									<div class="skill-button">
+										<img src="img/closed_window-icon.png" alt="closed_window-icon" />
+									</div>
+								</div>
+
+								<div class="skill-arrow"></div>	
+								<div class="skill-text">
+									<h5>Управление шторами и освещением</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-2 col-md-6 col-12">
+						<div class="skill-box">
+							<div class="arrow-top">
+								<div class="skill-stroke">
+									<div class="skill-button">
+										<img src="img/camera-icon.png" alt="camera-icon" />
+									</div>
+								</div>
+
+								<div class="skill-arrow"></div>	
+								<div class="skill-text">
+									<h5>Автоматическая охранная система</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-md-6 col-12">
+						<div class="skill-box">
+							<div class="arrow-left">
+								<div class="skill-stroke">
+									<div class="skill-button">
+										<img src="img/settings-icon.png" alt="settings-icon" />
+									</div>
+								</div>
+
+								<div class="skill-arrow"></div>	
+								<div class="skill-text">
+									<h5>Альтернативные источники энергии (солнечные панели, гелиосистемы)</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="who_install-section" id="who_do">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="float-box">
+					<img src="img/man-img.jpg" alt="man-img" />
+
+					<div class="float-text">
+						<h1>Кто устанавливает</h1>
+						<p>Приветствую! Мы - компания Villa Lux. и вот уже 7 лет мы проектируем, устанавливаем и обслуживаем системы Умного дома.</p>
+						<p>Дальше принято рассказывать что мы “динамично развивающаяся компания с индивидуальным подходом к каждому клиенту”...</p>
+						<p>Но разве Вам это интересно?</p>
+					</div>
+				</div>
+
+				<div class="director">
+					<h4>Сергей Гуриненко</h4>
+					<h5>владелец компании Villa Lux</h5>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="our_works-section" id="our_works">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="our_works-header">
+					<h1>Лучше всего о нас говорят наши проекты</h1>
+					<h3>Это больше не коробка с 4-мя стенами, а огромный технологичный организм</h3>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<div class="our_works-box">
+						<div class="our_works-header">
+							<img src="img/box_header_1-img.png" alt="our_project_header" >
+						</div>
+
+						<div class="our_works-text">
+							<h2>НСК «Олимпийский», Киев</h2>
+							<h4>Выполнили проектирование, монтаж и пусконаладочные работы систем:</h4>
+							<ul>
+								<li>Система электроснабжения в составе ТП Север 10/0,4 кВ, ТП Юг -10/0,4 кВ, Магистральные сети 0,4 кВ</li>
+								<li>Система гарантированного электроснабжения (ДЭС Север, ЖЭС Юг, ИБП Север, ИБП Юг)</li>
+								<li>Монтаж и пусконаладка самых больших в Украине дизельгенераторов</li>
+								<li>Система управления освещением (вн. освещение, освещение кровли, фасадное освещение)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="our_works-box">
+						<div class="our_works-header">
+							<img src="img/box_header_2-img.png" alt="our_project_header" >
+						</div>
+
+						<div class="our_works-text">
+							<h2>Стадион «Арена», Львов</h2>
+							<h4>Выполнили проектирование, монтаж и пусконаладочные работы систем:</h4>
+							<ul>
+								<li>Трансформаторные подстанции ТП 10/0,4 кВ 2х (2х2000) кВА</li>
+								<li>Внутреннее электроснабжение, силовые сети</li>
+								<li>Системы рабочего, ремонтного и аварийного освещения, бытовые розетки</li>
+								<li>Площадочные сети внутреннего электроснабжения 10 и 0,4 кB</li>
+								<li>Освещение территории, архитектурная подсветка здания</li>
+								<li>Система электрообогрева водостоков, кровли</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<button class="button popup-btn-works">Смотреть больше работ</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="about_us-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="about_us-header">
+					<h2>Немного цифр о компании Villa Lux</h2>
+					<h4>Это больше не коробка с 4-мя стенами, а огромный технологичный организм</h4>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-md-6 dignity-box time-about_us-box">
+					<h3><span class="big-font">7 </span>лет</h3>
+					<p>На рынке установки систем «Умный дом»</p>
+				</div>
+
+				<div class="col-md-6 dignity-box projects-about_us-box">
+					<h3><span class="big-font">55</span> проектов</h3>
+					<p>Выполнено в Киеве, Львове и Батуми (Грузия)</p>
+				</div>
+
+				<div class="col-md-6 dignity-box order-12">
+					<h3>Обустройте свою квартиру, дом или офис по последнему слову технологий</h3>
+					<button class="button popup-btn">Оставить заявку</button>
+				</div>
+
+				<div class="col-md-6 dignity-box peoples-about_us-box">
+					<h3><span class="big-font">14</span> сотрудников</h3>
+					<p>С опытом работы от 4 лет трудятся над каждым проектом</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="home_function-section" id="functions">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="home_function-header">
+					<h1>Какие функции «Умного дома» мы внедряем</h1>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<ul>
+						<li>Домашнюю автоматизацию (систему «умный дом»)</li>
+						<li>Систему управления освещением внутри и снаружи дома</li>
+						<li>Управление климатом</li>
+						<li>Домашний кинотеатр</li>
+						<li>Систему «Мультирум»</li>
+						<li>Резервное электроснабжение (дизельный генератор, аккумуляторные батареи и солнечные панели)</li>
+					</ul>
+				</div>
+
+				<div class="col-md-6">
+					<ul>
+						<li>Домофон</li>
+						<li>Охранную сигнализацию</li>
+						<li>Видеонаблюдение</li>
+						<li>Контроль доступа в помещения</li>
+						<li>Компьютерные сети «СКС»</li>
+						<li>Электрическую разводку внутри дома</li>
+						<li>Подвод электрики к любому участку</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="float-box float-box-1">
+					<img src="img/people-img.jpg" alt="people-img" />
+
+					<div class="float-text">
+						<h1>Делаем всё в срок</h1>
+						<p>После утверждения Вашего проекта Умного дома, мы называем точные сроки выполнения работ. Как правило, это 3-5 месяцев, зависит от количества работ.</p>
+						<p>Мы вкладываемся в эти сроки в 100% случаев. Это возможно благодаря сотрудничеству с проверенными подрядчиками и партнерами.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="float-box float-box-2">
+					<img src="img/plan-img.jpg" alt="plan-img" />
+
+					<div class="float-text">
+						<h1>Без скрытых платежей и «выкачивания» денег</h1>
+						<p>На этапе подписания договора, мы озвучиваем конкретную сумму на весь объем работ. Эта сумма НЕ увеличивается в процессе установки оборудования.</p>
+						<p>Вы платите 1 раз и спокойно занимаетесь своими делами. Мы берем все хлопоты на себя и не “дергаем” Вас по мелочам.</p>
+						<button class="button popup-btn">Получить бесплатную консультацию</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="our_comunication-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="our_comunication-header">
+					<h1>Как мы сотрудничаем</h1>
+					<h3>Это больше не коробка с 4-мя стенами, а огромный технологичный организм</h3>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-md-4">
+					<div class="step step-1">
+						<h1>Шаг 1</h1>
+						<p>Оставляете свой телефон на этом сайте</p>
+					</div>	
+				</div>
+
+				<div class="col-md-4">
+					<div class="step step-2">
+						<h1>Шаг 2</h1>
+						<p>Вас набирает наш специалист, отвечает на все вопросы.</p>
+						<p>Согласовываете время встречи у нас в офисе</p>
+					</div>	
+				</div>
+
+				<div class="col-md-4">
+					<div class="step step-3">
+						<h1>Шаг 3</h1>
+						<p>Мы заполняем опросный лист и выясняем все Ваши пожелания</p>
+					</div>	
+				</div>
+
+				<div class="col-md-4">
+					<div class="step step-4">
+						<h1>Шаг 4</h1>
+						<p>Подписываем договор на проектирование и Вы вносите предоплату и мы проектируем Ваш объект</p>
+					</div>	
+				</div>
+
+				<div class="col-md-4">
+					<div class="step step-5">
+						<h1>Шаг 5</h1>
+						<p>Мы презентуем будущий проект Вашего Умного дома. Подписываем договор и Вы вносите предоплату и мы приступаем к монтажным работам</p>
+					</div>	
+				</div>
+
+				<div class="col-md-4">
+					<div class="step step-6">
+						<h1>Шаг 6</h1>
+						<p>Через 3-5 месяцев Вы наслаждаетесь комфортом и технологичностью своего дома, квартиры или офиса</p>
+					</div>	
+				</div>
+			</div>
+
+			<div class="row call-back align-items-center">
+				<div class="col-md-7 col-12">
+					<h1>Оставьте свой телефон.<br> Мы перезвоним и проконсультируем</h1>
+				</div>
+
+				<div class="col-md-5 col-12">
+					<button class="button popup-btn">Оставить заявку</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="poll-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<h1>По данным опросов наших клиентов, система «<span class="accent-font">Умный дом</span>» экономит 3-5 часов в неделю, которые Вы обычно тратите на бытовые мелочи по дому или офис</h1>
+				<button class="button popup-btn">Установить современную и экономную систему Умный дом</button>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="footer-line">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-3 col-2 toggle-btn">
+						<button class="menu-btn"></button>
+					</div>
+
+					<div class="col-lg-2 col-md-2 col-2">
+						<div class="logo">
+							<a href="#header"><img src="img/footer_logo.png" alt="logo-img" /></a>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-12 order-10">
+						<menu>
+							<ul>
+								<li><a href="#functions">Функции Умного дома</a></li>
+								<li><a href="#who_do">Кто делает</a></li>
+								<li><a href="#our_works">Наши работы</a></li>
+							</ul>
+						</menu>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-8 order-md-12">
+						<div class="lost-app-btn">
+							<button class="popup-btn">Оставить заявку <img src="img/arrow_r-icon.png" alt="arrow_r-icon" /></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

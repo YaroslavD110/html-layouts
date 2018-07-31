@@ -1,0 +1,375 @@
+@import "vars"
+
+
+@media only screen and (max-width : 1200px)
+	header, footer
+		.header-line, .footer-line
+			menu
+				ul
+					li
+						margin-left: 10px!important
+
+	.float-box
+		.float-text
+			padding-left: 55%
+
+
+@media only screen and (max-width : 992px)
+	header, footer
+		.header-line, .footer-line
+			menu
+				ul
+					li	
+						margin-left: 15px
+						font-size: 13px
+
+						button
+							margin-left: 0
+							padding: 10px 15px
+
+			.lost-app-btn
+				button
+					padding: 10px 10px!important
+					margin-left: 0!important
+
+					img 
+						margin-left: 0px
+
+	header
+		.intro
+			.intro-text		
+				h1
+					font-size: 60px
+
+				h3 
+					font-size: 20px
+
+		.contact-form
+			form
+				margin-top: 25px
+
+				#name-error
+					left: 25%
+
+				#phonenumber-error
+					left: 50%
+
+	.float-box
+		width: 100%
+
+		img 
+			width: 100%
+
+		.float-text
+			padding: 75% 25px 25px 25px!important
+			margin: 25px!important
+
+	.who_install-section
+		padding: 50px 0 50px 0
+
+		.float-box
+			margin-left: -25px
+			text-align: center
+
+			img 
+				width: 80%
+
+			.float-text
+				padding-top: 120%!important
+
+		.director
+			margin: 0
+			text-align: center
+
+	.skills-wrap
+		text-align: center
+
+		.skill-box
+			display: inline-block
+
+			.skill-stroke
+				.skill-button
+
+			.skill-arrow
+
+			.skill-text
+
+			&:hover
+				.arrow-right, .arrow-center
+					.skill-arrow
+						background-image: url("../img/skill_arrow_left_b-icon.png")
+
+		.arrow-right
+			.skill-arrow
+				background-image: url("../img/skill_arrow_left-icon.png")
+				right: 80px
+				top: 110px
+				transform: rotate(115deg)
+
+			.skill-text
+				top: 130px 
+				right: 10px
+				text-align: center
+
+		.arrow-center
+			.skill-arrow
+				background-image: url("../img/skill_arrow_left-icon.png")
+				left: 10px
+				top: 110px
+				transform: rotate(115deg)
+
+			.skill-text
+				top: 130px 
+				left: 0px
+				text-align: center
+
+		.arrow-top
+			.skill-arrow
+				background-image: url("../img/skill_arrow_left-icon.png")
+				left: 10px
+				top: 110px
+				transform: rotate(115deg)
+
+			.skill-text
+				top: 125px 
+				left: 0px
+				text-align: center
+
+	#popup
+		.close-btn
+			width: 25px
+			height: 25px
+
+		.popup-header	
+			h2 	
+				margin: 0 25px 25px 25px
+
+		form
+			margin-top: 25px
+
+			#name-error
+				left: 22%
+
+			#phonenumber-error
+				left: 50%
+
+
+
+
+@media only screen and (max-width : 768px)
+	header, footer
+		.header-line, .footer-line
+			.container
+				margin-left: 0
+				margin-right: 0
+
+				.logo
+					text-align: left
+					padding-top: 0!important
+
+					img
+						width: 50px
+
+				.toggle-btn
+					display: block
+
+					.menu-btn
+						width: 40px
+
+						&::after,
+						&::before
+							width: 40px
+
+					.rotate-btn
+						&::after
+							left: -10px
+
+						&::before
+							left: -10px
+
+				.lost-app-btn
+					text-align: right
+
+				menu
+					margin: 0
+
+					ul
+						display: none
+						min-width: 250px
+						background-color: $gray-bg
+
+						li 
+							display: block
+							text-align: left
+							padding: 15px 35px
+
+				.menu-btn
+					display: inline-block
+
+	header
+		.intro
+			.intro-text		
+				h1
+					font-size: 42px
+
+				h3 
+					font-size: 16px
+
+		.contact-form
+			form
+				#name-error
+					left: 15%
+
+	header, footer
+		.header-line, .footer-line
+			text-align: center
+
+	.new_era-section
+		padding: 50px 0 50px 0
+
+	.house_skills-section
+		background: $gray-bg
+
+	.skills-wrap
+		text-align: left
+		margin-top: 0
+
+		.skill-box
+			margin: 15px 0
+			align-items: center
+
+			.skill-arrow
+				display: none
+
+			.skill-text
+				top: 20%!important
+				left: 150px!important
+				min-width: 180px!important
+				font-size: 13px
+
+	.home_function-section
+		.home_function-header
+			text-align: center
+
+			h1 
+				font-size: 28px
+				margin: 50px 0
+
+		ul 
+			margin-bottom: 50px
+
+	.our_comunication-section
+		.call-back
+			text-align: center
+
+			h1
+				text-align: center
+
+
+	#popup
+		.close-btn
+			margin-top: -70px
+			margin-right: 15px
+			width: 25px
+			height: 25px
+
+		.popup-header	
+			h2 	
+				margin: -30px 15px 15px 15px
+				font-size: 20px
+
+		form
+			#name-error
+				left: 13%
+
+
+
+@media only screen and (max-width : 480px)
+	.button
+		width: 100%
+
+	header, footer
+		.header-line, .footer-line
+			text-align: center
+
+			menu
+				ul
+					li 
+						padding: 15px!important
+
+	header
+		.contact-form
+			form
+				padding-top: 75px
+				margin-top: 0
+
+				input
+					display: inline-block
+					max-width: 100%
+					width: 100%
+
+				.button
+					width: 100%
+
+
+				#name-error
+					top: 0
+					left: 10%
+
+				#phonenumber-error
+					left: 10%
+					top: 20px
+
+	#popup
+		form
+			padding-top: 75px
+			margin-top: 0
+
+			input
+				display: inline-block
+				max-width: 100%
+				width: 90%
+				margin-right: 0
+
+			.button
+				width: 90%
+
+			#name-error
+				top: 0
+				left: 10%
+
+			#phonenumber-error
+				left: 10%
+				top: 20px
+
+	.poll-section
+		padding: 0 15px
+
+		h1 
+			font-size: 28px
+
+	.about_us-section,
+	.imagine_house-section	
+		.dignity-box
+			text-align: center!important
+			padding: 30px 15px
+
+	.house_skills-section
+		padding: 0
+
+	.home_function-section
+		.float-box-2
+			margin: 0
+
+	.our_comunication-section
+		padding: 25px 0
+
+	.our_works-section
+		.button
+			margin: 0 15px
+
+		.our_works-header
+			padding: 10px
+
+			h1 
+				line-height: 50px

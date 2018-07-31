@@ -1,0 +1,713 @@
+@import "vars"
+@import "libs"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+a 
+	text-decoration: none
+
+h1, h2, h3, h4, h5, h6
+	font-family: 'AcromBold', sans-serif
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	margin: 0
+	padding: 0
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: 'AcromRegular', sans-serif
+
+.button
+	border: none
+	background-color: $accent
+	color: $white
+	padding: 25px 35px
+	cursor: pointer
+	box-shadow: 0px 0px 5px 0px rgba(255, 82, 82,0.75)
+	transition: all .3s linear 
+	display: inline-block
+	font-size: 13px
+	font-family: 'AcromBold', sans-serif
+	font-weight: bold
+
+	&:hover
+		box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75)
+		background-color: #ab3939
+
+// Styles for popup window
+#popup
+	position: fixed
+	z-index: 1000
+	width: 100%
+	height: 100vh
+	background-color: rgba(0, 0, 0, 0.8)
+	padding-top: 100px
+	display: none
+
+	.close-btn
+		margin-top: -50px
+		cursor: pointer
+
+	.popup-header	
+		text-align: center
+
+		h2 	
+			color: $white
+			margin: 50px 
+
+	form
+		text-align: center
+		position: relative
+
+		input
+			border: none
+			padding: 25px
+			margin-right: 15px
+			margin-bottom: 20px
+			font-size: 13px
+			max-width: 180px
+			font-family: 'AcromRegular', sans-serif
+			outline: none
+
+		#name-error, #phonenumber-error
+			color: $accent
+			position: absolute
+			top: -30px
+
+		#name-error
+			left: 30px
+
+		#phonenumber-error
+			left: 190px
+
+// Styles for float box
+.float-box
+	margin-right: -25px
+	position: relative
+
+	img 
+		position: absolute
+		z-index: -1
+
+	.float-text
+		border: $accent-sec 2px solid
+		margin: 60px 0 0 60px
+		padding: 25px 25px 25px 50%
+
+// Styles for dignity box
+.dignity-box
+	padding: 50px
+
+	h3
+		font-size: 30px
+		line-height: 38px
+		margin-top: 0
+
+	p 
+		font-family: 'AcromBold', sans-serif
+
+	&:nth-child(odd)
+		text-align: right
+
+// Header, Footer
+header, footer
+	.header-line, .footer-line
+		background-color: $gray-bg
+
+		.toggle-btn
+			display: none
+			position: relative
+			margin-top: -10px
+
+			.menu-btn
+				border: none
+				width: 50px
+				height: 1px
+				background-color: #000
+				cursor: pointer
+				transition: width .5s linear
+				outline: none
+				position: relative
+
+				&::after,
+				&::before
+					position: absolute
+					width: 50px
+					height: 2px
+					background-color: #000
+					content: ''
+					left: 0
+					transition: all .3s linear
+
+				&::after
+					bottom: -15px
+
+				&::before
+					top: -15px
+
+
+			.rotate-btn
+				width: 0
+				background-color: $gray-bg
+
+				&::after
+					bottom: 0
+					left: -15px
+					transform: rotate(45deg)
+
+				&::before
+					top: 0
+					left: -15px
+					transform: rotate(-45deg)
+
+		menu
+			padding: 0
+			position: relative
+
+			ul
+				padding: 0
+				text-align: right
+
+				li	
+					display: inline-block
+					margin-left: 25px
+
+					a 
+						color: $black
+
+						&:hover
+							color: $accent
+
+		.lost-app-btn
+			button
+				color: $black
+				border: $accent-sec 2px solid
+				padding: 15px 15px
+				transition: all .3s linear
+				background-color: transparent
+				cursor: pointer
+				font-family: 'AcromBold', sans-serif
+				font-size: 16px
+				margin-left: 50px
+
+				img 
+					margin-left: 8px
+					margin-bottom: -5px
+
+				&:hover 
+					color: $white
+					background-color: $accent-sec
+
+header
+	.header-line
+		position: fixed
+		z-index: 100
+		width: 100%
+
+	.intro
+		padding-top: 100px
+		background: $gray-bg url("../img/header-bg.jpg") no-repeat center center
+		background-size: cover
+		text-align: center
+		color: $white
+
+		.intro-text		
+			h1
+				font-size: 75px 
+				margin-bottom: 0
+
+			h3
+				margin-top: 0
+				font-size: 25px
+				padding: 0 30px
+
+		.intro-box
+			margin-top: 10px
+			padding-bottom: 50px
+
+			h4
+				margin-top: 5px
+				font-family: 'AcromRegular', sans-serif
+				font-weight: normal
+				line-height: 20px
+
+	.contact-form
+		background-color: $gray-bg
+		padding: 30px 0
+
+		form
+			text-align: center
+			position: relative
+
+			input
+				border: none
+				padding: 25px
+				margin-right: 15px
+				font-size: 13px
+				margin-bottom: 20px
+				max-width: 180px
+				transition: background-color .3s linear
+				font-family: 'AcromRegular', sans-serif
+				outline: none
+
+			#name-error, #phonenumber-error
+				color: $accent
+				position: absolute
+				top: -30px
+
+			#name-error
+				left: 25px
+
+			#phonenumber-error
+				left: 190px
+
+
+// Section about new era technology
+.new_era-section
+	padding: 100px 0 200px 0
+	position: relative
+
+	.float-box
+		.float-text
+			p 
+				font-family: 'AcromBold', sans-serif
+
+			.accent-paragraph
+				color: $accent-sec
+
+// Section about imagine house
+.imagine_house-section
+	background: $gray-bg url("../img/imagine_house-bg.jpg") no-repeat center center
+	background-size: cover
+	color: $white
+	padding-bottom: 50px 
+
+	.imagine_house-header
+		text-align: center
+		margin: 30px 0
+		
+		h2
+			margin-bottom: 0 
+			font-size: 36px
+
+		h4
+			margin-top: 0
+			font-size: 20px
+
+	.weekend-dignity-box
+		background: $accent-sec url("../img/weekend-icon.png") no-repeat left center
+
+	.tired-dignity-box	
+		background-color: rgba(255, 255, 255, 0.1)
+
+	.fire_security-dignity-box
+		background: $accent-sec url("../img/fire_security-icon.png") no-repeat right center
+
+// Section about imagine house's skills
+.house_skills-section
+	background: $gray-bg url("../img/house_skills-bg.png") no-repeat center center
+	padding-bottom: 150px
+
+	h1 
+		font-size: 36px
+
+// Section about system skills
+.house_skills-header
+	text-align: center
+
+.skills-wrap
+	margin-top: 50px
+
+	.skill-box
+		position: relative
+		text-align: center
+		margin-top: 50px
+
+		.skill-stroke
+			width: 130px
+			height: 130px
+			border: rgba(102,198,180, 0.6) 10px solid
+			border-radius: 50%
+			cursor: pointer
+			transition: border-color .3s linear
+
+			.skill-button
+				background-color: $white
+				display: inline-block
+				padding: 25px
+				width: 90px
+				height: 90px
+				border-radius: 50%
+				margin-top: 10px
+
+		.skill-arrow
+			position: absolute
+			top: 0
+			width: 49px
+			height: 17px
+			transition: background-image .3s linear
+			z-index: 2
+
+		.skill-text
+			background-color: $white
+			padding: 15px
+			min-width: 205px
+			position: absolute
+			top: 0
+			transition: all .3s linear
+			z-index: 2
+
+			h5
+				margin: 0
+
+		&:hover
+			.skill-stroke
+				border-color: rgba(255,82,82, 0.7)
+
+			.skill-text
+				background-color: $accent-sec
+				color: $white
+
+			.arrow-right, .arrow-bottom
+				.skill-arrow
+					background-image: url("../img/skill_arrow_b-icon.png")
+
+			.arrow-left, .arrow-top, .arrow-center
+				.skill-arrow
+					background-image: url("../img/skill_arrow_left_b-icon.png")
+
+	.arrow-right
+		.skill-arrow
+			background-image: url("../img/skill_arrow-icon.png")
+			right: 138px
+			top: 70px
+			transform: rotate(-15deg)
+
+		.skill-text
+			top: 30px 
+			right: 185px
+			text-align: right
+
+	.arrow-left
+		.skill-arrow
+			background-image: url("../img/skill_arrow_left-icon.png")
+			left: 108px
+			top: 70px
+			transform: rotate(15deg)
+
+		.skill-text
+			top: 30px 
+			left: 150px
+			text-align: left
+
+	.arrow-bottom
+		.skill-arrow
+			background-image: url("../img/skill_arrow-icon.png")
+			left: 10px
+			top: -5px
+			transform: rotate(60deg)
+
+		.skill-text
+			left: -20px
+			top: -65px
+			text-align: center
+
+	.arrow-center
+		.skill-arrow
+			background-image: url("../img/skill_arrow_left-icon.png")
+			left: 83px
+			top: 110px
+			transform: rotate(45deg)
+
+		.skill-text
+			top: 110px 
+			left: 115px
+			text-align: center
+
+	.arrow-top
+		.skill-arrow
+			background-image: url("../img/skill_arrow_left-icon.png")
+			left: 80px
+			top: 110px
+			transform: rotate(60deg)
+
+		.skill-text
+			left: -20px
+			top: 135px
+			text-align: center
+
+// Section about who install
+.who_install-section
+	padding: 100px 0 200px 0
+
+	.float-box
+		margin-right: -25px
+
+		img 
+			right: 10%
+			width: 29%
+
+		.float-text
+			margin: 50px 50px 0 0
+			padding: 25px 50% 25px 50px
+
+			h1 
+				margin: 0
+
+			p 
+				font-family: 'AcromBold', sans-serif
+
+	.director
+		text-align: right
+		margin-right: 50px
+
+		h4 
+			margin: 0
+
+		h5 
+			margin: 0
+
+// Section about our works
+.our_works-section
+	background: $gray-bg url("../img/our_projects-bg.jpg") no-repeat center center
+	background-size: cover
+	padding-bottom: 50px
+
+	.our_works-header
+		text-align: center
+		color: $white
+
+		h1
+			font-size: 36px
+			margin-bottom: 0
+
+		h3
+			font-size: 20px
+			margin-top: 0
+			margin-bottom: 50px
+
+	.our_works-box
+		margin-bottom: 50px
+
+		img
+			width: 100%
+
+		.our_works-text
+			margin-top: -10px
+			padding: 15px
+			background-color: $white
+			min-height: 450px 
+
+			h2
+				margin: 0
+
+			h4 
+				margin: 0
+
+			ul 
+				li
+					list-style: none
+					position: relative
+
+					&::before
+						content: ''
+						position: absolute
+						left: -30px
+						top: 5px
+						height: 14px
+						width: 16px
+						background-image: url("../img/check-icon.png")
+
+// Section about us
+.about_us-section
+	background-color: $gray_bg
+
+	.about_us-header
+		text-align: center
+		margin: 30px 0
+
+		h2 
+			font-size: 36px
+			margin-bottom: 0
+		
+		h4 
+			font-size: 20px
+			margin-top: 0
+
+	.dignity-box
+		min-height: 300px
+
+		h3 
+			font-size: 28px
+
+	.time-about_us-box
+		background: $accent-sec url("../img/big_like-icon.png") no-repeat left center 
+		color: $white
+
+	.projects-about_us-box
+		background: url("../img/earth-icon.png") no-repeat right center
+
+	.peoples-about_us-box
+		background: $accent-sec url("../img/people-icon.png") no-repeat right center
+		color: $white
+
+	.big-font
+		font-size: 60px
+
+// Section about home functions
+.home_function-section
+	.home_function-header
+		text-align: center
+
+		h1 
+			font-size: 36px
+			margin: 50px 0
+
+	ul 
+		margin-bottom: 100px
+
+		li
+			list-style: none
+			position: relative
+			margin-top: 15px
+
+			&::before
+				content: ''
+				position: absolute
+				left: -30px
+				top: 5px
+				height: 14px
+				width: 16px
+				background-image: url("../img/check-icon.png")
+
+	.float-box-1
+		margin-right: -25px
+
+		.float-text
+			margin: 70px 0 70px 70px
+			padding: 25px 25px 25px 50%
+
+			h1 
+				margin: 0
+
+	.float-box-2
+		margin: 100px -25px 100px 0
+
+		img 
+			right: 0
+			max-width: 600px
+
+		.float-text
+			margin: 50px 50px 0 0
+			padding: 25px 50% 25px 50px
+
+			h1 
+				margin: 0
+
+// Section about our comunication
+.our_comunication-section
+	background-color: $gray-bg
+	padding: 50px
+
+	.our_comunication-header
+		text-align: center
+		margin-bottom: 50px
+
+		h1 	
+			font-size: 36px
+			margin: 0
+
+		h3 
+			font-size: 20px
+			margin: 0
+
+	.step
+		min-height: 280px
+		padding: 25px
+		margin-top: 30px
+
+		h1 
+			margin-top: 0
+			color: $accent-sec
+
+		p 
+			font-family: 'AcromBold', sans-serif
+
+		&-1
+			background: $white url("../img/phone_2-icon.png") no-repeat right center
+
+		&-2
+			background: $white url("../img/human-icon.png") no-repeat right center
+
+		&-3
+			background: $white url("../img/human_2-icon.png") no-repeat right center
+
+		&-4
+			background: $white url("../img/human_3-icon.png") no-repeat right center
+
+		&-5
+			background: $white url("../img/people_2-icon.png") no-repeat right center
+
+		&-6
+			background: $white url("../img/house_2-icon.png") no-repeat right center
+
+	.call-back
+		margin-top: 50px
+
+		h1
+			text-align: right
+
+// Section about our comunication
+.poll-section
+	background: $gray-bg url("../img/header-bg.jpg") no-repeat center center
+	background-size: cover
+	text-align: center
+	color: $white
+	padding: 50px 0
+
+	h1 
+		font-size: 30px
+		margin: 100px 0
+	
+		.accent-font
+			color: $accent-sec
+
+	.button 
+		margin-top: 50px
+		margin-bottom: 100px
+
+@import "media" // Завжди в кінці

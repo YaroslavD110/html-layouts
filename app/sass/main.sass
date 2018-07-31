@@ -1,0 +1,642 @@
+@import "vars"
+@import "libs"
+@import "fonts"
+@import "animations"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	margin: 0
+	padding: 0
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: 'Lato', sans-serif
+	overflow: hidden
+
+h1, h2, h3, h4, h5, h6
+  font-family: 'Quicksand', sans-serif
+
+.accent-font
+	color: $accent
+
+.area-header
+	width: 100%
+	text-align: center
+
+.button
+	border: none
+	padding: 20px 30px
+	cursor: pointer
+	text-decoration: none
+	color: $white
+	background-color: $accent
+	border-radius: 3px
+	transition: background-color .3s linear, color .3s linear
+
+	&:hover
+		border: 1px solid $accent
+		background-color: transparent
+		padding: 19px 29px
+		color: $accent
+
+#preloader
+	position: fixed
+	z-index: 10000
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: $white
+
+	.loader
+		width: 100%
+		height: 100%
+		position: relative
+
+		img
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+
+.fixed-menu-top
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	background-color: transparent
+	transition: all .3s linear
+	z-index: 99
+
+	.menu-btn
+		display: none
+
+		.menu-toggle--btn
+			position: relative
+			top: 35%
+
+			span
+				position: absolute
+				left: 0
+				background-color: $white
+				height: 5px
+				width: 30px
+				border-radius: 9px
+				transition: all .3s linear
+
+				&:nth-child(1)
+					top: 0
+
+				&:nth-child(2)
+					top: 10px
+
+				&:nth-child(3)
+					top: 10px
+
+				&:nth-child(4)
+					top: 20px
+
+		.animated_btn
+			span
+				&:nth-child(1)
+					width: 0
+					top: 10px
+					left: 50%
+
+				&:nth-child(2)
+					transform: rotate(45deg)
+
+				&:nth-child(3)
+					transform: rotate(-45deg)
+
+				&:nth-child(4)
+					width: 0
+					top: 10px
+					left: 50%
+
+	.logo
+		padding: 10px 0
+		transition: padding .3s linear
+
+		h1
+			font-size: 30px
+			margin: 0
+			padding: 0
+			color: $white
+			transition: color .3s linear
+
+	.main-menu
+		margin: 0
+		padding: 0
+
+		ul
+			margin: 0
+			padding: 0
+			text-align: right
+
+			li
+				display: inline-block
+				padding: 25px 12px
+				position: relative
+				transition: padding .3s linear
+
+				&:after
+					content: ''
+					position: absolute
+					bottom: 0
+					left: 0
+					height: 2px
+					width: 0
+					background-color: $accent
+					transition: width .3s linear
+
+				a
+					text-decoration: none
+					color: $white
+					padding: 25px 0
+					transition: color .3s linear
+
+				&:hover
+					&:after
+						width: 100%
+
+					a
+						color: $accent
+
+			.active
+				&:after
+					width: 100%
+
+				a
+					color: $accent
+
+.collapsed-menu
+	background-color: $white
+	box-shadow: 0 0 10px #222
+
+	.menu-btn
+		.menu-toggle--btn
+			top: 30%
+
+			span
+				background-color: $accent
+
+	.logo
+		padding: 4px 0
+
+		h1
+			color: $accent
+
+	.main-menu
+		ul
+			li
+				padding: 16px 10px
+
+				a
+					color: $black
+
+.header
+	width: 100%
+	background: $black no-repeat left center fixed
+	background-size: cover
+	height: 100vh
+
+	.welcome-table
+		display: table
+		width: 100%
+		height: 100%
+
+		.welcome-cell
+			display: table-cell
+			vertical-align: middle
+
+			.welcome-text
+				text-align: center
+				padding: 15px 0 35px 0
+
+				h1
+					color: $white
+					font-size: 60px
+					margin: 0
+					line-height: 75px
+
+				h3
+					color: $white
+					margin: 0
+					font-size: 30px
+					font-weight: 300
+					display: inline
+
+				#typed-text
+					display: inline
+					color: $accent
+					font-size: 30px
+					font-weight: 600
+
+				.typed-cursor
+					display: inline
+					color: $white
+					font-size: 30px
+
+.about-area
+	padding: 50px 0
+
+	.section-header
+		text-align: center
+		width: 100%
+
+		h1
+			font-size: 40px
+			margin: 0 0 50px 0
+			color: $accent
+
+	.author-img
+		img
+			width: 100%
+			border-radius: 5px
+
+	.about-text
+		h2
+			font-size: 20px
+
+	.skills
+		.skills-title
+			font-size: 20px
+
+		.progress-bar
+			.progress-line
+				width: 0
+				background-color: $accent
+				height: 3px
+				transition: width 1s linear
+
+			.progress-bg
+				position: relative
+				z-index: -1
+				top: -3px
+				height: 3px
+				width: 100%
+				background-color: $gray
+
+			p
+				.progress-bar--percent
+					float: right
+
+	.col-lg-7
+		.about-buttons
+			padding-top: 50px
+
+.services-area
+	padding: 30px 0 50px 0
+	background-color: $gray
+
+	.services-header
+		margin-bottom: 20px
+
+	.service-box
+		text-align: center
+		background-color: $white
+		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
+		padding: 25px
+		border-radius: 5px
+		position: relative
+		top: 0
+		margin-bottom: 35px
+		transition: top .3s linear
+
+		.service-box--header
+			.service-box--icon
+				background-color: $white
+				box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
+				padding: 15px 20px 17px 20px
+				border-radius: 50%
+				display: inline
+				font-size: 30px
+
+				i
+					transition: color .2s linear
+
+		.service-box--text
+			h3
+				color: $accent
+				margin-top: 35px
+
+		&:hover
+			top: -15px
+
+			.service-box--header
+				.service-box--icon
+					color: $accent
+
+.awards-area
+	background: $black no-repeat fixed
+	background-size: cover
+
+	.award-box
+		text-align: center
+		color: $white
+		padding: 25px
+
+		.award-box--header
+			.award-box--icon
+				font-size: 40px
+
+
+		.award-box--text
+			h1
+				margin: 0
+				color: $accent
+				font-size: 40px
+				transition: transform .3s linear
+
+		&:hover
+			.award-box--text
+				h1
+					transform: scale(1.2)
+
+.works-area
+	padding: 50px 0
+
+	.works-filter
+		text-align: center
+		width: 100%
+		margin-bottom: 20px
+
+		ul
+			margin: 0
+
+			li
+				display: inline-block
+				padding: 5px 15px
+				cursor: pointer
+				border-radius: 10px
+				transition: all .3s linear
+
+				&:hover
+					background-color: $accent
+					color: $white
+
+			.active
+				background-color: $accent
+				color: $white
+
+
+	.works-item
+		margin-top: 30px
+		position: relative
+		overflow: hidden
+		height: 220px
+
+		.works-item--img
+			img
+				width: 100%
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+
+		.works-item--cover
+			position: absolute
+			top: 0
+			left: 0
+			padding: 25px
+			background-color: transparent
+			width: 100%
+			height: 100%
+			color: $white
+			transition: background-color .5s linear
+			cursor: pointer
+
+			.works-item--text
+				position: relative
+				top: 100px
+				transition: all .4s linear
+				opacity: 0
+				text-align: center
+
+				h3
+					margin: 0
+
+				p
+					margin: 0
+					font-size: 13px
+
+			&:hover
+				background-color: $accent
+
+				.works-item--text
+					top: 50%
+					transform: translateY(-50%)
+					opacity: 1
+
+.comments-area
+	background: $black no-repeat fixed
+	background-size: cover
+
+	.comments-wrap
+		position: relative
+		padding: 75px 0
+
+		.quote-left,
+		.quote-right
+			position: absolute
+			color: rgba(232, 232, 233, 0.5)
+			font-size: 40px
+
+		.quote-left
+			top: 38px
+			left: -30px
+
+		.quote-right
+			bottom: 58px
+			right: -40px
+
+		.comments-item
+			color: $white
+			width: 100%
+			text-align: center
+
+			p
+				font-style: italic
+
+.blog-area
+	padding: 20px 0 60px 0
+	background-color: $gray
+
+	.blog-item
+		background-color: $white
+		border-radius: 5px
+
+		.blog-item--header
+			max-height: 230px
+			overflow: hidden
+			border-radius: 5px 5px 0 0
+
+			img
+				width: 100%
+
+		.blog-item--text
+			padding: 25px
+
+			.blog-item--tags
+				color: $black
+				font-size: 13px
+
+				a
+					color: $black
+					text-decoration: none
+					transition: color .3s linear
+
+					&:hover
+						color: $accent
+
+			h2
+				margin: 5px 0
+				font-size: 23px
+
+				a
+					color: $black
+					text-decoration: none
+					transition: color .3s linear
+
+					&:hover
+						color: $accent
+
+			p
+				font-size: 15px
+				line-height: 22px
+
+			.button
+				margin-top: 10px
+				padding: 13px 20px
+				width: auto
+				display: inline-block
+
+				&:hover
+					padding: 12px 19px
+
+.contact-area
+	padding: 20px 0 60px 0
+
+	.social-boxes
+		text-align: center
+		width: 100%
+		padding: 10px 0 20px 0
+
+		.social-box
+			display: inline-block
+			background-color: $white
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
+			padding: 5px 15px
+			border-radius: 50%
+			margin: 0 10px
+			transition: transform .3s linear
+
+			a
+				color: $black
+				border-radius: 50%
+				font-size: 25px
+				transition: color .3s linear
+
+			&:hover
+				transform: scale(1.1)
+
+				a
+					color: $accent
+
+	form
+		.input-box
+			position: relative
+
+			input
+				width: 100%
+				margin: 25px 0
+				height: 45px
+				padding: 0 10px
+				font-family: 'Lato', sans-serif
+				border-radius: 5px
+				outline: none
+				border: $black 1px solid
+
+			label
+				position: absolute
+				top: -5px
+				left: 0
+				color: $accent
+				font-size: 14px
+
+		.textarea-box
+			position: relative
+
+			textarea
+				width: 100%
+				height: 250px
+				border-radius: 5px
+				outline: none
+				border: $black 1px solid
+				padding: 10px
+				font-family: 'Lato', sans-serif
+				overflow-x: hidden
+				margin-bottom: 25px
+
+			label
+				position: absolute
+				top: -26px
+				left: 0
+				color: $accent
+				font-size: 14px
+
+		.button
+			width: 100%
+			font-size: 16px
+			border-radius: 5px
+			padding: 18px 0
+			outline: none
+
+			&:hover
+				padding: 17px 0
+
+footer
+	background-color: $black
+	color: $white
+	text-align: center
+
+	h4
+		font-weight: 400
+
+
+@import "media" // Завжди в кінці

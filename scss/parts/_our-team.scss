@@ -1,0 +1,255 @@
+// Styles for our team section
+.our-team {
+  padding-top: 103px;
+  padding-bottom: 110px;
+
+  // Our team header
+  &__header {
+    font-size: 42px;
+    font-weight: $bold;
+    text-transform: uppercase;
+    position: relative;
+    left: -11px;
+    margin-bottom: 5px;
+
+    @media (max-width: 768px) {
+      font-size: 38px;
+      line-height: 48px;
+      text-align: center;
+    }
+
+    @media (max-width: 460px) {
+      font-size: 35px;
+      line-height: 45px;
+    }
+  }
+
+  // Our team description
+  &__desc {
+    position: relative;
+    max-width: 478px;
+    line-height: 28px;
+    padding-bottom: 32px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 133px;
+      height: 3px;
+      background: $primary;
+    }
+
+    @media (max-width: 768px) {
+      text-align: center;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  // Our team wrapper
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 55px;
+
+    @media (max-width: 768px) {
+      padding-top: 20px;
+    }
+  }
+
+  // Styles for main worker block
+  &__main-preson {
+    max-width: 26%;
+    flex-basis: 26%;
+    height: 456px;
+    position: relative;
+    overflow: hidden;
+
+    // Main worker image
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      @media (max-width: 968px) {
+        object-position: top;
+      }
+    }
+
+    // Main worker image
+    .name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      min-height: 35px;
+      bottom: -70px;
+      left: 0;
+      font-size: 18px;
+      font-weight: $semi-bold;
+      color: $white;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: opacity 300ms linear, bottom 300ms ease-in-out;
+    }
+
+    &:hover .name {
+      opacity: 1;
+      bottom: 0;
+    }
+
+    @media (max-width: 968px) {
+      max-width: 100%;
+      flex-basis: 100%;
+    }
+  }
+
+  // Wrapper for all workers
+  &__all {
+    max-width: 69%;
+    flex-basis: 69%;
+
+    // Header for all workers
+    &-header {
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: $semi-bold;
+      padding-left: 4px;
+      margin-top: 4px;
+      margin-bottom: 20px;
+
+      @media (max-width: 968px) {
+        text-align: center;
+        margin-top: 15px;
+      }
+    }
+
+    // Description for all workers
+    &-desc {
+      padding-left: 7px;
+      line-height: 28px;
+      max-width: 645px;
+      margin-bottom: 35px;
+
+      @media (max-width: 968px) {
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        margin-top: 0;
+        margin-bottom: 25px;
+      }
+    }
+
+    // Social buttons
+    &-soc {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 8px;
+
+      // Link for social button
+      a {
+        font-size: 18px;
+        font-style: italic;
+        text-decoration: none;
+        color: $accent-black;
+        letter-spacing: 1px;
+        margin-right: 29px;
+        transition: color 300ms linear;
+        margin-bottom: 15px;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      @media (max-width: 968px) {
+        justify-content: center;
+      }
+    }
+
+    // Styles for workers list
+    &-persons {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 45px;
+
+      // styles for one worker block
+      .item {
+        position: relative;
+        max-width: 23%;
+        flex-basis: 23%;
+        margin: 0 auto;
+        height: 215px;
+        overflow: hidden;
+
+        // Worker image
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        // Worker name
+        &-name {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          position: absolute;
+          width: 100%;
+          min-height: 35px;
+          bottom: -50%;
+          left: 0;
+          font-size: 18px;
+          font-weight: $semi-bold;
+          color: $white;
+          background-color: rgba(0, 0, 0, 0.5);
+          transition: opacity 300ms linear, bottom 300ms ease-in-out;
+        }
+
+        &:hover .item-name {
+          opacity: 1;
+          bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+          max-width: 47%;
+          flex-basis: 47%;
+          margin-bottom: 20px;
+        }
+
+        @media (max-width: 468px) {
+          max-width: 100%;
+          flex-basis: 100%;
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    @media (max-width: 968px) {
+      max-width: 100%;
+      flex-basis: 100%;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+}

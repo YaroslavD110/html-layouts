@@ -1,0 +1,86 @@
+// Styles for subscribe section
+.subscribe {
+  padding-top: 129px;
+  padding-bottom: 138px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  // Rewrite default container styles
+  .container {
+    align-items: center;
+  }
+
+  // Subscribe header
+  &-header {
+    font-size: 42px;
+    font-weight: $bold;
+    text-align: center;
+    max-width: 1100px;
+    color: $white;
+    margin-bottom: 9px;
+
+    @media (max-width: 768px) {
+      font-size: 38px;
+      line-height: 48px;
+    }
+
+    @media (max-width: 460px) {
+      font-size: 35px;
+      line-height: 45px;
+    }
+  }
+
+  // Subscribe description
+  &-desc {
+    text-align: center;
+    max-width: 700px;
+    color: $white;
+    margin-bottom: 61px;
+  }
+
+  // Subscribe form
+  form {
+    @media (max-width: 790px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  // Sunbscribe input
+  &-input {
+    border: none;
+    border-radius: 4px;
+    padding: 28px 35px;
+    width: 451px;
+    margin-right: 18px;
+    font-family: $default-font;
+    font-size: 16px;
+
+    @media (max-width: 790px) {
+      width: 100%;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+  }
+
+  // Subscribe submit button
+  &-submit {
+    padding: 28px 52px;
+    font-size: 18px;
+    font-weight: $bold;
+    text-transform: uppercase;
+
+    @media (max-width: 790px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 460px) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-attachment: inherit;
+  }
+}

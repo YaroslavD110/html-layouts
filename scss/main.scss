@@ -1,0 +1,76 @@
+// Import libs styles
+@import "./libs/magnific-popup.css";
+
+// Import vars
+@import "vars";
+
+// Reset default styles
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: $default-font;
+  overflow-x: hidden;
+}
+
+// Set common styles
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 1250px;
+  min-width: 290px;
+  margin: 0 auto;
+
+  @media (max-width: 1260px) {
+    padding: 0 15px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  color: $accent-black;
+}
+
+.button {
+  background-color: $primary;
+  border: 2px solid $primary;
+  color: $white;
+  font-size: 18px;
+  font-weight: $bold;
+  padding: 15px 64px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 300ms linear, color 300ms linear;
+
+  &:hover {
+    background-color: transparent;
+    color: $primary;
+  }
+}
+
+// Import site parts styles
+// Header styles
+@import "./parts/header";
+
+// We can provide section styles
+@import "./parts/we-can";
+
+// Our features section styles
+@import "./parts/features";
+
+// Our team section styles
+@import "./parts/our-team";
+
+// Subscribe section styles
+@import "./parts/subscribe";
+
+// Our contacts section styles
+@import "./parts/contacts";
+
+// Footer styles
+@import "./parts/footer";

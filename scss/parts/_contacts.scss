@@ -1,0 +1,207 @@
+// Styles for contacts section
+.contacts {
+  padding-top: 93px;
+  padding-bottom: 110px;
+
+  // Header of contacts section
+  &-header {
+    font-size: 42px;
+    font-weight: $bold;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+
+    @media (max-width: 768px) {
+      font-size: 38px;
+      line-height: 48px;
+      text-align: center;
+    }
+
+    @media (max-width: 460px) {
+      font-size: 35px;
+      line-height: 45px;
+    }
+  }
+
+  // Description of contacts section
+  &-desc {
+    position: relative;
+    max-width: 732px;
+    line-height: 28px;
+    padding-bottom: 52px;
+    margin-bottom: 77px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 133px;
+      height: 3px;
+      background: $primary;
+    }
+
+    @media (max-width: 768px) {
+      text-align: center;
+      padding-bottom: 35px;
+      margin-bottom: 40px;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  // Contact form styles
+  form {
+    max-width: 58.5%;
+    flex-basis: 58.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 968px) {
+      max-width: 100%;
+      flex-basis: 100%;
+      margin-bottom: 35px;
+    }
+  }
+
+  // Info block
+  &-info {
+    display: flex;
+    justify-content: space-between;
+
+    // Contact form input
+    &__input {
+      max-width: 47%;
+      flex-basis: 47%;
+      border: none;
+      border-radius: 8px;
+      background-color: $gray;
+      padding: 22px 52px;
+      font-family: $default-font;
+      font-size: 18px;
+      margin-bottom: 46px;
+      box-sizing: border-box;
+
+      @media (max-width: 968px) {
+        max-width: 48.5%;
+        flex-basis: 48.5%;
+        margin-bottom: 25px;
+      }
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+    }
+
+    // Contact form textarea
+    &__textarea {
+      max-width: 100%;
+      min-height: 193px;
+      flex-basis: 100%;
+      border: none;
+      border-radius: 8px;
+      background-color: $gray;
+      padding: 28px 51px;
+      margin-bottom: 45px;
+      font-family: $default-font;
+      font-size: 18px;
+      resize: none;
+
+      @media (max-width: 968px) {
+        margin-bottom: 25px;
+      }
+    }
+
+    // Contact form submit button
+    &__submit {
+      max-width: 100%;
+      flex-basis: 100%;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: $semi-bold;
+      padding: 23px 0;
+    }
+
+    // Contact form main contacts section
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      max-width: 26.5%;
+      flex-basis: 26.5%;
+      color: $gray;
+      padding-top: 139px;
+      padding-left: 79px;
+
+      // Main contacts header
+      &-header {
+        font-size: 18px;
+        font-weight: $bold;
+        color: $gray;
+        text-transform: uppercase;
+        margin-bottom: 29px;
+      }
+
+      // Main contacts address
+      &-address {
+        max-width: 300px;
+        line-height: 28px;
+        margin-bottom: 15px;
+
+        @media (max-width: 968px) {
+          text-align: center;
+        }
+      }
+
+      // Main contacts email
+      &-mail {
+        max-width: 300px;
+        line-height: 28px;
+        margin-bottom: 19px;
+      }
+
+      // Main contacts phone
+      &-phone {
+        max-width: 300px;
+        line-height: 28px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        background-color: $accent-black;
+        height: 100%;
+        width: 50vw;
+      }
+
+      @media (max-width: 968px) {
+        max-width: 100%;
+        flex-basis: 100%;
+        background-color: $accent-black;
+        padding: 45px 15px;
+        align-items: center;
+        border-radius: 4px;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    @media (max-width: 968px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+}

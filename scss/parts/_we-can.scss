@@ -1,0 +1,139 @@
+// We can provide section styles
+.we-can {
+  padding-top: 103px;
+
+  // Rewrite base container
+  .container {
+    flex-direction: row;
+    border-bottom: 2px solid $gray;
+    padding-bottom: 72px;
+
+    @media (max-width: 768px) {
+      padding-bottom: 25px;
+    }
+  }
+
+  // Info block of section
+  &__info {
+    max-width: 50%;
+    flex-basis: 50%;
+
+    // Header of info block
+    &-header {
+      font-size: 43px;
+      font-weight: $bold;
+      line-height: 56px;
+      text-transform: uppercase;
+      margin-bottom: 31px;
+
+      @media (max-width: 768px) {
+        font-size: 38px;
+        line-height: 48px;
+        text-align: center;
+      }
+
+      @media (max-width: 460px) {
+        font-size: 35px;
+        line-height: 45px;
+      }
+    }
+
+    // Description of info block
+    &-desc {
+      line-height: 28px;
+      max-width: 525px;
+      margin-bottom: 50px;
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+    }
+
+    // Info block button
+    &-button {
+      padding: 15px 63px;
+      background-color: transparent;
+      color: $primary;
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+
+    @media (max-width: 960px) {
+      max-width: 100%;
+      flex-basis: 100%;
+      margin-bottom: 55px;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  // Features block of section
+  &__features {
+    max-width: 50%;
+    flex-basis: 50%;
+
+    // List of features
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      // Features item
+      .item {
+        max-width: 45%;
+        flex-basis: 45%;
+        margin: 6px auto;
+        margin-bottom: 12px;
+
+        // Feature icon
+        &-icon {
+          margin-bottom: 18px;
+
+          img {
+            max-width: 45px;
+          }
+        }
+
+        // Feature header
+        &-header {
+          font-size: 24px;
+          font-weight: $semi-bold;
+          margin-bottom: 10px;
+        }
+
+        // Feature description
+        &-desc {
+          margin: 0;
+          line-height: 28px;
+
+          @media (max-width: 768px) {
+            text-align: center;
+          }
+        }
+
+        @media (max-width: 768px) {
+          max-width: 100%;
+          flex-basis: 100%;
+          margin-bottom: 50px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+
+    @media (max-width: 960px) {
+      max-width: 100%;
+      flex-basis: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 50px;
+  }
+}

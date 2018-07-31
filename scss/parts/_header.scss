@@ -1,0 +1,207 @@
+// Header styles
+.header {
+  padding-top: 29px;
+  padding-bottom: 123px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  // Top menu styles
+  .top-menu {
+    width: 100%;
+    background-color: $accent-black;
+    padding: 0;
+    margin: 0;
+
+    // Top menu wrapper
+    &__wrapper {
+      @media (max-width: 768px) {
+        display: none;
+        width: 100%;
+      }
+    }
+
+    // Top menu list of items menu
+    &__list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+
+    // Top menu item
+    &__item {
+      list-style: none;
+
+      a {
+        display: block;
+        padding: 35px 29px;
+        font-size: 14px;
+        font-weight: $semi-bold;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        color: $accent-white;
+        text-decoration: none;
+        transition: background-color 200ms linear;
+
+        &:hover {
+          background-color: $primary;
+        }
+
+        @media (max-width: 768px) {
+          text-align: center;
+          padding: 25px 0;
+        }
+      }
+    }
+
+    // Top menu toggle button
+    &__button {
+      display: none;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      padding: 25px;
+
+      img {
+        width: 30px;
+      }
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+
+      @media (max-width: 460px) {
+        padding: 15px 25px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  // Intro block styles
+  .intro {
+    // Intro wrapper
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-top: 89px;
+
+      @media (max-width: 960px) {
+        flex-direction: column;
+      }
+
+      @media (max-width: 460px) {
+        padding-top: 35px;
+      }
+    }
+
+    // Into info block
+    &-info {
+      max-width: 50%;
+      flex-basis: 50%;
+
+      // Intro header
+      &__header {
+        text-transform: uppercase;
+        font-weight: $extra-bold;
+        font-size: 60px;
+        line-height: 75px;
+        letter-spacing: 1px;
+        color: $black;
+        margin-bottom: 17px;
+
+        @media (max-width: 768px) {
+          font-size: 40px;
+          line-height: 55px;
+        }
+
+        @media (max-width: 460px) {
+          font-size: 35px;
+          line-height: 45px;
+        }
+      }
+
+      // Intro description
+      &__desc {
+        margin-top: 0;
+        margin-bottom: 52px;
+        max-width: 540px;
+        line-height: 28px;
+
+        @media (max-width: 460px) {
+          margin-bottom: 35px;
+        }
+      }
+
+      @media (max-width: 960px) {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        flex-basis: 100%;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+    }
+
+    // Intro video
+    &-video {
+      max-width: 43%;
+      flex-basis: 43%;
+      min-height: 300px;
+      padding-top: 24px;
+
+      &__wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+        box-shadow: -14px -14px 73px 0px rgba(0, 0, 0, 0.29);
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+      }
+
+      @media (max-width: 960px) {
+        max-width: 100%;
+        flex-basis: 100%;
+        padding-top: 0;
+      }
+
+      @media (max-width: 460px) {
+        min-height: 170px;
+      }
+    }
+  }
+
+  @media (max-width: 960px) {
+    padding-bottom: 300px;
+  }
+
+  @media (max-width: 768px) {
+    padding-bottom: 170px;
+  }
+
+  @media (max-width: 460px) {
+    padding-bottom: 100px;
+  }
+}

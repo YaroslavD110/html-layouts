@@ -1,0 +1,51 @@
+// Styles for footer
+.footer {
+  background-color: $accent-black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  // Rewrite default syules for container
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  // Styles for copyright
+  .copyright {
+    display: flex;
+    align-items: center;
+    color: $gray;
+
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  }
+
+  // Social buttons
+  .soc-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    // Social button
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: $white;
+      margin-right: 15px;
+
+      // Image for social button
+      img {
+        width: 50%;
+      }
+    }
+  }
+}

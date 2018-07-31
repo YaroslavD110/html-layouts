@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>The Minimal Design | test work</title>
+
+  <!--Include google fontsa -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" />
+  <!-- Include styles -->
+  <link rel="stylesheet" href="css/styles.min.css" />
+</head>
+
+<body>
+
+  <!-- Header section -->
+  <header id="header" class="header" style="background-image: url('img/bg.jpg')">
+    <div class="container">
+      <menu class="top-menu">
+        <button class="top-menu__button" id="top-menu__toggle-btn">
+          <img src="img/menu-icon.svg" alt="menu btn" />
+        </button>
+
+        <div class="top-menu__wrapper">
+          <ul class="top-menu__list">
+            <li class="top-menu__item">
+              <a href="#header" class="scroll-btn">home</a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#features" class="scroll-btn">portfolio</a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#our-team" class="scroll-btn">about us</a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#contacts" class="scroll-btn">contact</a>
+            </li>
+          </ul>
+        </div>
+      </menu>
+
+      <div class="intro-wrapper">
+        <div class="intro-info">
+          <h1 class="intro-info__header">our strong organaisation</h1>
+          <p class="intro-info__desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias fuga rem distinctio, minus neque, error dolore
+            obcaecati aut accusamus molestiae nihil nisi laborum.</p>
+          <button class="button intro-info__button scroll-btn" data-to="#contacts">Contact Us</button>
+        </div>
+
+        <div class="intro-video">
+          <div class="intro-video__wrapper">
+            <iframe src="https://www.youtube.com/embed/ZbofJucjkSU" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- We can provide section -->
+  <section class="we-can">
+    <div class="container">
+      <div class="we-can__info">
+        <h1 class="we-can__info-header">do you know we can provide for you ?</h1>
+        <p class="we-can__info-desc">Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et.Lorem ni
+          ipsum dolor sit amet, consectetur adipis cing elit, ed doi eiusmod tempor incididunt ut labore et.</p>
+        <button class="we-can__info-button button scroll-btn" data-to="#subscribe">Learn More</button>
+      </div>
+
+      <div class="we-can__features">
+        <div class="we-can__features-list">
+          <div class="item">
+            <div class="item-icon">
+              <img src="img/features-icon-1.png" alt="Features icon" />
+            </div>
+            <h3 class="item-header">Management</h3>
+            <p class="item-desc">Lorem ipsum dolor sitea amet, zixf conseit adipi cing elit, seddi do eiusmod btdempor in didunt utlae ore etioe.Lorem
+              ipsum new idolor</p>
+          </div>
+          <div class="item">
+            <div class="item-icon">
+              <img src="img/features-icon-2.png" alt="Features icon" />
+            </div>
+            <h3 class="item-header">UI /UX Design</h3>
+            <p class="item-desc">Lorem ipsum dolor sitea amet, zixf conseit adipi cing elit, seddi do eiusmod btdempor in didunt utlae ore etioe.Lorem
+              ipsum new idolor sit amet,</p>
+          </div>
+          <div class="item">
+            <div class="item-icon">
+              <img src="img/features-icon-3.png" alt="Features icon" />
+            </div>
+            <h3 class="item-header">Logo / Branding</h3>
+            <p class="item-desc">Lorem ipsum dolor sitea amet, zixf conseit adipi cing elit, seddi do eiusmod btdempor in didunt utlae ore etioeew
+              idolor sit amet,</p>
+          </div>
+          <div class="item">
+            <div class="item-icon">
+              <img src="img/features-icon-4.png" alt="Features icon" />
+            </div>
+            <h3 class="item-header">Animation</h3>
+            <p class="item-desc">Lorem ipsum dolor sitea amet, zixf conseit adipi cing elit, seddi do eiusmod btdempor in didunt utlae ore etioe.Lorem
+              ipsum new idolor sit amet, consect netur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features section -->
+  <section class="features" id="features">
+    <div class="container">
+      <h1 class="features-header">feature products</h1>
+      <p class="features-desc">Lorem ipsum dolor sit amet, consectetur adipis cing elit,sed do eiusmod tempor incididunt ut labore et.</p>
+      <div class="features-controls">
+        <button class="filter features-controls__item" data-filter=".mix-category__all">All</button>
+        <button class="filter features-controls__item" data-filter=".mix-category__print-template">print template</button>
+        <button class="filter features-controls__item" data-filter=".mix-category__web-template">web template</button>
+        <button class="filter features-controls__item" data-filter=".mix-category__user-interface">user interface</button>
+        <button class="filter features-controls__item" data-filter=".mix-category__mock-up">mock-up</button>
+      </div>
+      <div class="features-list" id="gallery">
+        <div class="features-list__wrapper">
+          <div class="mix mix-category__all item">
+            <div class="item-img">
+              <a href="img/features-img-1.jpg" rel="features-gallery" class="features-gallery" data-gallery-active="is_active">
+                <img src="img/features-img-1.jpg" alt="Our feature image" />
+              </a>
+            </div>
+          </div>
+
+          <div class="mix mix-category__all mix-category__print-template item">
+            <div class="item-img">
+              <a href="img/features-img-2.jpg" rel="features-gallery" class="features-gallery" data-gallery-active="is_active">
+                <img src="img/features-img-2.jpg" alt="Our feature image" />
+              </a>
+            </div>
+          </div>
+
+          <div class="mix mix-category__all mix-category__web-template item">
+            <div class="item-img">
+              <a href="img/features-img-3.jpg" rel="features-gallery" class="features-gallery" data-gallery-active="is_active">
+                <img src="img/features-img-3.jpg" alt="Our feature image" />
+              </a>
+            </div>
+          </div>
+
+          <div class="mix mix-category__all mix-category__user-interface item">
+            <div class="item-img">
+              <a href="img/features-img-4.jpg" rel="features-gallery" class="features-gallery" data-gallery-active="is_active">
+                <img src="img/features-img-4.jpg" alt="Our feature image" />
+              </a>
+            </div>
+          </div>
+
+          <div class="mix mix-category__all mix-category__mock-up item">
+            <div class="item-img">
+              <a href="img/features-img-5.jpg" rel="features-gallery" class="features-gallery" data-gallery-active="is_active">
+                <img src="img/features-img-5.jpg" alt="Our feature image" />
+              </a>
+            </div>
+          </div>
+
+          <div class="mix mix-category__all mix-category__web-template item">
+            <div class="item-img">
+              <a href="img/features-img-3.jpg" rel="features-gallery" class="features-gallery" data-gallery-active="is_active">
+                <img src="img/features-img-3.jpg" alt="Our feature image" />
+              </a>
+            </div>
+          </div>
+
+          <div class="mix mix-category__all mix-category__user-interface item">
+            <div class="item-img">
+              <a href="img/features-img-4.jpg" rel="features-gallery" class="features-gallery" data-gallery-active="is_active">
+                <img src="img/features-img-4.jpg" alt="Our feature image" />
+              </a>
+            </div>
+          </div>
+
+          <div class="mix mix-category__all mix-category__mock-up item">
+            <div class="item-img">
+              <a href="img/features-img-5.jpg" rel="features-gallery" class="features-gallery" data-gallery-active="is_active">
+                <img src="img/features-img-5.jpg" alt="Our feature image" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our team section -->
+  <section class="our-team" id="our-team">
+    <div class="container">
+      <h1 class="our-team__header">Meet our team</h1>
+      <p class="our-team__desc">Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed dooing eiusmod tempor incididut labore Ui / Ux , print
+        template.
+      </p>
+      <div class="our-team__wrapper">
+        <div class="our-team__main-preson">
+          <img src="img/our-team-1.jpg" alt="Our worker photo" />
+          <div class="name">sokina jue</div>
+        </div>
+
+        <div class="our-team__all">
+          <h1 class="our-team__all-header">mark waugh</h1>
+          <p class="our-team__all-desc">Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed dooing eiusmod tempor incididut labore Ui / Ux ,
+            print template.</p>
+          <div class="our-team__all-soc">
+            <a href="#">Facebook</a>
+            <a href="#">Dribble</a>
+            <a href="#">Behance</a>
+            <a href="#">Twiter</a>
+          </div>
+          <div class="our-team__all-persons">
+            <div class="item">
+              <img src="img/our-team-2.jpg" alt="Our worker photo">
+              <div class="item-name">sokina jue</div>
+            </div>
+            <div class="item">
+              <img src="img/our-team-3.jpg" alt="Our worker photo">
+              <div class="item-name">sokina jue</div>
+            </div>
+            <div class="item">
+              <img src="img/our-team-4.jpg" alt="Our worker photo">
+              <div class="item-name">sokina jue</div>
+            </div>
+            <div class="item">
+              <img src="img/our-team-5.jpg" alt="Our worker photo">
+              <div class="item-name">sokina jue</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe section -->
+  <section class="subscribe" id="subscribe" style="background-image: url('img/bg-subscribe.jpg')">
+    <div class="container">
+      <h1 class="subscribe-header">Design tips, tricks, and freebies. Delivered weekly.</h1>
+      <p class="subscribe-desc">Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod.</p>
+      <form>
+        <input type="email" class="subscribe-input" placeholder="Email Address..." />
+        <input type="submit" class="subscribe-submit button" value="subscribe" />
+      </form>
+    </div>
+  </section>
+
+  <!-- Contacts section -->
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <h1 class="contacts-header">get in touch</h1>
+      <p class="contacts-desc">Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et.ur adipis cing
+        elit, sed do eiusmod tempor incididunt ut labore et. ur adipis cing elit, sed do eiusmod tempor incididunt ut labore
+        et.
+      </p>
+      <div class="contacts-info">
+        <form>
+          <input type="text" class="contacts-info__input" placeholder="Name" />
+          <input type="email" class="contacts-info__input" placeholder="Your Mail" />
+          <textarea class="contacts-info__textarea" placeholder="Type your message"></textarea>
+          <input type="submit" class="contacts-info__submit button" value="Send message" />
+        </form>
+        <div class="contacts-info__contacts">
+          <h3 class="contacts-info__contacts-header">contact info</h3>
+          <span class="contacts-info__contacts-address">Jalalabad 24 / A, Ambaarkhana, Sylhet, Bangladesh</span>
+          <span class="contacts-info__contacts-mail">redwan@deviserweb.com</span>
+          <span class="contacts-info__contacts-phone">(+88) 017 617 46373</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="copyright">© Copyright @Junaed 2016, All rights reserved.</div>
+      <div class="soc-buttons">
+        <a href="#" class="soc-buttons__item">
+          <img src="img/twitter-icon.svg" alt="Social button">
+        </a>
+        <a href="#" class="soc-buttons__item">
+          <img src="img/linked-in-icon.svg" alt="Social button">
+        </a>
+        <a href="#" class="soc-buttons__item">
+          <img src="img/google-plus-icon.svg" alt="Social button">
+        </a>
+        <a href="#" class="soc-buttons__item">
+          <img src="img/facebook-icon.svg" alt="Social button">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery.mixitup.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

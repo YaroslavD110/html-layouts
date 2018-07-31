@@ -1,0 +1,141 @@
+// Styles for features section
+.features {
+  padding-top: 93px;
+
+  // Rewrite default container align
+  .container {
+    align-items: center;
+  }
+
+  // Styles for features header
+  &-header {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: $bold;
+
+    @media (max-width: 768px) {
+      font-size: 38px;
+      line-height: 48px;
+    }
+
+    @media (max-width: 460px) {
+      font-size: 35px;
+      line-height: 45px;
+    }
+  }
+
+  // Styles for features description
+  &-desc {
+    position: relative;
+    text-align: center;
+    max-width: 555px;
+    line-height: 28px;
+    padding-bottom: 27px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 133px;
+      height: 2px;
+      background: $primary;
+    }
+  }
+
+  // Styles for filter controls buttons
+  &-controls {
+    padding-top: 67px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-wrap: wrap;
+
+    // Control button
+    &__item {
+      background-color: transparent;
+      border: none;
+      font-size: 22px;
+      font-weight: $semi-bold;
+      text-transform: uppercase;
+      padding: 0 23px;
+      cursor: pointer;
+      outline: none;
+      transition: color 300ms linear;
+
+      &:hover {
+        color: $primary;
+      }
+
+      // Active controll button
+      &-active {
+        color: $primary;
+      }
+
+      @media (max-width: 968px) {
+        padding: 0 15px;
+        font-size: 18px;
+      }
+
+      @media (max-width: 768px) {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  }
+
+  // Styles for list of features
+  &-list {
+    width: 100%;
+
+    // Wrapper for list of features
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      // Disable mix element
+      .mix {
+        display: none;
+      }
+    }
+
+    // Item of list
+    .item {
+      max-width: 292px;
+      flex-basis: 292px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+
+      // Item image wrapper
+      &-img {
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
+
+        // Item link
+        a {
+          cursor: zoom-in;
+        }
+
+        // Item image
+        img {
+          object-fit: cover;
+          object-position: center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 65px;
+  }
+}

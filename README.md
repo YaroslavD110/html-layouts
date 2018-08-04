@@ -1,3 +1,3 @@
 # Minto html-layout
 
-![preview](minto.jpg)
+![preview](Minto.jpg)

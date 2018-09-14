@@ -1,0 +1,47 @@
+// Info section
+.info {
+  &-section {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  &-header {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-top: 42px;
+    margin-bottom: 27px;
+    max-width: 585px;
+
+    .accent {
+      font-size: 36px;
+      line-height: 0.83;
+      color: $accent;
+    }
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+      margin-right: 14px;
+    }
+
+    &__date {
+      font-family: $header-font;
+      font-size: 14px;
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: -0.5px;
+      padding: 4px 10px;
+      border-radius: 3px;
+      background-color: $gray;
+    }
+  }
+}

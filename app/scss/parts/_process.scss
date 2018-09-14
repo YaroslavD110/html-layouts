@@ -1,0 +1,120 @@
+// Our process section
+.process {
+  &-section {
+    padding-top: 160px;
+    padding-bottom: 165px;
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: 44px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: -0.5px;
+    margin: 0;
+
+    .accent {
+      opacity: 0.3;
+    }
+  }
+
+  &-desc {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: -0.6px;
+    margin: 0;
+    opacity: 0.5;
+  }
+
+  &-collection {
+    margin-top: 125px;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 320px;
+      height: 100%;
+      margin: 0 auto;
+      padding-top: 106px;
+      padding-bottom: 20px;
+      transition: padding 300ms linear;
+
+      &-img {
+        margin: 0 auto;
+        min-height: 300px;
+      }
+
+      &-title {
+        text-align: center;
+        font-family: $header-font;
+        font-size: 36px;
+        font-weight: 700;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.39;
+        letter-spacing: -0.4px;
+        margin-top: 51px;
+        margin-bottom: 0;
+      }
+
+      &-desc {
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.67;
+        letter-spacing: -0.6px;
+        text-align: center;
+        opacity: 0.5;
+        margin-top: 10px;
+      }
+
+      &-btn {
+        width: fit-content;
+        opacity: 0;
+        transition: all 300ms linear;
+        margin: 50px auto 0;
+      }
+    }
+
+    .col-12 {
+      border-top: 1px solid $gray;
+      border-right: 1px solid $gray;
+      border-radius: 0;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      transition: all 300ms linear;
+
+      &:hover {
+        box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+
+        .process-collection__item-btn {
+          opacity: 1;
+        }
+
+        .process-collection__item {
+          padding-top: 56px;
+          padding-bottom: 70px;
+        }
+      }
+    }
+
+    .col-12:nth-child(3n) {
+      border-right: none;
+    }
+
+    .col-12:nth-child(1),
+    .col-12:nth-child(2),
+    .col-12:nth-child(3) {
+      border-top: none;
+    }
+  }
+}

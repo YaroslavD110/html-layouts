@@ -1,0 +1,83 @@
+@import "vars";
+@import "fonts";
+
+// Common styles
+@import "common";
+
+// Page parts
+@import "parts/header";
+@import "parts/footer";
+
+// Override main styles
+.header {
+  &-section {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      background-color: $black;
+      opacity: 0.96;
+    }
+  }
+}
+
+.footer {
+  padding-top: 100px;
+}
+
+.post {
+  &-content {
+    padding: 50px 15px;
+    margin: 0 auto;
+    max-width: 720px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h5 {
+      font-family: $header-font;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    ul {
+      background-color: $gray;
+      border-radius: 10px;
+      padding: 15px 35px;
+    }
+
+    a {
+      color: $black;
+      transition: color 300ms linear;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+
+    table {
+      background-color: $gray;
+      border-radius: 10px;
+      padding: 10px;
+      td,
+      th {
+        border: 2px solid $white;
+        border-top: none;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+@import "media"; // Always at the end

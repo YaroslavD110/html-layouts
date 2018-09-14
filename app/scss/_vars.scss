@@ -1,11 +1,30 @@
-$default-font: "roboto-example", sans-serif;
-$accent: orange;
-$text: #333;
+// Fonts
+$default-font: "AvenirNext", sans-serif;
+$header-font: "DINNextLTPro", sans-serif;
+
+// Colors
+$primary: #e57c3f;
+$accent: #40b49f;
+$text: #334f5c;
+$black: #334f5c;
+$gray: #f5f6f7;
+$white: #ffffff;
+$red: #e3584e;
 
 // Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
 $grid-gutter-width: 30px;
 $grid-columns: 12;
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
-$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
-
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
 $gutter: $grid-gutter-width;

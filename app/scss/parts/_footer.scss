@@ -1,0 +1,87 @@
+// Site footer
+.footer {
+  padding-top: 243px;
+  background-color: $black;
+  color: $white;
+
+  &-header {
+    font-family: $header-font;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    margin-top: 35px;
+    margin-bottom: 21px;
+  }
+
+  &-desc {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: -0.6px;
+    opacity: 0.3;
+  }
+
+  &-controls {
+    font-family: $header-font;
+    font-size: 20px;
+    font-weight: 300;
+
+    &__email {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 14px;
+      }
+    }
+  }
+
+  &-menu {
+    margin: 0;
+    padding: 0;
+
+    &__wrap {
+      margin: 0;
+      padding: 0;
+    }
+
+    &__item {
+      list-style: none;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $white;
+      font-size: 18px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.67;
+      letter-spacing: -0.6px;
+      opacity: 0.3;
+      transition: opacity 300ms linear;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-copyright {
+    font-size: 18px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: -0.6px;
+    text-align: center;
+    opacity: 0.3;
+    margin-top: 100px;
+    margin-bottom: 70px;
+  }
+}

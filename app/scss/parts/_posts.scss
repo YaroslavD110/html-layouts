@@ -1,0 +1,60 @@
+// Styles for posts grid
+.posts {
+  &-section {
+    padding: 50px 0;
+  }
+
+  &-item {
+    position: relative;
+    background-color: $gray;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transform: scale(1);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    transition: all 500ms linear;
+
+    &__preview {
+      &-img {
+        width: 100%;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 35px;
+
+      &-header {
+        font-size: 22px;
+        text-decoration: none;
+        color: $black;
+      }
+
+      &-category {
+        font-family: $header-font;
+        font-size: 12px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $black;
+        opacity: 0.5;
+        margin-bottom: 10px;
+      }
+
+      &-header,
+      &-category {
+        transition: color 300ms linear;
+
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
+      transform: scale(1.01);
+    }
+  }
+}

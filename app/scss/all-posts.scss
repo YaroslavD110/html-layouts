@@ -1,0 +1,36 @@
+@import "vars";
+@import "fonts";
+
+// Common styles
+@import "common";
+
+// Page parts
+@import "parts/header";
+@import "parts/footer";
+@import "parts/posts";
+
+// Override main styles
+.header {
+  &-section {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      background-color: $black;
+      opacity: 0.96;
+    }
+  }
+}
+
+.footer {
+  padding-top: 100px;
+}
+
+@import "media"; // Always at the end

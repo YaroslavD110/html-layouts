@@ -1,53 +1,20 @@
 @import "vars";
 @import "fonts";
-@import "libs";
 
-::placeholder {
-	color: #666;
-}
+// Needed css libraries
+@import "../libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css";
+@import "../libs/modal-video/css/modal-video.min.css";
 
-::selection {
-	background-color: $accent;
-	color: #fff;
-}
+// Common styles
+@import "common";
 
-body {
-	font-size: 16px;
-	min-width: 320px;
-	position: relative;
-	line-height: 1.65;
-	font-family: $default-font;
-	overflow-x: hidden;
-	color: $text;
-	input, textarea {
-		border: #666 1px solid;
-		outline: none;
-		&:focus:required:invalid {
-			border-color: red;
-		}
-		&:required:valid {
-			border-color: green;
-		}
-	}
-}
-
-.img-responsive {
-	display: block;
-	max-width: 100%;
-	height: auto;
-	&.img-width {
-		width: 100%;
-	}
-}
-
-.text-center {
-	text-align: center;
-}
-
-b, strong {
-	font-weight: bold;
-}
-
-
+// Page parts
+@import "parts/header";
+@import "parts/info";
+@import "parts/samples";
+@import "parts/process";
+@import "parts/feature";
+@import "parts/contacts";
+@import "parts/footer";
 
 @import "media"; // Always at the end

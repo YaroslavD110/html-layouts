@@ -1,0 +1,247 @@
+// Styles for page header
+.header {
+  &-section {
+    padding-top: 50px;
+    background-color: $black;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-panel {
+    &__logo {
+      display: flex;
+      position: relative;
+      left: -100px;
+
+      &-img {
+        position: relative;
+        bottom: -5px;
+        width: 183px;
+        height: 58px;
+        object-fit: contain;
+        margin-right: 17px;
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: $header-font;
+        font-size: 16px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        color: $white;
+        min-width: 141px;
+        opacity: 0.9;
+
+        .normal {
+          font-weight: 200;
+        }
+      }
+    }
+
+    &__phone {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-family: $header-font;
+      font-size: 20px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: $white;
+    }
+
+    &__menu {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+
+      &-wrap {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      &-btn {
+        cursor: pointer;
+        position: relative;
+        height: 28px;
+        width: 30px;
+
+        span {
+          display: block;
+          position: absolute;
+          height: 4px;
+          width: 100%;
+          background: $white;
+          border-radius: 2px;
+          opacity: 1;
+          left: 0;
+          transform: rotate(0deg);
+          transition: 0.25s ease-in-out;
+
+          &:nth-child(1) {
+            top: 0px;
+          }
+
+          &:nth-child(2) {
+            top: 11px;
+          }
+
+          &:nth-child(3) {
+            top: 22px;
+          }
+        }
+
+        &__opened {
+          span {
+            &:nth-child(1) {
+              transform: rotate(45deg);
+              top: 11px;
+            }
+
+            &:nth-child(2) {
+              width: 0;
+              left: 50%;
+            }
+
+            &:nth-child(3) {
+              transform: rotate(-45deg);
+              top: 11px;
+            }
+          }
+        }
+      }
+
+      &-item {
+        margin-left: 15px;
+      }
+
+      &-link {
+        font-family: $header-font;
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $white;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transition: color 300ms linear;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    padding-top: 143px;
+    padding-bottom: 160px;
+
+    &__page {
+      &-header {
+        text-align: center;
+        font-family: $header-font;
+        font-size: 48px;
+        font-weight: 700;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+        color: $white;
+      }
+    }
+
+    &__intro {
+      &-header {
+        display: flex;
+        flex-direction: column;
+        font-family: $header-font;
+        font-size: 48px;
+        font-weight: 700;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+        color: $white;
+        margin-bottom: 44px;
+
+        .accent {
+          opacity: 0.3;
+        }
+      }
+
+      &-controls {
+        display: flex;
+        align-items: center;
+
+        span {
+          opacity: 0.3;
+          font-family: $header-font;
+          font-size: 14px;
+          font-weight: 500;
+          color: $white;
+          margin-left: 30px;
+          margin-right: 22px;
+        }
+      }
+
+      &-phone {
+        color: $white;
+        font-weight: normal;
+      }
+    }
+
+    &__videos {
+      position: absolute;
+      width: 1060px;
+      transform: rotate(-30deg) translate(103px, -10px);
+
+      &-wrap {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &-btn {
+        position: absolute;
+        top: 37px;
+        left: 32%;
+        transform: rotate(30deg);
+      }
+
+      &-item {
+        max-width: 500px;
+        height: 280px;
+        background-color: $white;
+        padding: 10px;
+        margin: 15px auto;
+        border-radius: 10px;
+        box-shadow: 0px 20px 60px -2px rgba(0, 0, 0, 0.2);
+      }
+
+      &-preview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+}

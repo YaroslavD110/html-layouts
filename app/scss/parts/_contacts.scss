@@ -1,0 +1,158 @@
+// Contact us section
+.contacts {
+  &-section {
+    padding-top: 47px;
+    padding-bottom: 200px;
+    background-color: $gray;
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: 44px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: -0.5px;
+    margin: 0;
+
+    .accent {
+      opacity: 0.3;
+    }
+  }
+
+  &-desc {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: -0.6px;
+    margin: 0;
+    opacity: 0.7;
+  }
+
+  &-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 100px;
+    background-color: $white;
+    padding: 53px 51px;
+    border-radius: 10px;
+
+    &__wrap {
+      position: relative;
+      min-height: 155px;
+    }
+
+    &__input {
+      width: 100%;
+      border: none;
+      background-color: $gray;
+      font-family: $header-font;
+      font-size: 14px;
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: $black;
+      padding: 21px 34px;
+      border-radius: 3px;
+
+      &-wrap {
+        margin-top: 20px;
+        padding: 0 10px;
+        max-width: 50%;
+        flex-basis: 50%;
+
+        &:first-child {
+          margin-top: 0;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+
+      &::placeholder {
+        text-transform: uppercase;
+      }
+    }
+
+    &__select {
+      cursor: pointer;
+      width: 100%;
+      border: none;
+      background-color: $gray;
+      font-family: $header-font;
+      font-size: 14px;
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: $black;
+      padding: 21px 34px;
+      border-radius: 3px;
+      appearance: none;
+      background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position: calc(100% - 19px) calc(50% - 2px),
+        calc(100% - 14px) calc(50% - 2px), calc(100% - 2.5em) 50%;
+      background-size: 5px 5px, 5px 5px, 1px 70%;
+      background-repeat: no-repeat;
+
+      &::placeholder {
+        text-transform: uppercase;
+      }
+    }
+
+    &__textarea {
+      width: 100%;
+      border: none;
+      background-color: $gray;
+      font-family: $header-font;
+      font-size: 14px;
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: $black;
+      padding: 21px 34px;
+      border-radius: 3px;
+      resize: none;
+      height: 100%;
+
+      &::placeholder {
+        text-transform: uppercase;
+      }
+
+      &-wrap {
+        height: 73%;
+      }
+    }
+
+    &__btn {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    &__inputs-wrap {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 46%;
+      flex-basis: 46%;
+    }
+
+    &__message-wrap {
+      max-width: 46%;
+      flex-basis: 46%;
+    }
+  }
+}

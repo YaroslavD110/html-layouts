@@ -1,4 +1,24 @@
 @import "_mixins/font-face";
 
-@include font-face("roboto-example", "../fonts/RobotoRegular/RobotoRegular");
-@include font-face("roboto-example", "../fonts/RobotoBold/RobotoBold", bold);
+@include font-face(
+  "AvenirNext",
+  "../fonts/AvenirNext-Regular/AvenirNextLTPro-Regular"
+);
+
+@include font-face(
+  "DINNextLTPro",
+  "../fonts/DINNextLTPro-Regular/DINNextLTPro-Regular",
+  300
+);
+
+@include font-face(
+  "DINNextLTPro",
+  "../fonts/DINNextLTPro-Light/DINNextLTPro-Light",
+  200
+);
+
+@include font-face(
+  "DINNextLTPro",
+  "../fonts/DINNextLTPro-Medium/DINNextLTPro-Medium",
+  700
+);

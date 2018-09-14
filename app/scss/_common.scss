@@ -1,0 +1,103 @@
+@import "../libs/bootstrap/scss/bootstrap-grid.scss";
+
+// Common styles
+::placeholder {
+  color: #666;
+}
+
+body {
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  font-family: $default-font;
+  overflow-x: hidden;
+  color: $text;
+  margin: 0;
+  padding: 0;
+  input,
+  textarea {
+    border: #666 1px solid;
+    outline: none;
+    &:focus:required:invalid {
+      border-color: red;
+    }
+    &:required:valid {
+      border-color: green;
+    }
+  }
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  &.img-width {
+    width: 100%;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+.page-wrapper {
+  overflow-x: hidden;
+}
+
+.button {
+  cursor: pointer;
+  display: block;
+  padding: 21px 39px;
+  border-radius: 3px;
+  border: none;
+  background-color: $primary;
+  font-family: $header-font;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white;
+  transform: scale(1);
+  transition: transform 300ms linear;
+
+  &:hover {
+    transform: scale(0.97);
+  }
+}
+
+.video-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  height: 160px;
+  width: 160px;
+
+  &__icon {
+    width: 100%;
+  }
+}
+
+.icon {
+  width: 17.3px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    margin-right: 14px;
+  }
+}

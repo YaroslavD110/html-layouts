@@ -89,6 +89,31 @@
     }
 
     .owl {
+      &-dot {
+        display: block;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        border: none;
+        margin: 15px 5px 0;
+        outline: none;
+        background-color: $primary;
+        transition: 300ms linear;
+      }
+
+      &-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+
+        .active {
+          // height: 11px;
+          // width: 11px;
+          // border: 1px solid $primary;
+          background-color: $accent;
+        }
+      }
+
       &-nav {
         .owl-prev,
         .owl-next {

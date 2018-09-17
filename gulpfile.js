@@ -1,5 +1,5 @@
 var syntax = "sсss"; // Syntax: sass or scss;
-
+var path = require("path");
 var gulp = require("gulp"),
   gutil = require("gulp-util"),
   sass = require("gulp-sass"),

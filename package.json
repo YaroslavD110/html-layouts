@@ -2,7 +2,9 @@
   "name": "html-layout",
   "version": "0.0.1",
   "scripts": {
-    "eslint": "eslint ./src/js/main.js"
+    "eslint": "eslint ./src/js/main.js",
+    "stylelint": "stylelint ./src/less/** --syntax less",
+    "htmllint": "html-lint ./**/*.html"
   },
   "main": "./src/index.html",
   "repository": "https://tangerine69@bitbucket.org/tangerine69/ternalahtmllayout.git",
@@ -27,10 +29,11 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1",
-    "html-lint": "^2.4.1",
-    "stylelint": "^9.9.0"
+    "stylelint": "^9.9.0",
+    "stylelint-config-recommended": "^2.1.0"
   },
   "dependencies": {
+    "htmlhint": "^0.10.1",
     "jquery": "^3.3.1"
   }
 }

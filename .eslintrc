@@ -1,0 +1,13 @@
+{
+  "env": { "jquery": true },
+  "extends": "airbnb-base",
+  "rules": {
+    "no-console": "off",
+    "func-names": "off",
+    "quotes": ["error", "double"],
+    "linebreak-style": "off",
+    "prefer-arrow-callback": "off",
+    "comma-dangle": "off",
+    "space-before-function-paren": "off"
+  }
+}

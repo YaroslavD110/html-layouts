@@ -71,7 +71,7 @@ gulp.task("styles", function() {
     .src(`./${path.src}/${lang}/**/[^_]*.${lang}`) // Get files
     .pipe(styles().on("error", notify.onError())) // Compiling styles
     .pipe(gcmq().on("error", notify.onError())) // Group media queries
-    .pipe(autoprefixer(["last 15 versions"])) // Use autoprefixer
+    .pipe(autoprefixer([ "last 15 versions" ])) // Use autoprefixer
     .pipe(rename({ suffix: ".min" })) // Add ".min" suffix for files
     .pipe(cleancss({ level: { 1: { specialComments: 0 } } })) // Clean css
     .pipe(gulp.dest(`./${path.src}/css`)) // Get out files in dist directory

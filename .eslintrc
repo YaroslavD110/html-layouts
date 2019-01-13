@@ -1,6 +1,15 @@
 {
-  "env": { "jquery": true },
+  "env": { 
+    "jquery": true, 
+    "browser": true
+  },
   "extends": "airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": 5
+  },
+  "plugins": [
+    "jquery"
+  ],
   "rules": {
     "no-console": "off",
     "func-names": "off",
@@ -8,6 +17,11 @@
     "linebreak-style": "off",
     "prefer-arrow-callback": "off",
     "comma-dangle": "off",
-    "space-before-function-paren": "off"
+    "space-in-parens": ["error", "never"],
+    "lines-around-comment": "off",
+    "array-bracket-spacing": ["error", "always"],
+    "no-var": "off",
+    "vars-on-top": "off",
+    "no-inner-declarations": "off"
   }
 }

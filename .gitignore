@@ -3,6 +3,7 @@
 # Idea
 /.idea
 /.vs
+/.vscode
 
 # dependencies
 /node_modules
@@ -11,6 +12,7 @@
 
 # testing
 /coverage
+/tests
 
 # prodaction
 /dist

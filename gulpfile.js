@@ -15,6 +15,7 @@ const notify = require("gulp-notify");
 const log = require("fancy-log");
 const colors = require("colors/safe");
 const image = require("gulp-image");
+const sourcemaps = require('gulp-sourcemaps');
 const del = require("del");
 
 /* ******************************************* */
@@ -69,11 +70,13 @@ gulp.task("styles", function() {
   // Return task instance
   return gulp
     .src(`./${path.src}/${lang}/**/[^_]*.${lang}`) // Get files
+    .pipe(sourcemaps.init())
     .pipe(styles().on("error", notify.onError())) // Compiling styles
     .pipe(gcmq().on("error", notify.onError())) // Group media queries
     .pipe(autoprefixer([ "last 15 versions" ])) // Use autoprefixer
     .pipe(rename({ suffix: ".min" })) // Add ".min" suffix for files
     .pipe(cleancss({ level: { 1: { specialComments: 0 } } })) // Clean css
+    .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest(`./${path.src}/css`)) // Get out files in dist directory
     .pipe(browserSync.reload({ stream: true })); // Reload browser
 });

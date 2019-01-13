@@ -17,7 +17,6 @@
     "comma-dangle": "off",
     "space-in-parens": ["error", "never"],
     "lines-around-comment": "off",
-    "array-bracket-spacing": ["error", "always"],
     "no-var": "off",
     "vars-on-top": "off",
     "no-inner-declarations": "off",

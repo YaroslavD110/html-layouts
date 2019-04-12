@@ -1,0 +1,52 @@
+// Stylesfor partners secction
+
+.partners {
+  padding: 50px 0;
+  overflow: hidden;
+
+  .title {
+    height: fit-content;
+  }
+
+  .container {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    @include lg {
+      justify-content: space-around;
+    }
+  }
+
+  &-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+
+    &__item {
+      padding: 15px;
+      max-width: 335px;
+
+      img {
+        max-height: 100px;
+        max-width: 100%;
+        filter: grayscale(1);
+        transition: 300ms linear filter;
+
+        &:hover {
+          filter: grayscale(0);
+        }
+      }
+    }
+
+    @include lg {
+      width: 70%;
+    }
+  }
+
+  @include md {
+    padding: 100px 0;
+  }
+}

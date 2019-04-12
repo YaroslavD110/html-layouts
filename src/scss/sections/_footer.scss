@@ -1,0 +1,38 @@
+// Styles for foooter section
+
+.footer {
+  padding: 50px 0;
+  background-color: $secondary;
+
+  .container {
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include lg {
+      justify-content: space-between;
+    }
+  }
+
+  &-logo {
+    margin: 0 15px;
+    max-width: 200px;
+
+    @include lg {
+      margin-left: 8.33%;
+    }
+  }
+
+  &-copyright {
+    margin: 0 15px;
+    max-width: 600px;
+    font-size: 16px;
+    font-weight: 200;
+    color: $white;
+    text-align: right;
+
+    @include lg {
+      margin-right: 8.33%;
+    }
+  }
+}

@@ -1,0 +1,302 @@
+// Styles for about us section
+
+.about {
+  position: relative;
+  padding: 50px 0;
+  overflow: hidden;
+  min-height: 480px;
+  background-color: $secondary;
+
+  &::before {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 60vw;
+    background-color: $secondary;
+
+    @include rwd(1400) {
+      display: block;
+    }
+  }
+
+  &-tabs {
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    &__controls {
+      display: flex;
+      flex-wrap: nowrap;
+      position: relative;
+      width: 100%;
+      padding-left: 0;
+      list-style: none;
+      overflow-x: auto;
+
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: -35px;
+        left: 0;
+        background: transparent url("../img/atoms-icon-2.svg") center center no-repeat;
+        background-size: contain;
+        height: 30px;
+        width: 30px;
+        animation: rotate 10s linear infinite;
+
+        @include md {
+          top: 50%;
+          left: 15px;
+          transform: translateY(-50%);
+        }
+
+        @include lg {
+          height: 50px;
+          width: 50px;
+          top: 20px;
+          left: 20px;
+          transform: translateY(0);
+        }
+
+        @include rwd(1400) {
+          display: none;
+        }
+      }
+
+      &-item {
+        cursor: pointer;
+        position: relative;
+        font-weight: 200;
+        color: $white;
+        font-size: 18px;
+        transition: 300ms linear font-weight;
+        text-align: center;
+        padding: 15px 0;
+        margin: 0 25px;
+        min-width: fit-content;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1px;
+          width: 0;
+          background-color: $white;
+          transition: 300ms linear width;
+        }
+
+        &::before {
+          display: none;
+          content: "";
+          position: absolute;
+          left: -40px;
+          background: transparent url("../img/atoms-icon-2.svg") center center no-repeat;
+          background-size: contain;
+          transform: translateY(0);
+          height: 0;
+          width: 0;
+          transition: 400ms linear all;
+          opacity: 0;
+
+          @include rwd(1400) {
+            display: block;
+          }
+        }
+
+        &:hover {
+
+          &::after {
+            width: 100%;
+
+            @include rwd(1400) {
+              width: 80%;
+            }
+          }
+        }
+
+        @include sm {
+          padding: 15px;
+          margin: 0;
+          width: auto;
+        }
+
+        @include lg {
+          font-size: 22px;
+        }
+
+        @include rwd(1400) {
+          text-align: left;
+          width: 100%;
+          padding: 10px 0;
+          margin: 15px 0;
+        }
+      }
+
+      .active {
+        font-weight: 500;
+
+        &::after {
+          width: 100%;
+
+          @include rwd(1400) {
+            width: 80%;
+          }
+        }
+
+        &::before {
+          opacity: 1;
+          transform: translateY(-50%);
+          left: -70px;
+          height: 40px;
+          width: 40px;
+          animation: rotate 10s linear infinite;
+        }
+      }
+
+      @include md {
+        padding-left: 8.33%;
+      }
+
+      @include rwd(1400) {
+        display: block;
+        width: 21%;
+      }
+    }
+
+    &__content {
+      position: relative;
+      width: 100%;
+
+      &-item {
+        display: flex;
+        flex: 1 auto;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background-color: $white;
+        overflow: hidden;
+        border-radius: 9px;
+        box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.16);
+        transform: translateY(0);
+        z-index: 0;
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+
+        @include lg {
+          flex-direction: row;
+        }
+
+        @include rwd(1400) {
+          top: 50%;
+          right: 20px;
+          width: 70%;
+          transform: translateY(-50%);
+        }
+      }
+
+      .active {
+        position: relative;
+        z-index: 1;
+        top: 0;
+        opacity: 1;
+        transition-delay: 400ms;
+
+        @include rwd(1400) {
+          top: 50%;
+          position: absolute;
+        }
+      }
+
+      .item {
+
+        &-description {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          padding: 15px;
+          padding-bottom: 68px;
+          height: auto;
+          order: 2;
+          overflow-x: hidden;
+          overflow-y: inherit;
+          box-sizing: border-box;
+
+          p {
+            font-weight: 200;
+            font-size: 14px;
+            color: $gray-text;
+            box-sizing: border-box;
+            text-align: justify;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            z-index: 3;
+            left: 15px;
+            bottom: 20px;
+            background: transparent url("../img/wave-icon.svg") left center no-repeat;
+            background-size: contain;
+            min-height: 40px;
+            width: 100%;
+
+            @include sm {
+              left: 50px;
+            }
+
+            @include rwd(1400) {
+              min-height: 60px;
+              bottom: 20px;
+            }
+          }
+
+          @include sm {
+            padding: 30px 50px;
+            padding-bottom: 68px;
+          }
+
+          @include lg {
+            min-height: 420px;
+            width: 60%;
+            order: 1;
+            padding-bottom: 80px;
+          }
+        }
+
+        &-preview {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+          order: 1;
+
+          @include lg {
+            order: 2;
+            width: 40%;
+            height: auto;
+          }
+        }
+      }
+
+      @include rwd(1400) {
+        position: initial;
+        width: 79%;
+      }
+    }
+
+    @include rwd(1400) {
+      flex-direction: row;
+    }
+  }
+
+  @include rwd(1400) {
+    background-color: $white;
+    padding-top: 150px;
+    padding-bottom: 100px;
+  }
+}

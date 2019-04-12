@@ -17,13 +17,15 @@ const colors = require("colors/safe");
 const image = require("gulp-image");
 const sourcemaps = require("gulp-sourcemaps");
 const del = require("del");
+const babel = require("gulp-babel");
+const htmlreplace = require("gulp-html-replace");
 
 /* ******************************************* */
 /*                  Settings                   */
 /* ******************************************* */
 const settings = {
   // Main settings
-  preprocessor: "less", // You can use: [ "sass", "scss", "less" ]
+  preprocessor: "scss", // You can use: [ "sass", "scss", "less" ]
   files: {
     // Setup main files names
     mainCssFile: "main", // Name of main styles file
@@ -48,7 +50,9 @@ gulp.task("BrowserSync", function() {
     server: {
       baseDir: `${settings.path.src}`
     },
-    notify: false
+    notify: false,
+    ghostMode: false,
+    cors: true
     // open: false,
     // online: false, // Work Offline Without Internet Connection
   });
@@ -93,7 +97,9 @@ gulp.task("JSLibs", function() {
   return gulp
     .src([
       // Get js files
-      "./node_modules/jquery/dist/jquery.min.js"
+      "./node_modules/jquery/dist/jquery.min.js",
+      "./node_modules/slick-carousel/slick/slick.min.js",
+      "./node_modules/jquery-viewport-checker/src/jquery.viewportchecker.js"
     ])
     .pipe(uglify().on("error", notify.onError())) // Miniify js files
     .pipe(concat(`${settings.files.jsLibsName}.min.js`)) // Concat files in one
@@ -108,11 +114,14 @@ gulp.task("CustomJS", function() {
   // Return task instance
   return gulp
     .src(`./${settings.path.src}/js/${settings.files.mainJsFile}.js`) // Get file
+    .pipe(sourcemaps.init())
+    .pipe(babel())
     .pipe(uglify().on("error", notify.onError())) // Minify code
     .pipe(
       // Add sufix for file
       rename({ suffix: ".min" })
     )
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(`./${settings.path.src}/js`)); // Get out file in dist directory
 });
 
@@ -140,13 +149,9 @@ gulp.task("dest", function() {
   log.info(colors.green("Get out files in build directory"));
 
   // Dest images
-  gulp
-    .src(`./${settings.path.src}/img/**/*`)
-    .pipe(gulp.dest(`./${settings.path.build}/img`));
+  gulp.src(`./${settings.path.src}/img/**/*`).pipe(gulp.dest(`./${settings.path.build}/img`));
   // Dest fonts
-  gulp
-    .src(`./${settings.path.src}/fonts/**/*`)
-    .pipe(gulp.dest(`./${settings.path.build}/fonts`));
+  gulp.src(`./${settings.path.src}/fonts/**/*`).pipe(gulp.dest(`./${settings.path.build}/fonts`));
   // Dest styles
   gulp
     .src(`./${settings.path.src}/css/${settings.files.mainCssFile}.min.css`)
@@ -158,6 +163,16 @@ gulp.task("dest", function() {
   // Dest html
   return gulp
     .src(`./${settings.path.src}/**/*.html`)
+    .pipe(
+      htmlreplace(
+        {
+          js: { src: "js/scripts.min.js", tpl: "<script src=\"%s\"></script>" }
+        },
+        {
+          keepBlockTags: true
+        }
+      )
+    )
     .pipe(gulp.dest(`./${settings.path.build}`));
 });
 
@@ -185,15 +200,7 @@ gulp.task("ImagesMinify", function() {
 // ** Building project
 gulp.task(
   "build",
-  gulp.series(
-    "CleanDist",
-    "styles",
-    "JSLibs",
-    "CustomJS",
-    "ConcatJS",
-    "ImagesMinify",
-    "dest"
-  )
+  gulp.series("CleanDist", "styles", "JSLibs", "CustomJS", "ConcatJS", "ImagesMinify", "dest")
 );
 
 // Watch task
@@ -201,14 +208,9 @@ gulp.task("watch", function() {
   const lang = settings.preprocessor;
 
   // Watch for html files changing
-  gulp
-    .watch(`./${settings.path.src}/**/*.html`)
-    .on("change", browserSync.reload);
+  gulp.watch(`./${settings.path.src}/**/*.html`).on("change", browserSync.reload);
   // Watch for styles files changing
-  gulp.watch(
-    `./${settings.path.src}/${lang}/**/*.${lang}`,
-    gulp.parallel("styles")
-  );
+  gulp.watch(`./${settings.path.src}/${lang}/**/*.${lang}`, gulp.parallel("styles"));
   gulp.watch(
     // Watch for js files changing
     `./${settings.path.src}/js/${settings.files.mainJsFile}.js`,
@@ -219,11 +221,5 @@ gulp.task("watch", function() {
 // Default task
 gulp.task(
   "default",
-  gulp.series(
-    "styles",
-    "JSLibs",
-    "CustomJS",
-    "ConcatJS",
-    gulp.parallel("watch", "BrowserSync")
-  )
+  gulp.series("styles", "JSLibs", "CustomJS", "ConcatJS", gulp.parallel("watch", "BrowserSync"))
 );

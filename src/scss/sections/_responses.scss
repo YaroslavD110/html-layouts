@@ -1,0 +1,262 @@
+// Styles for responses section
+
+.responses {
+  padding: 50px 0;
+
+  .container {
+    flex-direction: column;
+    padding: 0;
+
+    @include sm {
+      padding: 0 15px;
+    }
+  }
+
+  &-header {
+    margin-left: 15px;
+
+    @include rwd(900) {
+      margin-left: 125px;
+    }
+  }
+
+  &-wrap {
+    position: relative;
+    padding: 0;
+
+    .slick-track {
+      padding: 20px 0;
+    }
+
+    .slick-disabled {
+      opacity: 0.39;
+    }
+
+    @include rwd(900) {
+      padding: 0 100px;
+    }
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 15px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+
+      .responses-item {
+
+        &__user::after {
+          height: 155px;
+          width: 155px;
+          animation: RotateUserAtoms 5s linear infinite;
+        }
+
+        &__preview-wrap::after {
+          opacity: 0.15;
+        }
+      }
+    }
+
+    &__preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &-wrap {
+        position: relative;
+        width: 100%;
+        height: 250px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: $black;
+          opacity: 0;
+          transition: 300ms linear opacity;
+        }
+      }
+    }
+
+    &__user {
+      position: relative;
+      top: -60px;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+
+      &-wrap {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      &-img {
+        position: relative;
+        z-index: 3;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $white;
+        width: 127px;
+        height: 127px;
+        border-radius: 50%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        background: transparent url("../img/atoms-icon-3.svg") center center no-repeat;
+        background-size: contain;
+        height: 55px;
+        width: 55px;
+        transition: 300ms linear width, 300ms linear height;
+      }
+
+      &-name {
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: -40px;
+      }
+
+      &-position {
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: -10px;
+      }
+
+      &-source {
+        font-size: 12px;
+        font-weight: 200;
+        margin-top: -15px;
+      }
+
+      &-comment {
+        font-size: 14px;
+        font-weight: 300;
+        text-align: center;
+        padding: 0 25px;
+        margin-bottom: 30px;
+
+        @include sm {
+          font-size: 16px;
+        }
+      }
+    }
+
+    @include sm {
+      margin: 0 25px;
+    }
+  }
+
+  &-btn {
+
+    &__prev,
+    &__next {
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 300ms linear opacity;
+      opacity: 1;
+      outline: none;
+    }
+
+    &__prev {
+      left: 0;
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    &__next {
+      right: 0;
+    }
+  }
+
+  &-dots {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 15px;
+    margin: 5px 0;
+
+    li {
+      position: relative;
+      margin: 6px;
+      height: 12px;
+      width: 12px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 70%;
+        width: 70%;
+        background-color: $white;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        border: 3px solid $primary-alt;
+        transition: 300ms linear all;
+      }
+
+      button {
+        display: none;
+      }
+    }
+
+    .slick-active {
+
+      &::after {
+        border-width: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $primary-alt;
+      }
+    }
+  }
+
+  @include lg {
+    padding: 50px 0;
+  }
+}
+
+// Rotation animation
+@keyframes RotateUserAtoms {
+
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

@@ -1,0 +1,193 @@
+// Styles for services section
+
+.services {
+  padding-top: 50px;
+  background-color: $secondary;
+  overflow: hidden;
+
+  .container {
+    flex-wrap: wrap;
+    padding: 0;
+
+    @include sm {
+      padding: 0 15px;
+    }
+  }
+
+  &-header {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+    .title {
+      height: fit-content;
+      margin-top: 0;
+      margin-left: 15px;
+
+      @include sm {
+        margin-left: 0;
+        margin-top: 60px;
+      }
+    }
+
+    @include lg {
+      width: 30%;
+      justify-content: center;
+    }
+  }
+
+  &-tabs {
+    width: 100%;
+
+    &__controls {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      &-item {
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        transition: 300ms linear opacity;
+        opacity: 0.7;
+        padding: 25px;
+        padding-top: 35px;
+        box-sizing: border-box;
+
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: $secondary-alt;
+          opacity: 0;
+          transition: 300ms linear opacity;
+          border-radius: 15px;
+
+          @include lg {
+            border-radius: 15px 15px 0 0;
+          }
+        }
+
+        @include lg {
+          width: 20%;
+        }
+      }
+
+      .active {
+        opacity: 1;
+
+        .services-tabs__controls-text {
+          font-weight: 500;
+        }
+
+        &::before {
+          opacity: 0.1;
+        }
+      }
+
+      &-text {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 200;
+        line-height: 21px;
+        color: $white;
+        margin: 0;
+        transition: 300ms linear font-weight;
+
+        @include sm {
+          font-size: 18px;
+          font-weight: 200;
+          line-height: 24px;
+        }
+      }
+
+      &-icon {
+        margin-bottom: 20px;
+        max-width: 50%;
+        height: auto;
+        object-fit: contain;
+
+        @include sm {
+          margin-bottom: 30px;
+          max-width: 100px;
+          height: 90px;
+        }
+      }
+    }
+
+    &__content {
+      position: relative;
+      padding: 20px 15px;
+
+      &-item {
+        top: 50px;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 300ms linear;
+        max-width: 800px;
+
+        p {
+          font-size: 14px;
+          font-weight: 200;
+          color: $white;
+          text-align: justify;
+
+          @include sm {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .active {
+        transition: opacity 300ms linear 300ms;
+        position: relative;
+        top: 0;
+        opacity: 1;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        background-color: $secondary-alt;
+        opacity: 0.1;
+        border-radius: 15px 0 0 0;
+
+        @include lg {
+          border-radius: 0;
+        }
+      }
+
+      @include sm {
+        padding: 50px;
+      }
+    }
+
+    @include lg {
+      width: 70%;
+    }
+  }
+
+  @include lg {
+    padding-top: 100px;
+  }
+}

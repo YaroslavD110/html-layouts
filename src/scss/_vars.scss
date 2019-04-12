@@ -1,0 +1,37 @@
+// Fonts
+$default-font: "Montserrat", sans-serif;
+$headers-font: "AlfaSlabOne", sans-serif;
+
+// Page collors
+$primary: #26dcf2;
+$primary-alt: #1c426e;
+$secondary: #88a0d9;
+$secondary-alt: #2e4781;
+$white: #fff;
+$black: #1e1e1e;
+$gray: #e6e6e6;
+$red: #721c24;
+$gray-text: #4e627a;
+$gray-light: rgba(192, 192, 192, 0.15);
+
+// Main text color
+$text: #303030;
+$text-secondary: #140f8e;
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+$gutter: $grid-gutter-width;

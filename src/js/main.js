@@ -1,22 +1,50 @@
 const $body = $("body");
+const $window = $(window);
 const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-// const googleMapsAPIKey = "";
+
+let mobileMode = $window.width() < 800;
+let mobileListener;
 
 // Function for creating tabs
-function tabs(nodes) {
-  nodes.controls.each((index, btn) => {
-    if (index === 0) {
-      $(btn).addClass("active");
-      $(nodes.content.get(0)).addClass("active");
+function tabs({ $controls, $content, $scene }) {
+  $content.slideUp(0);
+  $controls.removeClass("active-control");
+  $controls.each((index, btn) => {
+    if (index === 0 && !mobileMode) {
+      $(btn).addClass("active-control");
+
+      $($content.get(0))
+        .clone()
+        .appendTo($scene)
+        .removeAttr("style");
     }
 
-    $(btn).click(function() {
-      $(nodes.controls).removeClass("active");
-      $(this).addClass("active");
+    $(btn)
+      .unbind("click")
+      .click(function() {
+        if (mobileMode) {
+          const $current = $($content.get(index));
 
-      $(nodes.content).removeClass("active");
-      $(nodes.content.get(index)).addClass("active");
-    });
+          if ($current.css("display") === "none") {
+            $(this).addClass("active-control");
+            $current.slideDown(300);
+          } else {
+            $current.slideUp(300);
+            $(this).removeClass("active-control");
+          }
+        } else {
+          $controls.removeClass("active-control");
+          $(this).addClass("active-control");
+          $scene.children().fadeOut(300, function() {
+            $(this).remove();
+
+            $($content.get(index))
+              .clone()
+              .appendTo($scene)
+              .fadeIn(300);
+          });
+        }
+      });
   });
 }
 
@@ -44,18 +72,6 @@ $(window).on("resize", function() {
 });
 
 $(document).ready(function() {
-  // Create tabs for about section
-  tabs({
-    controls: $(".about-tabs__controls-item"),
-    content: $(".about-tabs__content-item")
-  });
-
-  // Create tabs for services section
-  tabs({
-    controls: $(".services-tabs__controls-item"),
-    content: $(".services-tabs__content-item")
-  });
-
   // Init slick slider for responses
   $(".responses-wrap").slick({
     slidesToShow: 3,
@@ -181,52 +197,107 @@ $(document).ready(function() {
     setTimeout(() => $(this).css("display", "none"), 300);
   });
 
-  // Product animation
-  const $productItems = $(".product-item__list > g");
-  const $productControls = $(".product-item__text-list .product-item__text");
-  const $productDescriptionItems = $(".product-description__list .product-description__list-item");
-  const getID = (target) => {
-    const className = target.classList.value.split(" ").find(value => /^group-[0-9]$/.test(value));
+  mobileListener = () => {
+    // Create tabs for about section
+    tabs({
+      $controls: $(".about-tabs__item-control"),
+      $content: $(".about-tabs__item-content"),
+      $scene: $(".about-tabs__scene")
+    });
 
-    if (className) {
-      const id = className.substring(className.search(/[0-9]/));
-      return parseInt(id, 10);
-    }
+    // Create tabs for services section
+    tabs({
+      $controls: $(".services-tabs__item-control"),
+      $content: $(".services-tabs__item-content"),
+      $scene: $(".services-tabs__scene")
+    });
 
-    return undefined;
-  };
+    // Product animation
+    const $productItems = $(".product-layer");
+    const $productControls = $(".product-controls__item");
+    const $descriptionItems = $(".product-description__list .product-description__list-item");
+    const $frontSide = $productItems.filter(function() {
+      return /([7-9])|(1[0-2])/.test($(this).data("id"));
+    });
 
-  const setActiveItem = (activeItemId, control) => {
-    if (typeof activeItemId !== "number") {
+    const getById = ($list, id) => $list.filter(function() {
+      return $(this).data("id") === id;
+    });
+
+    const resetProduct = () => {
+      $productItems.removeClass("product-layer__active");
       $productItems.attr("opacity", 1);
-      $productDescriptionItems.removeClass("active");
-      $productDescriptionItems.filter("[data-id=0]").addClass("active");
+      $productControls.removeClass("product-controls__item-active");
+      $descriptionItems.removeClass("active");
+      getById($descriptionItems, 0).addClass("active");
+    };
+
+    const setActiveLayer = (id) => {
+      if (id < 8) {
+        $frontSide.attr("opacity", 0);
+      } else {
+        $frontSide.attr("opacity", 1);
+      }
+
+      if (id === 0) {
+        resetProduct();
+      }
+
+      if (id === 8) {
+        getById($productItems, 13).attr("opacity", 0);
+      } else {
+        getById($productItems, 13).attr("opacity", 1);
+      }
+
+      $productItems.removeClass("product-layer__active");
+      $(`.product-layer[data-id=${id}], .product-layer[data-connect=${id}]`).addClass(
+        "product-layer__active"
+      );
+    };
+
+    const $productDescWrap = $(".product-description__list");
+    if (mobileMode) {
+      $(".product-controls").attr("opacity", 0);
+      $productDescWrap.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false,
+        dotsClass: "product-dots",
+        adaptiveHeight: true
+      });
+
+      $productDescWrap.on("afterChange", function(event) {
+        const $target = $(event.currentTarget).find(".slick-active");
+        const id = $target.data("id");
+
+        setActiveLayer(id);
+      });
     } else {
-      $productItems.attr("opacity", 1);
-      $productItems.not(`.group-${activeItemId}`).attr("opacity", 0.3);
-      $productDescriptionItems.removeClass("active");
-      $productDescriptionItems.filter(`[data-id=${activeItemId}]`).addClass("active");
+      $(".product-controls").attr("opacity", 1);
+      if ($productDescWrap[0].slick) {
+        $productDescWrap.slick("unslick");
+      }
     }
 
-    if (!control) {
-      $productControls.removeClass("active");
-    } else {
-      $productControls.removeClass("active");
-      $(control).addClass("active");
-    }
+    $productControls.find("rect").hover((e) => {
+      const $target = $(e.target.parentElement);
+      const id = $target.data("id");
+
+      setActiveLayer(id);
+
+      $productControls.removeClass("product-controls__item-active");
+      $target.addClass("product-controls__item-active");
+
+      $descriptionItems.removeClass("active");
+      getById($descriptionItems, id).addClass("active");
+    });
+
+    getById($descriptionItems, 0).addClass("active");
+    $("#product-reset").hover(function() {
+      resetProduct();
+    });
   };
-
-  $productControls.find("rect").hover((e) => {
-    const target = e.target.parentElement;
-    const id = getID(target);
-    setActiveItem(id, target);
-  });
-
-  $(".product-item__list").hover(() => {
-    setActiveItem(null);
-  });
-
-  setActiveItem(null);
 
   // Animation on scroll
   $(".anim").viewportChecker({
@@ -248,7 +319,49 @@ $(document).ready(function() {
       return $elem;
     }
   });
+
+  // Handle mobile mode
+  mobileListener();
+  $window.resize(function() {
+    const tmpState = $(this).width() < 800;
+
+    if (tmpState !== mobileMode) {
+      if (tmpState) {
+        mobileMode = true;
+      } else {
+        mobileMode = false;
+      }
+
+      mobileListener();
+    }
+  });
 });
+
+// Handle onscroll
+let navbarPaddingTop = null;
+const setNavbar = (scrollTop) => {
+  const $navbar = $(".navbar");
+  const navbarPaddingBottom = parseInt($navbar.css("padding-bottom"), 10);
+
+  if (!navbarPaddingTop) {
+    navbarPaddingTop = parseInt($navbar.css("padding-top"), 10);
+  }
+
+  if (scrollTop > navbarPaddingTop) {
+    $navbar.parent().css("padding-top", $navbar.height() + navbarPaddingTop + navbarPaddingBottom);
+    $navbar.addClass("navbar-fixed");
+  } else {
+    $navbar.parent().css("padding-top", 0);
+    $navbar.removeClass("navbar-fixed");
+  }
+};
+
+$window.scroll(function() {
+  const scrollTop = $(this).scrollTop();
+  setNavbar(scrollTop);
+});
+
+setNavbar($window.scrollTop());
 
 // Create Google Map
 // const googleMapStyles = [

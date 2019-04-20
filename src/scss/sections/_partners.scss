@@ -32,10 +32,14 @@
       img {
         max-height: 100px;
         max-width: 100%;
-        filter: grayscale(1);
+        filter: grayscale(0);
         transition: 300ms linear filter;
 
         &:hover {
+          filter: grayscale(1);
+        }
+
+        @include sm {
           filter: grayscale(0);
         }
       }

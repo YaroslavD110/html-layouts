@@ -211,8 +211,8 @@
     li {
       position: relative;
       margin: 6px;
-      height: 12px;
-      width: 12px;
+      height: 18px;
+      width: 18px;
 
       &::after {
         content: "";
@@ -224,7 +224,7 @@
         background-color: $white;
         border-radius: 50%;
         transform: translate(-50%, -50%);
-        border: 3px solid $primary-alt;
+        border: 1px solid $secondary;
         transition: 300ms linear all;
       }
 
@@ -236,10 +236,7 @@
     .slick-active {
 
       &::after {
-        border-width: 0;
-        height: 100%;
-        width: 100%;
-        background-color: $primary-alt;
+        background-color: $secondary;
       }
     }
   }

@@ -7,7 +7,6 @@
   .container {
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
 
     @include lg {
       justify-content: space-between;
@@ -15,8 +14,12 @@
   }
 
   &-logo {
-    margin: 0 15px;
-    max-width: 200px;
+    margin-right: 15px;
+    max-width: 150px;
+
+    @include sm {
+      max-width: 200px;
+    }
 
     @include lg {
       margin-left: 8.33%;
@@ -24,12 +27,16 @@
   }
 
   &-copyright {
-    margin: 0 15px;
+    margin-left: 15px;
     max-width: 600px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 200;
     color: $white;
-    text-align: right;
+
+    @include sm {
+      text-align: right;
+      font-size: 16px;
+    }
 
     @include lg {
       margin-right: 8.33%;

@@ -40,133 +40,44 @@
   &-item {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
     margin: 0 15px;
-
-    &:focus {
-      outline: none;
-    }
-
-    &:hover {
-
-      .responses-item {
-
-        &__user::after {
-          height: 155px;
-          width: 155px;
-          animation: RotateUserAtoms 5s linear infinite;
-        }
-
-        &__preview-wrap::after {
-          opacity: 0.15;
-        }
-      }
-    }
+    outline: none;
 
     &__preview {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 15px;
 
       &-wrap {
         position: relative;
         width: 100%;
         height: 250px;
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          background-color: $black;
-          opacity: 0;
-          transition: 300ms linear opacity;
-        }
+        margin-bottom: 20px;
       }
     }
 
-    &__user {
-      position: relative;
-      top: -60px;
-      height: 120px;
-      width: 120px;
-      border-radius: 50%;
+    &__desc {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-      &-wrap {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      &-img {
-        position: relative;
-        z-index: 3;
-        border-radius: 50%;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        z-index: 2;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: $white;
-        width: 127px;
-        height: 127px;
-        border-radius: 50%;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(0deg);
-        background: transparent url("../img/atoms-icon-3.svg") center center no-repeat;
-        background-size: contain;
-        height: 55px;
-        width: 55px;
-        transition: 300ms linear width, 300ms linear height;
-      }
-
-      &-name {
-        font-size: 16px;
-        font-weight: 700;
-        margin-top: -40px;
-      }
-
-      &-position {
-        font-size: 12px;
-        font-weight: 600;
-        margin-top: -10px;
-      }
-
-      &-source {
-        font-size: 12px;
-        font-weight: 200;
-        margin-top: -15px;
-      }
-
-      &-comment {
-        font-size: 14px;
-        font-weight: 300;
+      &-title {
         text-align: center;
-        padding: 0 25px;
-        margin-bottom: 30px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        margin: 0;
+      }
 
-        @include sm {
-          font-size: 16px;
-        }
+      &-subtitle {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        color: rgba($black, 0.5);
+        margin: 0;
       }
     }
 

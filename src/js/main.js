@@ -9,6 +9,7 @@ let mobileListener;
 function tabs({ $controls, $content, $scene }) {
   $content.slideUp(0);
   $controls.removeClass("active-control");
+  $scene.empty();
   $controls.each((index, btn) => {
     if (index === 0 && !mobileMode) {
       $(btn).addClass("active-control");
@@ -213,8 +214,10 @@ $(document).ready(function() {
     });
 
     // Product animation
+    let currentProductIndex = 0;
     const $productItems = $(".product-layer");
     const $productControls = $(".product-controls__item");
+    const $sliderBtns = $(".product-description__btns .product-description__btn");
     const $descriptionItems = $(".product-description__list .product-description__list-item");
     const $frontSide = $productItems.filter(function() {
       return /([7-9])|(1[0-2])/.test($(this).data("id"));
@@ -223,6 +226,8 @@ $(document).ready(function() {
     const getById = ($list, id) => $list.filter(function() {
       return $(this).data("id") === id;
     });
+
+    const getIdByIndex = index => $descriptionItems.get(index) && $descriptionItems.get(index).dataset.id;
 
     const resetProduct = () => {
       $productItems.removeClass("product-layer__active");
@@ -255,6 +260,16 @@ $(document).ready(function() {
       );
     };
 
+    const setCurrentProduct = (id) => {
+      setActiveLayer(id);
+
+      $productControls.removeClass("product-controls__item-active");
+      getById($productControls, id).addClass("product-controls__item-active");
+
+      $descriptionItems.removeClass("active");
+      getById($descriptionItems, id).addClass("active");
+    };
+
     const $productDescWrap = $(".product-description__list");
     if (mobileMode) {
       $(".product-controls").attr("opacity", 0);
@@ -280,21 +295,40 @@ $(document).ready(function() {
       }
     }
 
-    $productControls.find("rect").hover((e) => {
+    $productControls.find("rect").click((e) => {
       const $target = $(e.target.parentElement);
       const id = $target.data("id");
 
-      setActiveLayer(id);
+      setCurrentProduct(id);
+    });
 
-      $productControls.removeClass("product-controls__item-active");
-      $target.addClass("product-controls__item-active");
+    $sliderBtns.click(function() {
+      const itemsCount = $descriptionItems.length - 2;
+      let id = 0;
 
-      $descriptionItems.removeClass("active");
-      getById($descriptionItems, id).addClass("active");
+      if ($(this).hasClass("product-description__btn-prev")) {
+        currentProductIndex--;
+
+        if (currentProductIndex < 0) {
+          currentProductIndex = itemsCount;
+        }
+
+        id = parseInt(getIdByIndex(currentProductIndex), 10);
+      } else if ($(this).hasClass("product-description__btn-next")) {
+        currentProductIndex++;
+
+        if (currentProductIndex > itemsCount) {
+          currentProductIndex = 0;
+        }
+
+        id = parseInt(getIdByIndex(currentProductIndex), 10);
+      }
+
+      setCurrentProduct(id);
     });
 
     getById($descriptionItems, 0).addClass("active");
-    $("#product-reset").hover(function() {
+    $("#product-reset").click(function() {
       resetProduct();
     });
   };
@@ -336,32 +370,6 @@ $(document).ready(function() {
     }
   });
 });
-
-// Handle onscroll
-let navbarPaddingTop = null;
-const setNavbar = (scrollTop) => {
-  const $navbar = $(".navbar");
-  const navbarPaddingBottom = parseInt($navbar.css("padding-bottom"), 10);
-
-  if (!navbarPaddingTop) {
-    navbarPaddingTop = parseInt($navbar.css("padding-top"), 10);
-  }
-
-  if (scrollTop > navbarPaddingTop) {
-    $navbar.parent().css("padding-top", $navbar.height() + navbarPaddingTop + navbarPaddingBottom);
-    $navbar.addClass("navbar-fixed");
-  } else {
-    $navbar.parent().css("padding-top", 0);
-    $navbar.removeClass("navbar-fixed");
-  }
-};
-
-$window.scroll(function() {
-  const scrollTop = $(this).scrollTop();
-  setNavbar(scrollTop);
-});
-
-setNavbar($window.scrollTop());
 
 // Create Google Map
 // const googleMapStyles = [

@@ -1,10 +1,11 @@
 // Styles for product section
 
 .product {
-  padding: 50px 0;
+  padding: 100px 0;
 
   .container {
     flex-direction: column;
+    justify-content: space-between;
 
     @include lg {
       flex-direction: row;
@@ -586,7 +587,7 @@
     }
 
     @include lg {
-      width: 55%;
+      width: 53%;
     }
   }
 
@@ -638,11 +639,12 @@
     width: 100%;
 
     .title {
-      margin-top: 0;
-      margin-bottom: 15px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding-bottom: 0;
 
-      @include rwd(1200) {
-        margin-top: 100px;
+      &::after {
+        display: none;
       }
     }
 
@@ -652,6 +654,8 @@
       flex-direction: column;
 
       &-item {
+        display: flex;
+        flex-direction: column;
         position: initial;
         top: 0;
         opacity: 1;
@@ -682,11 +686,13 @@
       color: $gray-text;
       font-size: 20px;
       font-weight: 500;
+      line-height: 28px;
       margin: 0;
       text-align: left;
 
       @include sm {
-        font-size: 32px;
+        font-size: 24px;
+        line-height: 32px;
         text-align: center;
       }
 
@@ -695,15 +701,62 @@
       }
     }
 
+    &__img {
+      max-width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      object-position: left;
+    }
+
+    &__btns {
+      display: none;
+      margin: 15px 0;
+
+      @include rwd(800) {
+        display: flex;
+      }
+    }
+
+    &__btn {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border: none;
+      outline: none;
+      background-color: rgba($secondary, 0.2);
+      border-radius: 50%;
+      transition: background-color 200ms linear;
+
+      img {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      &:hover {
+        background-color: $primary;
+      }
+
+      &:last-child {
+        margin-left: 5px;
+
+        img {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
     &__text {
       color: $gray-text;
-      font-size: 14px;
+      font-size: 13px;
+      line-height: 20px;
       font-weight: 200;
       max-width: 100%;
-
-      @include sm {
-        font-size: 16px;
-      }
+      margin-bottom: 30px;
 
       @include lg {
         max-width: 540px;

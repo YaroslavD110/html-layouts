@@ -95,7 +95,7 @@
           height: 1px;
           width: 100%;
           width: calc(100% - 30px);
-          background-color: $white;
+          background-color: $primary;
           transition: 300ms linear width;
 
           @include rwd(800) {
@@ -148,13 +148,13 @@
       &-title {
         font-weight: 200;
         color: $white;
-        font-size: 18px;
+        font-size: 14px;
         transition: 300ms linear font-weight;
         text-align: left;
         margin: 0;
 
         @include lg {
-          font-size: 22px;
+          font-size: 16px;
         }
       }
 
@@ -204,7 +204,7 @@
 
         p {
           font-weight: 200;
-          font-size: 14px;
+          font-size: 13px;
           color: $gray-text;
           box-sizing: border-box;
           text-align: justify;
@@ -255,10 +255,16 @@
       .active {
 
         &-control {
-          font-weight: 500;
 
-          .about-tabs__item-arrow {
-            transform: rotate(180deg);
+          .about-tabs__item {
+
+            &-title {
+              font-weight: 500;
+            }
+
+            &-arrow {
+              transform: rotate(180deg);
+            }
           }
 
           &::after {

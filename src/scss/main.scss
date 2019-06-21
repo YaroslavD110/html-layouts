@@ -33,7 +33,7 @@ strong {
 
 .container {
   display: flex;
-  max-width: 1656px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -47,22 +47,22 @@ strong {
   border: none;
   background-color: transparent;
   width: fit-content;
-  padding: 12px 70px;
+  padding: 12px 50px;
   font-weight: 600;
-  font-size: 19px;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
 
   &-primary {
-    background-color: $primary;
+    background-color: #14d5d9;
     color: $white;
     box-shadow: 0 0 10px 0 rgba(28, 177, 196, 0.85);
-    border-radius: 5px;
+    border-radius: 50px;
     transition: 300ms linear all;
 
     &:hover {
       box-shadow: 0 0 17px 0 rgba(28, 177, 196, 0.85);
-      background-color: darken($primary, 5%);
+      background-color: darken(#14d5d9, 5%);
     }
   }
 }
@@ -102,7 +102,8 @@ strong {
   }
 
   @include sm {
-    font-size: 40px;
+    font-size: 30px;
+    line-height: 38px;
 
     &::after {
       width: 210px;

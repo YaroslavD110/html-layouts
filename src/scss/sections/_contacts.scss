@@ -10,11 +10,6 @@
     font-weight: 600;
     color: $white;
     margin-bottom: 20px;
-
-    @include sm {
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
   }
 
   .container {
@@ -36,14 +31,6 @@
         text-decoration: none;
         font-weight: 500;
       }
-
-      @include sm {
-        font-size: 18px;
-      }
-
-      @include lg {
-        font-size: 21px;
-      }
     }
 
     &__link {
@@ -57,22 +44,10 @@
       &-icon {
         margin-right: 5px;
       }
-
-      @include sm {
-        font-size: 18px;
-      }
-
-      @include lg {
-        font-size: 21px;
-      }
     }
 
-    @include lg {
+    @include md {
       width: 40%;
-    }
-
-    @include rwd(1170) {
-      width: 41.77%;
     }
   }
 
@@ -82,12 +57,12 @@
     &__wrap {
       width: 100%;
 
-      @include lg {
+      @include md {
         width: 60%;
       }
 
-      @include rwd(1170) {
-        width: 41.77%;
+      @include rwd(1100) {
+        width: 30%;
       }
     }
 
@@ -159,17 +134,17 @@
 
     &__input {
       font-family: $default-font;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 300;
       color: $white;
-      padding: 20px;
+      padding: 15px;
       width: 100%;
       border: none;
       background-color: transparent;
       box-sizing: border-box;
 
       &::placeholder {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
         color: $white;
       }
@@ -177,10 +152,10 @@
 
     &__textarea {
       font-family: $default-font;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 300;
       color: $white;
-      padding: 20px;
+      padding: 15px;
       width: 100%;
       border: none;
       background-color: transparent;
@@ -189,20 +164,19 @@
       height: 180px;
 
       &::placeholder {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
         color: $white;
       }
     }
 
     .btn {
-      padding: 20px 70px;
       margin-top: 0;
       width: 100%;
 
       @include sm {
         width: fit-content;
-        margin-top: 50px;
+        margin-top: 30px;
       }
     }
   }

@@ -702,10 +702,20 @@
     }
 
     &__img {
-      max-width: 100%;
       max-height: 250px;
-      object-fit: contain;
+      width: 100%;
+      object-fit: cover;
       object-position: left;
+      border-radius: 10px;
+
+      @include md {
+        width: fit-content;
+      }
+
+      @include lg {
+        width: 70%;
+        height: 250px;
+      }
     }
 
     &__btns {

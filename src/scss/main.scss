@@ -111,22 +111,6 @@ strong {
   }
 }
 
-.anim {
-  opacity: 0;
-  animation-play-state: paused;
-
-  &-action {
-    opacity: 1;
-    animation-play-state: running;
-    animation-duration: 600ms;
-    animation-timing-function: linear;
-  }
-
-  &-delay {
-    animation-delay: 500ms;
-  }
-}
-
 // Sections
 @import "sections/header";
 @import "sections/about";

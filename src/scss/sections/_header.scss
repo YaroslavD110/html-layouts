@@ -80,11 +80,6 @@
 
     .btn {
       box-sizing: border-box;
-      width: 100%;
-
-      @include sm {
-        width: fit-content;
-      }
     }
 
     @include rwd(1100) {
@@ -147,7 +142,7 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $secondary;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 12px;
     border: 1px solid $secondary;
     padding: 2px 12px;
@@ -157,6 +152,10 @@
     &:hover {
       background-color: $secondary;
       color: $white;
+    }
+
+    @include rwd(1100) {
+      margin-left: 20px;
     }
   }
 
@@ -211,7 +210,7 @@
     &__link {
       display: block;
       position: relative;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 15px;
       padding: 12px 0;
       text-decoration: none;
@@ -240,7 +239,6 @@
 
       @include rwd(1100) {
         display: initial;
-        font-weight: 300;
         font-size: 12px;
         padding: 15px;
       }
@@ -248,12 +246,12 @@
   }
 
   &-logo {
-    width: 100%;
+    max-width: 100%;
     object-fit: contain;
     object-position: left;
 
     &__wrap {
-      width: 50%;
+      width: 40%;
 
       @include sm {
         width: 21%;
@@ -267,7 +265,7 @@
     }
 
     @include rwd(1100) {
-      width: 50%;
+      max-width: 50%;
     }
   }
 

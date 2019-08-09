@@ -162,8 +162,8 @@ $(document).ready(function() {
         $group.find(".error-label").text(validationResult);
       }
 
-      $input.on("keypress", (e) => {
-        const validation = rules[input.name] && rules[input.name](e.target.value);
+      $input.on("keypress", (event) => {
+        const validation = rules[input.name] && rules[input.name](event.target.value);
 
         if (typeof validation === "string") {
           $group.addClass("error");
@@ -227,7 +227,10 @@ $(document).ready(function() {
       return $(this).data("id") === id;
     });
 
-    const getIdByIndex = index => $descriptionItems.get(index) && $descriptionItems.get(index).dataset.id;
+    const getIdByIndex = index => (
+      $descriptionItems.get(index)
+      && $descriptionItems.get(index).dataset.id
+    );
 
     const resetProduct = () => {
       $productItems.removeClass("product-layer__active");
@@ -296,7 +299,7 @@ $(document).ready(function() {
     }
 
     $productControls.find("rect").click((e) => {
-      const $target = $(e.target.parentElement);
+      const $target = $(e.target).parent();
       const id = $target.data("id");
 
       setCurrentProduct(id);

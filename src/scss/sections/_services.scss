@@ -110,7 +110,7 @@
 
       &-icon {
         margin-right: 15px;
-        width: 60px;
+        max-width: 60px;
         height: auto;
         object-fit: contain;
       }
@@ -138,6 +138,7 @@
           font-weight: 200;
           color: $white;
           text-align: justify;
+          margin: 10px 0;
         }
 
         &::before {
@@ -153,7 +154,7 @@
         }
 
         @include sm {
-          padding: 50px;
+          padding: 23px 50px;
         }
 
         @include rwd(800) {

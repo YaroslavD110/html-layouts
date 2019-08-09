@@ -20,6 +20,8 @@
     "no-var": "off",
     "vars-on-top": "off",
     "no-inner-declarations": "off",
-    "space-before-function-paren": "off"
+    "space-before-function-paren": "off",
+    "no-plusplus": "off",
+    "no-useless-escape": "off"
   }
 }

@@ -666,6 +666,25 @@
         padding: 15px;
         border-radius: 15px;
 
+        p {
+          color: $gray-text;
+          font-size: 13px;
+          line-height: 20px;
+          font-weight: 200;
+        }
+
+        ul,
+        ol {
+          padding-left: 30px;
+
+          li {
+            color: $gray-text;
+            font-size: 13px;
+            line-height: 20px;
+            font-weight: 200;
+          }
+        }
+
         @include rwd(800) {
           position: absolute;
           opacity: 0;
@@ -707,6 +726,7 @@
       object-fit: cover;
       object-position: left;
       border-radius: 10px;
+      margin-top: 20px;
 
       @include md {
         width: fit-content;
@@ -757,19 +777,6 @@
         img {
           transform: rotate(180deg);
         }
-      }
-    }
-
-    &__text {
-      color: $gray-text;
-      font-size: 13px;
-      line-height: 20px;
-      font-weight: 200;
-      max-width: 100%;
-      margin-bottom: 30px;
-
-      @include lg {
-        max-width: 540px;
       }
     }
 

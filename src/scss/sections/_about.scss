@@ -114,7 +114,9 @@
           content: "";
           position: absolute;
           left: -40px;
-          background: transparent url("../img/atoms-icon-2.svg") center center no-repeat;
+          background:
+ transparent url("../img/atoms-icon-2.svg") center center
+            no-repeat;
           background-size: contain;
           transform: translateY(0);
           height: 0;
@@ -210,13 +212,52 @@
           text-align: justify;
         }
 
+        ul,
+        ol {
+          padding-left: 30px;
+
+          li {
+            font-weight: 200;
+            font-size: 13px;
+            color: $gray-text;
+            box-sizing: border-box;
+          }
+        }
+
+        .tabs {
+
+          &-dots {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 0;
+
+            &__item {
+              cursor: pointer;
+              background-color: transparent;
+              width: 10px;
+              height: 10px;
+              margin: 0 5px;
+              border-radius: 50%;
+              border: 1px solid $secondary-alt;
+              transition: background-color 300ms linear;
+
+              &-active {
+                background-color: $secondary-alt;
+              }
+            }
+          }
+        }
+
         &::after {
           content: "";
           position: absolute;
           z-index: 3;
           left: 15px;
           bottom: 20px;
-          background: transparent url("../img/wave-icon.svg") left center no-repeat;
+          background:
+ transparent url("../img/wave-icon.svg") left center
+            no-repeat;
           background-size: contain;
           min-height: 65px;
           width: 100%;

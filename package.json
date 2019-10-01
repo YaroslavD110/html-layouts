@@ -7,8 +7,6 @@
     "htmllint": "html-lint ./**/*.html"
   },
   "main": "./src/index.html",
-  "repository": "https://tangerine69@bitbucket.org/tangerine69/ternalahtmllayout.git",
-  "author": "tangerine69 <tangerine69@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.3",

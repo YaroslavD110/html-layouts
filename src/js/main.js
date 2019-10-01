@@ -227,10 +227,7 @@ $(document).ready(function() {
       return $(this).data("id") === id;
     });
 
-    const getIdByIndex = index => (
-      $descriptionItems.get(index)
-      && $descriptionItems.get(index).dataset.id
-    );
+    const getIdByIndex = index => $descriptionItems.get(index) && $descriptionItems.get(index).dataset.id;
 
     const resetProduct = () => {
       $productItems.removeClass("product-layer__active");

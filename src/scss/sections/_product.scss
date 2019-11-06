@@ -671,6 +671,7 @@
           font-size: 13px;
           line-height: 20px;
           font-weight: 200;
+          text-align: justify;
         }
 
         ul,
@@ -704,7 +705,7 @@
     &__subtitle {
       color: $gray-text;
       font-size: 20px;
-      font-weight: 500;
+      font-weight: 300;
       line-height: 28px;
       margin: 0;
       text-align: left;
@@ -761,10 +762,10 @@
       transition: background-color 200ms linear;
 
       img {
-        width: 70%;
-        height: 70%;
+        position: relative;
+        left: -1px;
+        width: 60%;
         object-fit: contain;
-        object-position: center;
       }
 
       &:hover {
@@ -776,6 +777,8 @@
 
         img {
           transform: rotate(180deg);
+          left: initial;
+          right: -1px;
         }
       }
     }

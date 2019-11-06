@@ -1,32 +1,5 @@
 @import "mixins/font-face";
 
-@include font-face(
-  "AlfaSlabOne",
-  "../fonts/AlfaSlabOneRegular/AlfaSlabOne-Regular",
-  300
-);
-@include font-face(
-  "Montserrat",
-  "../fonts/MontserratBold/Montserrat-Bold",
-  700
-);
-@include font-face(
-  "Montserrat",
-  "../fonts/MontserratSemiBold/Montserrat-SemiBold",
-  600
-);
-@include font-face(
-  "Montserrat",
-  "../fonts/MontserratMedium/Montserrat-Medium",
-  500
-);
-@include font-face(
-  "Montserrat",
-  "../fonts/MontserratRegular/Montserrat-Regular",
-  300
-);
-@include font-face(
-  "Montserrat",
-  "../fonts/MontserratLight/Montserrat-Light",
-  100
-);
+@include font-face("Rubik", "../fonts/RubikMedium/Rubik-Medium", 500);
+@include font-face("Rubik", "../fonts/RubikRegular/Rubik-Regular", 300);
+@include font-face("Rubik", "../fonts/RubikLight/Rubik-Light", 100);

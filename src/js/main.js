@@ -50,7 +50,7 @@ function tabs({ $controls, $content, $scene }) {
 }
 
 // Smooth scroll to section
-$(document).on("click", "a[href^=\"#\"]", function(event) {
+$(document).on("click", 'a[href^="#"]', function(event) {
   event.preventDefault();
 
   $(".navbar-btn__active").removeClass("navbar-btn__active");
@@ -78,9 +78,9 @@ $(document).ready(function() {
     slidesToShow: 3,
     infinite: false,
     prevArrow:
-      "<button class=\"responses-btn__prev\"><img src=\"img/slider-arrow-icon.svg\" /></button>",
+      '<button class="responses-btn__prev"><img src="img/slider-arrow-icon.svg" /></button>',
     nextArrow:
-      "<button class=\"responses-btn__next\"><img src=\"img/slider-arrow-icon.svg\" /></button>",
+      '<button class="responses-btn__next"><img src="img/slider-arrow-icon.svg" /></button>',
     dotsClass: "responses-dots",
     responsive: [
       {
@@ -151,19 +151,23 @@ $(document).ready(function() {
       }
     };
 
-    values.forEach((input) => {
-      const $input = $this.find(`input[name=${input.name}], textarea[name=${input.name}]`);
+    values.forEach(input => {
+      const $input = $this.find(
+        `input[name=${input.name}], textarea[name=${input.name}]`
+      );
       const $group = $input.parent(".contacts-form__group");
       const $label = $group.find(".error-label");
-      const validationResult = rules[input.name] && rules[input.name](input.value);
+      const validationResult =
+        rules[input.name] && rules[input.name](input.value);
 
       if (typeof validationResult === "string") {
         $group.addClass("error");
         $group.find(".error-label").text(validationResult);
       }
 
-      $input.on("keypress", (event) => {
-        const validation = rules[input.name] && rules[input.name](event.target.value);
+      $input.on("keypress", event => {
+        const validation =
+          rules[input.name] && rules[input.name](event.target.value);
 
         if (typeof validation === "string") {
           $group.addClass("error");
@@ -214,37 +218,49 @@ $(document).ready(function() {
     });
 
     // Product animation
-    let currentProductIndex = 0;
+    const ids = [];
+    $(".product-description__list-item").each(function() {
+      ids.push($(this).data("id"));
+    });
+    const firstProduct = Math.min(...ids);
+    let currentProductIndex = firstProduct;
+    let autoChangeProduct = null;
     const $productItems = $(".product-layer");
     const $productControls = $(".product-controls__item");
-    const $sliderBtns = $(".product-description__btns .product-description__btn");
-    const $descriptionItems = $(".product-description__list .product-description__list-item");
+    const $sliderBtns = $(
+      ".product-description__btns .product-description__btn"
+    );
+    const $descriptionItems = $(
+      ".product-description__list .product-description__list-item"
+    );
     const $frontSide = $productItems.filter(function() {
       return /([7-9])|(1[0-2])/.test($(this).data("id"));
     });
 
-    const getById = ($list, id) => $list.filter(function() {
-      return $(this).data("id") === id;
-    });
+    const getById = ($list, id) =>
+      $list.filter(function() {
+        return $(this).data("id") === id;
+      });
 
-    const getIdByIndex = index => $descriptionItems.get(index) && $descriptionItems.get(index).dataset.id;
+    const getIdByIndex = index =>
+      $descriptionItems.get(index) && $descriptionItems.get(index).dataset.id;
 
     const resetProduct = () => {
       $productItems.removeClass("product-layer__active");
       $productItems.attr("opacity", 1);
       $productControls.removeClass("product-controls__item-active");
       $descriptionItems.removeClass("active");
-      getById($descriptionItems, 0).addClass("active");
+      getById($descriptionItems, firstProduct).addClass("active");
     };
 
-    const setActiveLayer = (id) => {
+    const setActiveLayer = id => {
       if (id < 8) {
         $frontSide.attr("opacity", 0);
       } else {
         $frontSide.attr("opacity", 1);
       }
 
-      if (id === 0) {
+      if (id === firstProduct) {
         resetProduct();
       }
 
@@ -255,12 +271,12 @@ $(document).ready(function() {
       }
 
       $productItems.removeClass("product-layer__active");
-      $(`.product-layer[data-id=${id}], .product-layer[data-connect=${id}]`).addClass(
-        "product-layer__active"
-      );
+      $(
+        `.product-layer[data-id=${id}], .product-layer[data-connect=${id}]`
+      ).addClass("product-layer__active");
     };
 
-    const setCurrentProduct = (id) => {
+    const setCurrentProduct = id => {
       setActiveLayer(id);
 
       $productControls.removeClass("product-controls__item-active");
@@ -295,39 +311,46 @@ $(document).ready(function() {
       }
     }
 
-    $productControls.find("rect").click((e) => {
+    $productControls.find("rect").click(e => {
       const $target = $(e.target).parent();
       const id = $target.data("id");
 
       setCurrentProduct(id);
     });
 
-    $sliderBtns.click(function() {
-      const itemsCount = $descriptionItems.length - 2;
-      let id = 0;
+    function setNextProduct() {
+      const itemsCount = $descriptionItems.length;
+      let id = firstProduct;
 
       if ($(this).hasClass("product-description__btn-prev")) {
         currentProductIndex--;
 
-        if (currentProductIndex < 0) {
+        if (currentProductIndex < firstProduct) {
           currentProductIndex = itemsCount;
         }
 
-        id = parseInt(getIdByIndex(currentProductIndex), 10);
+        id = parseInt(getIdByIndex(currentProductIndex - 1), 10);
       } else if ($(this).hasClass("product-description__btn-next")) {
         currentProductIndex++;
 
-        if (currentProductIndex > itemsCount) {
-          currentProductIndex = 0;
+        if (currentProductIndex >= itemsCount) {
+          currentProductIndex = firstProduct;
         }
 
-        id = parseInt(getIdByIndex(currentProductIndex), 10);
+        id = parseInt(getIdByIndex(currentProductIndex - 1), 10);
       }
 
       setCurrentProduct(id);
-    });
+    }
 
-    getById($descriptionItems, 0).addClass("active");
+    $sliderBtns.click(setNextProduct);
+    autoChangeProduct = setInterval(() => {
+      setNextProduct.bind($sliderBtns.get(0))();
+    }, 1 * 1000);
+
+    if (firstProduct) setCurrentProduct(firstProduct);
+    else getById($descriptionItems, firstProduct).addClass("active");
+
     $("#product-reset").click(function() {
       resetProduct();
     });

@@ -346,7 +346,7 @@ $(document).ready(function() {
     $sliderBtns.click(setNextProduct);
     autoChangeProduct = setInterval(() => {
       setNextProduct.bind($sliderBtns.get(0))();
-    }, 1 * 1000);
+    }, 7 * 1000);
 
     if (firstProduct) setCurrentProduct(firstProduct);
     else getById($descriptionItems, firstProduct).addClass("active");
